@@ -34,3 +34,10 @@ add_library(${PROJECT_LIB_NAME} ${PROJECT_HEADER_FILES} ${PROJECT_SOURCE_FILES})
 set_target_properties(${PROJECT_LIB_NAME} PROPERTIES CXX_VISIBILITY_PRESET "hidden")
 target_link_libraries(${PROJECT_LIB_NAME} PRIVATE Threads::Threads)
 target_include_directories(${PROJECT_LIB_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+
+ADD_LIBRARY(CityFlow
+        SHARED
+        ${PROJECT_SOURCE_FILES}
+        swig/cityflow_csharp_wrap.cxx
+        ${PROJECT_HEADER_FILES})
+	TARGET_LINK_LIBRARIES(CityFlow)
