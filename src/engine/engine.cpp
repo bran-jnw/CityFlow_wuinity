@@ -1,5 +1,5 @@
-#include "engine/engine.h"
-#include "utility/utility.h"
+#include "../engine/engine.h"
+#include "../utility/utility.h"
 
 #include <algorithm>
 #include <cmath>

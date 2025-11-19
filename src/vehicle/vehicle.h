@@ -1,10 +1,10 @@
 #ifndef CITYFLOW_VEHICLE
 #define CITYFLOW_VEHICLE
 
-#include "utility/utility.h"
-#include "flow/route.h"
-#include "vehicle/router.h"
-#include "vehicle/lanechange.h"
+#include "../utility/utility.h"
+#include "../flow/route.h"
+#include "../vehicle/router.h"
+#include "../vehicle/lanechange.h"
 
 #include <utility>
 #include <memory>

@@ -1,8 +1,8 @@
 #ifndef CITYFLOW_ROADNET_H
 #define CITYFLOW_ROADNET_H
 
-#include "roadnet/trafficlight.h"
-#include "utility/utility.h"
+#include "../roadnet/trafficlight.h"
+#include "../utility/utility.h"
 
 #include <list>
 #include <map>

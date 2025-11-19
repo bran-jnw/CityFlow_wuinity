@@ -1,4 +1,4 @@
-/* File : cityengine_csharp.i */
+/* File : cityflow_csharp.i */
 %module CityEngine
 
 %{

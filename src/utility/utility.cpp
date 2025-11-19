@@ -1,14 +1,14 @@
-#include "utility/utility.h"
+#include "../utility/utility.h"
 #include <cmath>
 #include <algorithm>
 #include <iostream>
 
-#include "rapidjson/filereadstream.h"
-#include "rapidjson/filewritestream.h"
-#include "rapidjson/cursorstreamwrapper.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/document.h"
-#include "rapidjson/error/en.h"
+#include "../../extern/rapidjson/include/rapidjson/filereadstream.h"
+#include "../../extern/rapidjson/include/rapidjson/filewritestream.h"
+#include "../../extern/rapidjson/include/rapidjson/cursorstreamwrapper.h"
+#include "../../extern/rapidjson/include/rapidjson/writer.h"
+#include "../../extern/rapidjson/include/rapidjson/document.h"
+#include "../../extern/rapidjson/include/rapidjson/error/en.h"
 
 namespace CityFlow {
 

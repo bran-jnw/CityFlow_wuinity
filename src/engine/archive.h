@@ -1,9 +1,9 @@
 #ifndef CITYFLOW_ARCHIVE_H
 #define CITYFLOW_ARCHIVE_H
 
-#include "rapidjson/document.h"
-#include "rapidjson/allocators.h"
-#include "roadnet/roadnet.h"
+#include "../../extern/rapidjson/include/rapidjson/document.h"
+#include "../../extern/rapidjson/include/rapidjson/allocators.h"
+#include "../roadnet/roadnet.h"
 
 #include <deque>
 
