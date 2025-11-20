@@ -50,37 +50,37 @@ public class Flow : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Flow(swigCPtr);
+          CityFlowPINVOKE.delete_Flow(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public Flow(VehicleInfo vehicleTemplate, double timeInterval, Engine engine, int startTime, int endTime, SWIGTYPE_p_std__string id) : this(CityEnginePINVOKE.new_Flow(VehicleInfo.getCPtr(vehicleTemplate), timeInterval, Engine.getCPtr(engine), startTime, endTime, SWIGTYPE_p_std__string.getCPtr(id)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Flow(VehicleInfo vehicleTemplate, double timeInterval, Engine engine, int startTime, int endTime, string id) : this(CityFlowPINVOKE.new_Flow(VehicleInfo.getCPtr(vehicleTemplate), timeInterval, Engine.getCPtr(engine), startTime, endTime, id), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void nextStep(double timeInterval) {
-    CityEnginePINVOKE.Flow_nextStep(swigCPtr, timeInterval);
+    CityFlowPINVOKE.Flow_nextStep(swigCPtr, timeInterval);
   }
 
-  public SWIGTYPE_p_std__string getId() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Flow_getId(swigCPtr), true);
+  public string getId() {
+    string ret = CityFlowPINVOKE.Flow_getId(swigCPtr);
     return ret;
   }
 
   public bool isValid() {
-    bool ret = CityEnginePINVOKE.Flow_isValid(swigCPtr);
+    bool ret = CityFlowPINVOKE.Flow_isValid(swigCPtr);
     return ret;
   }
 
   public void setValid(bool valid) {
-    CityEnginePINVOKE.Flow_setValid(swigCPtr, valid);
+    CityFlowPINVOKE.Flow_setValid(swigCPtr, valid);
   }
 
   public void reset() {
-    CityEnginePINVOKE.Flow_reset(swigCPtr);
+    CityFlowPINVOKE.Flow_reset(swigCPtr);
   }
 
 }

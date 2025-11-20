@@ -50,99 +50,99 @@ public class Router : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Router(swigCPtr);
+          CityFlowPINVOKE.delete_Router(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public Router(Router other) : this(CityEnginePINVOKE.new_Router__SWIG_0(Router.getCPtr(other)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Router(Router other) : this(CityFlowPINVOKE.new_Router__SWIG_0(Router.getCPtr(other)), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public Router(Vehicle vehicle, SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t route, SWIGTYPE_p_std__mt19937 rnd) : this(CityEnginePINVOKE.new_Router__SWIG_1(Vehicle.getCPtr(vehicle), SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t.getCPtr(route), SWIGTYPE_p_std__mt19937.getCPtr(rnd)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Router(Vehicle vehicle, SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t route, SWIGTYPE_p_std__mt19937 rnd) : this(CityFlowPINVOKE.new_Router__SWIG_1(Vehicle.getCPtr(vehicle), SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t.getCPtr(route), SWIGTYPE_p_std__mt19937.getCPtr(rnd)), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
   public Road getFirstRoad() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Router_getFirstRoad(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Router_getFirstRoad(swigCPtr);
     Road ret = (cPtr == global::System.IntPtr.Zero) ? null : new Road(cPtr, false);
     return ret;
   }
 
   public Drivable getFirstDrivable() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Router_getFirstDrivable(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Router_getFirstDrivable(swigCPtr);
     Drivable ret = (cPtr == global::System.IntPtr.Zero) ? null : new Drivable(cPtr, false);
     return ret;
   }
 
   public Drivable getNextDrivable(uint i) {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Router_getNextDrivable__SWIG_0(swigCPtr, i);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Router_getNextDrivable__SWIG_0(swigCPtr, i);
     Drivable ret = (cPtr == global::System.IntPtr.Zero) ? null : new Drivable(cPtr, false);
     return ret;
   }
 
   public Drivable getNextDrivable() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Router_getNextDrivable__SWIG_1(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Router_getNextDrivable__SWIG_1(swigCPtr);
     Drivable ret = (cPtr == global::System.IntPtr.Zero) ? null : new Drivable(cPtr, false);
     return ret;
   }
 
   public Drivable getNextDrivable(Drivable curDrivable) {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Router_getNextDrivable__SWIG_2(swigCPtr, Drivable.getCPtr(curDrivable));
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Router_getNextDrivable__SWIG_2(swigCPtr, Drivable.getCPtr(curDrivable));
     Drivable ret = (cPtr == global::System.IntPtr.Zero) ? null : new Drivable(cPtr, false);
     return ret;
   }
 
   public void update() {
-    CityEnginePINVOKE.Router_update(swigCPtr);
+    CityFlowPINVOKE.Router_update(swigCPtr);
   }
 
   public bool isLastRoad(Drivable drivable) {
-    bool ret = CityEnginePINVOKE.Router_isLastRoad(swigCPtr, Drivable.getCPtr(drivable));
+    bool ret = CityFlowPINVOKE.Router_isLastRoad(swigCPtr, Drivable.getCPtr(drivable));
     return ret;
   }
 
   public bool onLastRoad() {
-    bool ret = CityEnginePINVOKE.Router_onLastRoad(swigCPtr);
+    bool ret = CityFlowPINVOKE.Router_onLastRoad(swigCPtr);
     return ret;
   }
 
   public bool onValidLane() {
-    bool ret = CityEnginePINVOKE.Router_onValidLane(swigCPtr);
+    bool ret = CityFlowPINVOKE.Router_onValidLane(swigCPtr);
     return ret;
   }
 
   public Lane getValidLane(Lane curLane) {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Router_getValidLane(swigCPtr, Lane.getCPtr(curLane));
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Router_getValidLane(swigCPtr, Lane.getCPtr(curLane));
     Lane ret = (cPtr == global::System.IntPtr.Zero) ? null : new Lane(cPtr, false);
     return ret;
   }
 
   public void setVehicle(Vehicle vehicle) {
-    CityEnginePINVOKE.Router_setVehicle(swigCPtr, Vehicle.getCPtr(vehicle));
+    CityFlowPINVOKE.Router_setVehicle(swigCPtr, Vehicle.getCPtr(vehicle));
   }
 
-  public bool dijkstra(Road start, Road end, SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t buffer) {
-    bool ret = CityEnginePINVOKE.Router_dijkstra(swigCPtr, Road.getCPtr(start), Road.getCPtr(end), SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t.getCPtr(buffer));
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public bool dijkstra(Road start, Road end, RoadPointerVector buffer) {
+    bool ret = CityFlowPINVOKE.Router_dijkstra(swigCPtr, Road.getCPtr(start), Road.getCPtr(end), RoadPointerVector.getCPtr(buffer));
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public bool updateShortestPath() {
-    bool ret = CityEnginePINVOKE.Router_updateShortestPath(swigCPtr);
+    bool ret = CityFlowPINVOKE.Router_updateShortestPath(swigCPtr);
     return ret;
   }
 
-  public bool setRoute(SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t anchor) {
-    bool ret = CityEnginePINVOKE.Router_setRoute(swigCPtr, SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t.getCPtr(anchor));
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public bool setRoute(RoadPointerVector anchor) {
+    bool ret = CityFlowPINVOKE.Router_setRoute(swigCPtr, RoadPointerVector.getCPtr(anchor));
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t getFollowingRoads() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t(CityEnginePINVOKE.Router_getFollowingRoads(swigCPtr), true);
+  public RoadPointerVector getFollowingRoads() {
+    RoadPointerVector ret = new RoadPointerVector(CityFlowPINVOKE.Router_getFollowingRoads(swigCPtr), true);
     return ret;
   }
 

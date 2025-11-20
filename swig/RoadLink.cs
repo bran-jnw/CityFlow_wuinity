@@ -50,50 +50,50 @@ public class RoadLink : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_RoadLink(swigCPtr);
+          CityFlowPINVOKE.delete_RoadLink(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_t getLaneLinks() {
-    SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_t(CityEnginePINVOKE.RoadLink_getLaneLinks__SWIG_0(swigCPtr), false);
+  public LaneLinkVector getLaneLinks() {
+    LaneLinkVector ret = new LaneLinkVector(CityFlowPINVOKE.RoadLink_getLaneLinks__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t getLaneLinkPointers() {
-    SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t(CityEnginePINVOKE.RoadLink_getLaneLinkPointers(swigCPtr), false);
+  public LaneLinkPointerVector getLaneLinkPointers() {
+    LaneLinkPointerVector ret = new LaneLinkPointerVector(CityFlowPINVOKE.RoadLink_getLaneLinkPointers(swigCPtr), false);
     return ret;
   }
 
   public Road getStartRoad() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.RoadLink_getStartRoad(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.RoadLink_getStartRoad(swigCPtr);
     Road ret = (cPtr == global::System.IntPtr.Zero) ? null : new Road(cPtr, false);
     return ret;
   }
 
   public Road getEndRoad() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.RoadLink_getEndRoad(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.RoadLink_getEndRoad(swigCPtr);
     Road ret = (cPtr == global::System.IntPtr.Zero) ? null : new Road(cPtr, false);
     return ret;
   }
 
   public bool isAvailable() {
-    bool ret = CityEnginePINVOKE.RoadLink_isAvailable(swigCPtr);
+    bool ret = CityFlowPINVOKE.RoadLink_isAvailable(swigCPtr);
     return ret;
   }
 
   public bool isTurn() {
-    bool ret = CityEnginePINVOKE.RoadLink_isTurn(swigCPtr);
+    bool ret = CityFlowPINVOKE.RoadLink_isTurn(swigCPtr);
     return ret;
   }
 
   public void reset() {
-    CityEnginePINVOKE.RoadLink_reset(swigCPtr);
+    CityFlowPINVOKE.RoadLink_reset(swigCPtr);
   }
 
-  public RoadLink() : this(CityEnginePINVOKE.new_RoadLink(), true) {
+  public RoadLink() : this(CityFlowPINVOKE.new_RoadLink(), true) {
   }
 
 }

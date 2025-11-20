@@ -50,85 +50,85 @@ public class Drivable : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Drivable(swigCPtr);
+          CityFlowPINVOKE.delete_Drivable(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t getVehicles() {
-    SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t ret = new SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t(CityEnginePINVOKE.Drivable_getVehicles__SWIG_0(swigCPtr), false);
+  public VehiclePointerList getVehicles() {
+    VehiclePointerList ret = new VehiclePointerList(CityFlowPINVOKE.Drivable_getVehicles__SWIG_0(swigCPtr), false);
     return ret;
   }
 
   public double getLength() {
-    double ret = CityEnginePINVOKE.Drivable_getLength(swigCPtr);
+    double ret = CityFlowPINVOKE.Drivable_getLength(swigCPtr);
     return ret;
   }
 
   public double getWidth() {
-    double ret = CityEnginePINVOKE.Drivable_getWidth(swigCPtr);
+    double ret = CityFlowPINVOKE.Drivable_getWidth(swigCPtr);
     return ret;
   }
 
   public double getMaxSpeed() {
-    double ret = CityEnginePINVOKE.Drivable_getMaxSpeed(swigCPtr);
+    double ret = CityFlowPINVOKE.Drivable_getMaxSpeed(swigCPtr);
     return ret;
   }
 
   public uint getVehicleCount() {
-    uint ret = CityEnginePINVOKE.Drivable_getVehicleCount(swigCPtr);
+    uint ret = CityFlowPINVOKE.Drivable_getVehicleCount(swigCPtr);
     return ret;
   }
 
   public Drivable.DrivableType getDrivableType() {
-    Drivable.DrivableType ret = (Drivable.DrivableType)CityEnginePINVOKE.Drivable_getDrivableType(swigCPtr);
+    Drivable.DrivableType ret = (Drivable.DrivableType)CityFlowPINVOKE.Drivable_getDrivableType(swigCPtr);
     return ret;
   }
 
   public bool isLane() {
-    bool ret = CityEnginePINVOKE.Drivable_isLane(swigCPtr);
+    bool ret = CityFlowPINVOKE.Drivable_isLane(swigCPtr);
     return ret;
   }
 
   public bool isLaneLink() {
-    bool ret = CityEnginePINVOKE.Drivable_isLaneLink(swigCPtr);
+    bool ret = CityFlowPINVOKE.Drivable_isLaneLink(swigCPtr);
     return ret;
   }
 
   public Vehicle getFirstVehicle() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Drivable_getFirstVehicle(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Drivable_getFirstVehicle(swigCPtr);
     Vehicle ret = (cPtr == global::System.IntPtr.Zero) ? null : new Vehicle(cPtr, false);
     return ret;
   }
 
   public Vehicle getLastVehicle() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Drivable_getLastVehicle(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Drivable_getLastVehicle(swigCPtr);
     Vehicle ret = (cPtr == global::System.IntPtr.Zero) ? null : new Vehicle(cPtr, false);
     return ret;
   }
 
   public SWIGTYPE_p_Point getPointByDistance(double dis) {
-    SWIGTYPE_p_Point ret = new SWIGTYPE_p_Point(CityEnginePINVOKE.Drivable_getPointByDistance(swigCPtr, dis), true);
+    SWIGTYPE_p_Point ret = new SWIGTYPE_p_Point(CityFlowPINVOKE.Drivable_getPointByDistance(swigCPtr, dis), true);
     return ret;
   }
 
   public SWIGTYPE_p_Point getDirectionByDistance(double dis) {
-    SWIGTYPE_p_Point ret = new SWIGTYPE_p_Point(CityEnginePINVOKE.Drivable_getDirectionByDistance(swigCPtr, dis), true);
+    SWIGTYPE_p_Point ret = new SWIGTYPE_p_Point(CityFlowPINVOKE.Drivable_getDirectionByDistance(swigCPtr, dis), true);
     return ret;
   }
 
   public void pushVehicle(Vehicle vehicle) {
-    CityEnginePINVOKE.Drivable_pushVehicle(swigCPtr, Vehicle.getCPtr(vehicle));
+    CityFlowPINVOKE.Drivable_pushVehicle(swigCPtr, Vehicle.getCPtr(vehicle));
   }
 
   public void popVehicle() {
-    CityEnginePINVOKE.Drivable_popVehicle(swigCPtr);
+    CityFlowPINVOKE.Drivable_popVehicle(swigCPtr);
   }
 
-  public virtual SWIGTYPE_p_std__string getId() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Drivable_getId(swigCPtr), true);
+  public virtual string getId() {
+    string ret = CityFlowPINVOKE.Drivable_getId(swigCPtr);
     return ret;
   }
 

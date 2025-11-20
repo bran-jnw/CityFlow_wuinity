@@ -50,7 +50,7 @@ public class Cross : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Cross(swigCPtr);
+          CityFlowPINVOKE.delete_Cross(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -58,65 +58,65 @@ public class Cross : global::System.IDisposable {
   }
 
   public double getLeaveDistance() {
-    double ret = CityEnginePINVOKE.Cross_getLeaveDistance(swigCPtr);
+    double ret = CityFlowPINVOKE.Cross_getLeaveDistance(swigCPtr);
     return ret;
   }
 
   public double getArriveDistance() {
-    double ret = CityEnginePINVOKE.Cross_getArriveDistance(swigCPtr);
+    double ret = CityFlowPINVOKE.Cross_getArriveDistance(swigCPtr);
     return ret;
   }
 
   public void notify(LaneLink laneLink, Vehicle vehicle, double notifyDistance) {
-    CityEnginePINVOKE.Cross_notify(swigCPtr, LaneLink.getCPtr(laneLink), Vehicle.getCPtr(vehicle), notifyDistance);
+    CityFlowPINVOKE.Cross_notify(swigCPtr, LaneLink.getCPtr(laneLink), Vehicle.getCPtr(vehicle), notifyDistance);
   }
 
   public bool canPass(Vehicle vehicle, LaneLink laneLink, double distanceToLaneLinkStart) {
-    bool ret = CityEnginePINVOKE.Cross_canPass(swigCPtr, Vehicle.getCPtr(vehicle), LaneLink.getCPtr(laneLink), distanceToLaneLinkStart);
+    bool ret = CityFlowPINVOKE.Cross_canPass(swigCPtr, Vehicle.getCPtr(vehicle), LaneLink.getCPtr(laneLink), distanceToLaneLinkStart);
     return ret;
   }
 
   public void clearNotify() {
-    CityEnginePINVOKE.Cross_clearNotify(swigCPtr);
+    CityFlowPINVOKE.Cross_clearNotify(swigCPtr);
   }
 
   public Vehicle getFoeVehicle(LaneLink laneLink) {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Cross_getFoeVehicle(swigCPtr, LaneLink.getCPtr(laneLink));
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Cross_getFoeVehicle(swigCPtr, LaneLink.getCPtr(laneLink));
     Vehicle ret = (cPtr == global::System.IntPtr.Zero) ? null : new Vehicle(cPtr, false);
     return ret;
   }
 
   public double getDistanceByLane(LaneLink laneLink) {
-    double ret = CityEnginePINVOKE.Cross_getDistanceByLane(swigCPtr, LaneLink.getCPtr(laneLink));
+    double ret = CityFlowPINVOKE.Cross_getDistanceByLane(swigCPtr, LaneLink.getCPtr(laneLink));
     return ret;
   }
 
   public double getNotifyDistanceByLane(LaneLink laneLink) {
-    double ret = CityEnginePINVOKE.Cross_getNotifyDistanceByLane(swigCPtr, LaneLink.getCPtr(laneLink));
+    double ret = CityFlowPINVOKE.Cross_getNotifyDistanceByLane(swigCPtr, LaneLink.getCPtr(laneLink));
     return ret;
   }
 
   public double getSafeDistanceByLane(LaneLink laneLink) {
-    double ret = CityEnginePINVOKE.Cross_getSafeDistanceByLane(swigCPtr, LaneLink.getCPtr(laneLink));
+    double ret = CityFlowPINVOKE.Cross_getSafeDistanceByLane(swigCPtr, LaneLink.getCPtr(laneLink));
     return ret;
   }
 
   public double getAng() {
-    double ret = CityEnginePINVOKE.Cross_getAng(swigCPtr);
+    double ret = CityFlowPINVOKE.Cross_getAng(swigCPtr);
     return ret;
   }
 
   public LaneLink getLaneLink(int i) {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.Cross_getLaneLink(swigCPtr, i);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.Cross_getLaneLink(swigCPtr, i);
     LaneLink ret = (cPtr == global::System.IntPtr.Zero) ? null : new LaneLink(cPtr, false);
     return ret;
   }
 
   public void reset() {
-    CityEnginePINVOKE.Cross_reset(swigCPtr);
+    CityFlowPINVOKE.Cross_reset(swigCPtr);
   }
 
-  public Cross() : this(CityEnginePINVOKE.new_Cross(), true) {
+  public Cross() : this(CityFlowPINVOKE.new_Cross(), true) {
   }
 
 }

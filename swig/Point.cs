@@ -50,7 +50,7 @@ public class Point : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Point(swigCPtr);
+          CityFlowPINVOKE.delete_Point(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -59,56 +59,56 @@ public class Point : global::System.IDisposable {
 
   public double x {
     set {
-      CityEnginePINVOKE.Point_x_set(swigCPtr, value);
+      CityFlowPINVOKE.Point_x_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.Point_x_get(swigCPtr);
+      double ret = CityFlowPINVOKE.Point_x_get(swigCPtr);
       return ret;
     } 
   }
 
   public double y {
     set {
-      CityEnginePINVOKE.Point_y_set(swigCPtr, value);
+      CityFlowPINVOKE.Point_y_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.Point_y_get(swigCPtr);
+      double ret = CityFlowPINVOKE.Point_y_get(swigCPtr);
       return ret;
     } 
   }
 
   public static int sign(double x) {
-    int ret = CityEnginePINVOKE.Point_sign(x);
+    int ret = CityFlowPINVOKE.Point_sign(x);
     return ret;
   }
 
-  public Point() : this(CityEnginePINVOKE.new_Point__SWIG_0(), true) {
+  public Point() : this(CityFlowPINVOKE.new_Point__SWIG_0(), true) {
   }
 
-  public Point(double x, double y) : this(CityEnginePINVOKE.new_Point__SWIG_1(x, y), true) {
+  public Point(double x, double y) : this(CityFlowPINVOKE.new_Point__SWIG_1(x, y), true) {
   }
 
   public double len() {
-    double ret = CityEnginePINVOKE.Point_len(swigCPtr);
+    double ret = CityFlowPINVOKE.Point_len(swigCPtr);
     return ret;
   }
 
   public Point normal() {
-    Point ret = new Point(CityEnginePINVOKE.Point_normal(swigCPtr), true);
+    Point ret = new Point(CityFlowPINVOKE.Point_normal(swigCPtr), true);
     return ret;
   }
 
   public Point unit() {
-    Point ret = new Point(CityEnginePINVOKE.Point_unit(swigCPtr), true);
+    Point ret = new Point(CityFlowPINVOKE.Point_unit(swigCPtr), true);
     return ret;
   }
 
   public double ang() {
-    double ret = CityEnginePINVOKE.Point_ang(swigCPtr);
+    double ret = CityFlowPINVOKE.Point_ang(swigCPtr);
     return ret;
   }
 
-  public static readonly double eps = CityEnginePINVOKE.Point_eps_get();
+  public static readonly double eps = CityFlowPINVOKE.Point_eps_get();
 }
 
 }

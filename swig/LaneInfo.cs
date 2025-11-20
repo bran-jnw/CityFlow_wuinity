@@ -50,7 +50,7 @@ public class LaneInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_LaneInfo(swigCPtr);
+          CityFlowPINVOKE.delete_LaneInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -59,10 +59,10 @@ public class LaneInfo : global::System.IDisposable {
 
   public Road road {
     set {
-      CityEnginePINVOKE.LaneInfo_road_set(swigCPtr, Road.getCPtr(value));
+      CityFlowPINVOKE.LaneInfo_road_set(swigCPtr, Road.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = CityEnginePINVOKE.LaneInfo_road_get(swigCPtr);
+      global::System.IntPtr cPtr = CityFlowPINVOKE.LaneInfo_road_get(swigCPtr);
       Road ret = (cPtr == global::System.IntPtr.Zero) ? null : new Road(cPtr, false);
       return ret;
     } 
@@ -70,25 +70,25 @@ public class LaneInfo : global::System.IDisposable {
 
   public int LaneNumber {
     set {
-      CityEnginePINVOKE.LaneInfo_LaneNumber_set(swigCPtr, value);
+      CityFlowPINVOKE.LaneInfo_LaneNumber_set(swigCPtr, value);
     } 
     get {
-      int ret = CityEnginePINVOKE.LaneInfo_LaneNumber_get(swigCPtr);
+      int ret = CityFlowPINVOKE.LaneInfo_LaneNumber_get(swigCPtr);
       return ret;
     } 
   }
 
   public double pos {
     set {
-      CityEnginePINVOKE.LaneInfo_pos_set(swigCPtr, value);
+      CityFlowPINVOKE.LaneInfo_pos_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.LaneInfo_pos_get(swigCPtr);
+      double ret = CityFlowPINVOKE.LaneInfo_pos_get(swigCPtr);
       return ret;
     } 
   }
 
-  public LaneInfo() : this(CityEnginePINVOKE.new_LaneInfo(), true) {
+  public LaneInfo() : this(CityFlowPINVOKE.new_LaneInfo(), true) {
   }
 
 }

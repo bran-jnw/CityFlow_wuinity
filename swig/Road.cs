@@ -50,90 +50,90 @@ public class Road : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Road(swigCPtr);
+          CityFlowPINVOKE.delete_Road(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public SWIGTYPE_p_std__string getId() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Road_getId(swigCPtr), true);
+  public string getId() {
+    string ret = CityFlowPINVOKE.Road_getId(swigCPtr);
     return ret;
   }
 
   public Intersection getStartIntersection() {
-    Intersection ret = new Intersection(CityEnginePINVOKE.Road_getStartIntersection(swigCPtr), false);
+    Intersection ret = new Intersection(CityFlowPINVOKE.Road_getStartIntersection(swigCPtr), false);
     return ret;
   }
 
   public Intersection getEndIntersection() {
-    Intersection ret = new Intersection(CityEnginePINVOKE.Road_getEndIntersection(swigCPtr), false);
+    Intersection ret = new Intersection(CityFlowPINVOKE.Road_getEndIntersection(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Lane_t getLanes() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Lane_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Lane_t(CityEnginePINVOKE.Road_getLanes__SWIG_0(swigCPtr), false);
+  public LaneVector getLanes() {
+    LaneVector ret = new LaneVector(CityFlowPINVOKE.Road_getLanes__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Lane_p_t getLanePointers() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Lane_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Lane_p_t(CityEnginePINVOKE.Road_getLanePointers(swigCPtr), false);
+  public LanePointerVector getLanePointers() {
+    LanePointerVector ret = new LanePointerVector(CityFlowPINVOKE.Road_getLanePointers(swigCPtr), false);
     return ret;
   }
 
   public void buildSegmentationByInterval(double interval) {
-    CityEnginePINVOKE.Road_buildSegmentationByInterval(swigCPtr, interval);
+    CityFlowPINVOKE.Road_buildSegmentationByInterval(swigCPtr, interval);
   }
 
   public bool connectedToRoad(Road road) {
-    bool ret = CityEnginePINVOKE.Road_connectedToRoad(swigCPtr, Road.getCPtr(road));
+    bool ret = CityFlowPINVOKE.Road_connectedToRoad(swigCPtr, Road.getCPtr(road));
     return ret;
   }
 
   public void reset() {
-    CityEnginePINVOKE.Road_reset(swigCPtr);
+    CityFlowPINVOKE.Road_reset(swigCPtr);
   }
 
   public double getWidth() {
-    double ret = CityEnginePINVOKE.Road_getWidth(swigCPtr);
+    double ret = CityFlowPINVOKE.Road_getWidth(swigCPtr);
     return ret;
   }
 
   public double getLength() {
-    double ret = CityEnginePINVOKE.Road_getLength(swigCPtr);
+    double ret = CityFlowPINVOKE.Road_getLength(swigCPtr);
     return ret;
   }
 
   public double averageLength() {
-    double ret = CityEnginePINVOKE.Road_averageLength(swigCPtr);
+    double ret = CityFlowPINVOKE.Road_averageLength(swigCPtr);
     return ret;
   }
 
   public double getAverageSpeed() {
-    double ret = CityEnginePINVOKE.Road_getAverageSpeed(swigCPtr);
+    double ret = CityFlowPINVOKE.Road_getAverageSpeed(swigCPtr);
     return ret;
   }
 
   public double getAverageDuration() {
-    double ret = CityEnginePINVOKE.Road_getAverageDuration(swigCPtr);
+    double ret = CityFlowPINVOKE.Road_getAverageDuration(swigCPtr);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Vehicle_p_t getPlanRouteBuffer() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Vehicle_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Vehicle_p_t(CityEnginePINVOKE.Road_getPlanRouteBuffer(swigCPtr), false);
+  public VehicleVector getPlanRouteBuffer() {
+    VehicleVector ret = new VehicleVector(CityFlowPINVOKE.Road_getPlanRouteBuffer(swigCPtr), false);
     return ret;
   }
 
   public void addPlanRouteVehicle(Vehicle vehicle) {
-    CityEnginePINVOKE.Road_addPlanRouteVehicle(swigCPtr, Vehicle.getCPtr(vehicle));
+    CityFlowPINVOKE.Road_addPlanRouteVehicle(swigCPtr, Vehicle.getCPtr(vehicle));
   }
 
   public void clearPlanRouteBuffer() {
-    CityEnginePINVOKE.Road_clearPlanRouteBuffer(swigCPtr);
+    CityFlowPINVOKE.Road_clearPlanRouteBuffer(swigCPtr);
   }
 
-  public Road() : this(CityEnginePINVOKE.new_Road(), true) {
+  public Road() : this(CityFlowPINVOKE.new_Road(), true) {
   }
 
 }

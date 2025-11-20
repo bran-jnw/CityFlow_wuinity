@@ -50,68 +50,68 @@ public class Intersection : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Intersection(swigCPtr);
+          CityFlowPINVOKE.delete_Intersection(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public SWIGTYPE_p_std__string getId() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Intersection_getId(swigCPtr), true);
+  public string getId() {
+    string ret = CityFlowPINVOKE.Intersection_getId(swigCPtr);
     return ret;
   }
 
   public TrafficLight getTrafficLight() {
-    TrafficLight ret = new TrafficLight(CityEnginePINVOKE.Intersection_getTrafficLight__SWIG_0(swigCPtr), false);
+    TrafficLight ret = new TrafficLight(CityFlowPINVOKE.Intersection_getTrafficLight__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t getRoads() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t(CityEnginePINVOKE.Intersection_getRoads__SWIG_0(swigCPtr), false);
+  public RoadPointerVector getRoads() {
+    RoadPointerVector ret = new RoadPointerVector(CityFlowPINVOKE.Intersection_getRoads__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_RoadLink_t getRoadLinks() {
-    SWIGTYPE_p_std__vectorT_RoadLink_t ret = new SWIGTYPE_p_std__vectorT_RoadLink_t(CityEnginePINVOKE.Intersection_getRoadLinks__SWIG_0(swigCPtr), false);
+  public RoadLinkVector getRoadLinks() {
+    RoadLinkVector ret = new RoadLinkVector(CityFlowPINVOKE.Intersection_getRoadLinks__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Cross_t getCrosses() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Cross_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Cross_t(CityEnginePINVOKE.Intersection_getCrosses(swigCPtr), false);
+  public CrossVector getCrosses() {
+    CrossVector ret = new CrossVector(CityFlowPINVOKE.Intersection_getCrosses(swigCPtr), false);
     return ret;
   }
 
   public bool isVirtualIntersection() {
-    bool ret = CityEnginePINVOKE.Intersection_isVirtualIntersection(swigCPtr);
+    bool ret = CityFlowPINVOKE.Intersection_isVirtualIntersection(swigCPtr);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t getLaneLinks() {
-    SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t(CityEnginePINVOKE.Intersection_getLaneLinks(swigCPtr), false);
+  public LaneLinkPointerVector getLaneLinks() {
+    LaneLinkPointerVector ret = new LaneLinkPointerVector(CityFlowPINVOKE.Intersection_getLaneLinks(swigCPtr), false);
     return ret;
   }
 
   public void reset() {
-    CityEnginePINVOKE.Intersection_reset(swigCPtr);
+    CityFlowPINVOKE.Intersection_reset(swigCPtr);
   }
 
-  public SWIGTYPE_p_std__vectorT_Point_t getOutline() {
-    SWIGTYPE_p_std__vectorT_Point_t ret = new SWIGTYPE_p_std__vectorT_Point_t(CityEnginePINVOKE.Intersection_getOutline(swigCPtr), true);
+  public PointVector getOutline() {
+    PointVector ret = new PointVector(CityFlowPINVOKE.Intersection_getOutline(swigCPtr), true);
     return ret;
   }
 
   public bool isImplicitIntersection() {
-    bool ret = CityEnginePINVOKE.Intersection_isImplicitIntersection(swigCPtr);
+    bool ret = CityFlowPINVOKE.Intersection_isImplicitIntersection(swigCPtr);
     return ret;
   }
 
   public SWIGTYPE_p_Point getPosition() {
-    SWIGTYPE_p_Point ret = new SWIGTYPE_p_Point(CityEnginePINVOKE.Intersection_getPosition(swigCPtr), false);
+    SWIGTYPE_p_Point ret = new SWIGTYPE_p_Point(CityFlowPINVOKE.Intersection_getPosition(swigCPtr), false);
     return ret;
   }
 
-  public Intersection() : this(CityEnginePINVOKE.new_Intersection(), true) {
+  public Intersection() : this(CityFlowPINVOKE.new_Intersection(), true) {
   }
 
 }

@@ -10,22 +10,22 @@
 
 namespace CityFlowCore {
 
-public class SWIGTYPE_p_std__mapT_std__string_std__vectorT_std__string_t_t {
+public class SWIGTYPE_p_RoadLink {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
-  internal SWIGTYPE_p_std__mapT_std__string_std__vectorT_std__string_t_t(global::System.IntPtr cPtr, bool futureUse) {
+  internal SWIGTYPE_p_RoadLink(global::System.IntPtr cPtr, bool futureUse) {
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  protected SWIGTYPE_p_std__mapT_std__string_std__vectorT_std__string_t_t() {
+  protected SWIGTYPE_p_RoadLink() {
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(SWIGTYPE_p_std__mapT_std__string_std__vectorT_std__string_t_t obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(SWIGTYPE_p_RoadLink obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef swigRelease(SWIGTYPE_p_std__mapT_std__string_std__vectorT_std__string_t_t obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef swigRelease(SWIGTYPE_p_RoadLink obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 }

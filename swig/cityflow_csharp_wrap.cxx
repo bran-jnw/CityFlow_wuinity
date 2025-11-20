@@ -249,7 +249,7 @@ static void SWIGUNUSED SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpExcepti
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_CityEngine(
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_CityFlow(
                                                 SWIG_CSharpExceptionCallback_t applicationCallback,
                                                 SWIG_CSharpExceptionCallback_t arithmeticCallback,
                                                 SWIG_CSharpExceptionCallback_t divideByZeroCallback, 
@@ -277,7 +277,7 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_CityEngine(
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_CityEngine(
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_CityFlow(
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentCallback,
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentNullCallback,
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentOutOfRangeCallback) {
@@ -295,7 +295,7 @@ static SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_CityEngine(SWIG_CSharpStringHelperCallback callback) {
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_CityFlow(SWIG_CSharpStringHelperCallback callback) {
   SWIG_csharp_string_callback = callback;
 }
 
@@ -303,6 +303,22 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_CityEngine(SWIG_CSharpStr
 /* Contract support */
 
 #define SWIG_contract_assert(nullreturn, expr, msg) do { if (!(expr)) {SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, msg, ""); return nullreturn; } } while (0)
+
+/* SWIG Errors applicable to all language modules, values are reserved from -1 to -99 */
+#define  SWIG_UnknownError    	   -1
+#define  SWIG_IOError        	   -2
+#define  SWIG_RuntimeError   	   -3
+#define  SWIG_IndexError     	   -4
+#define  SWIG_TypeError      	   -5
+#define  SWIG_DivisionByZero 	   -6
+#define  SWIG_OverflowError  	   -7
+#define  SWIG_SyntaxError    	   -8
+#define  SWIG_ValueError     	   -9
+#define  SWIG_SystemError    	   -10
+#define  SWIG_AttributeError 	   -11
+#define  SWIG_MemoryError    	   -12
+#define  SWIG_NullReferenceError   -13
+
 
 
 #ifdef __cplusplus
@@ -353,6 +369,78 @@ template <typename T> T SwigValueInit() {
 #endif
 
 
+SWIGINTERN void SWIG_CSharpException(int code, const char *msg) {
+  if (code == SWIG_ValueError) {
+    SWIG_CSharpExceptionArgumentCodes exception_code = SWIG_CSharpArgumentOutOfRangeException;
+    SWIG_CSharpSetPendingExceptionArgument(exception_code, msg, 0);
+  } else {
+    SWIG_CSharpExceptionCodes exception_code = SWIG_CSharpApplicationException;
+    switch(code) {
+    case SWIG_MemoryError:
+      exception_code = SWIG_CSharpOutOfMemoryException;
+      break;
+    case SWIG_IndexError:
+      exception_code = SWIG_CSharpIndexOutOfRangeException;
+      break;
+    case SWIG_DivisionByZero:
+      exception_code = SWIG_CSharpDivideByZeroException;
+      break;
+    case SWIG_IOError:
+      exception_code = SWIG_CSharpIOException;
+      break;
+    case SWIG_OverflowError:
+      exception_code = SWIG_CSharpOverflowException;
+      break;
+    case SWIG_NullReferenceError:
+      exception_code = SWIG_CSharpNullReferenceException;
+      break;
+    case SWIG_RuntimeError:
+    case SWIG_TypeError:
+    case SWIG_SyntaxError:
+    case SWIG_SystemError:
+    case SWIG_UnknownError:
+    default:
+      exception_code = SWIG_CSharpApplicationException;
+      break;
+    }
+    SWIG_CSharpSetPendingException(exception_code, msg);
+  }
+}
+
+
+#include <typeinfo>
+#include <stdexcept>
+
+
+#include <string>
+
+
+#include <typeinfo>
+#include <stdexcept>
+
+
+#include <vector>
+#include <algorithm>
+#include <stdexcept>
+
+
+#include <map>
+#include <algorithm>
+#include <stdexcept>
+
+
+#include <utility>
+
+
+#include <list>
+#include <algorithm>
+#include <stdexcept>
+
+
+#include <deque>
+#include <stdexcept>
+
+
 	#include "..\src\engine\engine.h"
 	#include "..\src\engine\archive.h"
 	#include "..\src\flow\flow.h"
@@ -366,6 +454,2258 @@ template <typename T> T SwigValueInit() {
 	#include "..\src\vehicle\router.h"
 	#include "..\src\vehicle\vehicle.h"
 
+	typedef unsigned int size_t;
+
+SWIGINTERN std::deque< CityFlow::Vehicle * >::const_reference std_deque_Sl_CityFlow_Vehicle_Sm__Sg__getitem(std::deque< CityFlow::Vehicle * > *self,int i){
+                int size = int(self->size());
+                if (i<0) i += size;
+                if (i>=0 && i<size)
+                    return (*self)[i];
+                else
+                    throw std::out_of_range("deque index out of range");
+           }
+SWIGINTERN void std_deque_Sl_CityFlow_Vehicle_Sm__Sg__setitem(std::deque< CityFlow::Vehicle * > *self,int i,CityFlow::Vehicle *const &x){
+                int size = int(self->size());
+                if (i<0) i+= size;
+                if (i>=0 && i<size)
+                    (*self)[i] = x;
+                else
+                    throw std::out_of_range("deque index out of range");
+           }
+SWIGINTERN void std_deque_Sl_CityFlow_Vehicle_Sm__Sg__delitem(std::deque< CityFlow::Vehicle * > *self,int i){
+                int size = int(self->size());
+                if (i<0) i+= size;
+                if (i>=0 && i<size) {
+                    self->erase(self->begin()+i);
+                } else {
+                    throw std::out_of_range("deque index out of range");
+                }
+           }
+SWIGINTERN std::deque< CityFlow::Vehicle * > std_deque_Sl_CityFlow_Vehicle_Sm__Sg__getslice(std::deque< CityFlow::Vehicle * > *self,int i,int j){
+                int size = int(self->size());
+                if (i<0) i = size+i;
+                if (j<0) j = size+j;
+                if (i<0) i = 0;
+                if (j>size) j = size;
+                std::deque< CityFlow::Vehicle * > tmp(j-i);
+                std::copy(self->begin()+i,self->begin()+j,tmp.begin());
+                return tmp;
+            }
+SWIGINTERN void std_deque_Sl_CityFlow_Vehicle_Sm__Sg__setslice(std::deque< CityFlow::Vehicle * > *self,int i,int j,std::deque< CityFlow::Vehicle * > const &v){
+                int size = int(self->size());
+                if (i<0) i = size+i;
+                if (j<0) j = size+j;
+                if (i<0) i = 0;
+                if (j>size) j = size;
+                if (int(v.size()) == j-i) {
+                    std::copy(v.begin(),v.end(),self->begin()+i);
+                } else {
+                    self->erase(self->begin()+i,self->begin()+j);
+                    if (i+1 <= size)
+                        self->insert(self->begin()+i+1,v.begin(),v.end());
+                    else
+                        self->insert(self->end(),v.begin(),v.end());
+                }
+            }
+SWIGINTERN void std_deque_Sl_CityFlow_Vehicle_Sm__Sg__delslice(std::deque< CityFlow::Vehicle * > *self,int i,int j){
+                int size = int(self->size());
+                if (i<0) i = size+i;
+                if (j<0) j = size+j;
+                if (i<0) i = 0;
+                if (j>size) j = size;
+                self->erase(self->begin()+i,self->begin()+j);
+            }
+SWIGINTERN std::map< std::string,double >::mapped_type const &std_map_Sl_std_string_Sc_double_Sg__getitem(std::map< std::string,double > *self,std::map< std::string,double >::key_type const &key){
+        std::map< std::string, double, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end())
+          return iter->second;
+        else
+          throw std::out_of_range("key not found");
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_double_Sg__setitem(std::map< std::string,double > *self,std::map< std::string,double >::key_type const &key,std::map< std::string,double >::mapped_type const &x){
+#ifdef __cpp_lib_map_try_emplace
+        (*self).insert_or_assign(key, x);
+#else
+        (*self)[key] = x;
+#endif
+      }
+SWIGINTERN bool std_map_Sl_std_string_Sc_double_Sg__ContainsKey(std::map< std::string,double > *self,std::map< std::string,double >::key_type const &key){
+        std::map< std::string, double, std::less< std::string > >::iterator iter = self->find(key);
+        return iter != self->end();
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_double_Sg__Add(std::map< std::string,double > *self,std::map< std::string,double >::key_type const &key,std::map< std::string,double >::mapped_type const &value){
+        std::map< std::string, double, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end())
+          throw std::out_of_range("key already exists");
+        self->insert(std::pair< std::string, double >(key, value));
+      }
+SWIGINTERN bool std_map_Sl_std_string_Sc_double_Sg__Remove(std::map< std::string,double > *self,std::map< std::string,double >::key_type const &key){
+        std::map< std::string, double, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end()) {
+          self->erase(iter);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::map< std::string,double,std::less< std::string > >::iterator *std_map_Sl_std_string_Sc_double_Sg__create_iterator_begin(std::map< std::string,double > *self){
+        return new std::map< std::string, double, std::less< std::string > >::iterator(self->begin());
+      }
+SWIGINTERN std::map< std::string,double >::key_type const &std_map_Sl_std_string_Sc_double_Sg__get_next_key(std::map< std::string,double > *self,std::map< std::string,double,std::less< std::string > >::iterator *swigiterator){
+        (void)self;
+        std::map< std::string, double, std::less< std::string > >::iterator iter = *swigiterator;
+        (*swigiterator)++;
+        return (*iter).first;
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_double_Sg__destroy_iterator(std::map< std::string,double > *self,std::map< std::string,double,std::less< std::string > >::iterator *swigiterator){
+        (void)self;
+        delete swigiterator;
+      }
+SWIGINTERN std::map< std::string,int >::mapped_type const &std_map_Sl_std_string_Sc_int_Sg__getitem(std::map< std::string,int > *self,std::map< std::string,int >::key_type const &key){
+        std::map< std::string, int, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end())
+          return iter->second;
+        else
+          throw std::out_of_range("key not found");
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_int_Sg__setitem(std::map< std::string,int > *self,std::map< std::string,int >::key_type const &key,std::map< std::string,int >::mapped_type const &x){
+#ifdef __cpp_lib_map_try_emplace
+        (*self).insert_or_assign(key, x);
+#else
+        (*self)[key] = x;
+#endif
+      }
+SWIGINTERN bool std_map_Sl_std_string_Sc_int_Sg__ContainsKey(std::map< std::string,int > *self,std::map< std::string,int >::key_type const &key){
+        std::map< std::string, int, std::less< std::string > >::iterator iter = self->find(key);
+        return iter != self->end();
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_int_Sg__Add(std::map< std::string,int > *self,std::map< std::string,int >::key_type const &key,std::map< std::string,int >::mapped_type const &value){
+        std::map< std::string, int, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end())
+          throw std::out_of_range("key already exists");
+        self->insert(std::pair< std::string, int >(key, value));
+      }
+SWIGINTERN bool std_map_Sl_std_string_Sc_int_Sg__Remove(std::map< std::string,int > *self,std::map< std::string,int >::key_type const &key){
+        std::map< std::string, int, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end()) {
+          self->erase(iter);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::map< std::string,int,std::less< std::string > >::iterator *std_map_Sl_std_string_Sc_int_Sg__create_iterator_begin(std::map< std::string,int > *self){
+        return new std::map< std::string, int, std::less< std::string > >::iterator(self->begin());
+      }
+SWIGINTERN std::map< std::string,int >::key_type const &std_map_Sl_std_string_Sc_int_Sg__get_next_key(std::map< std::string,int > *self,std::map< std::string,int,std::less< std::string > >::iterator *swigiterator){
+        (void)self;
+        std::map< std::string, int, std::less< std::string > >::iterator iter = *swigiterator;
+        (*swigiterator)++;
+        return (*iter).first;
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_int_Sg__destroy_iterator(std::map< std::string,int > *self,std::map< std::string,int,std::less< std::string > >::iterator *swigiterator){
+        (void)self;
+        delete swigiterator;
+      }
+SWIGINTERN std::map< std::string,std::vector< std::string > >::mapped_type const &std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__getitem(std::map< std::string,std::vector< std::string > > *self,std::map< std::string,std::vector< std::string > >::key_type const &key){
+        std::map< std::string, std::vector< std::string >, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end())
+          return iter->second;
+        else
+          throw std::out_of_range("key not found");
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__setitem(std::map< std::string,std::vector< std::string > > *self,std::map< std::string,std::vector< std::string > >::key_type const &key,std::map< std::string,std::vector< std::string > >::mapped_type const &x){
+#ifdef __cpp_lib_map_try_emplace
+        (*self).insert_or_assign(key, x);
+#else
+        (*self)[key] = x;
+#endif
+      }
+SWIGINTERN bool std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__ContainsKey(std::map< std::string,std::vector< std::string > > *self,std::map< std::string,std::vector< std::string > >::key_type const &key){
+        std::map< std::string, std::vector< std::string >, std::less< std::string > >::iterator iter = self->find(key);
+        return iter != self->end();
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__Add(std::map< std::string,std::vector< std::string > > *self,std::map< std::string,std::vector< std::string > >::key_type const &key,std::map< std::string,std::vector< std::string > >::mapped_type const &value){
+        std::map< std::string, std::vector< std::string >, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end())
+          throw std::out_of_range("key already exists");
+        self->insert(std::pair< std::string, std::vector< std::string > >(key, value));
+      }
+SWIGINTERN bool std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__Remove(std::map< std::string,std::vector< std::string > > *self,std::map< std::string,std::vector< std::string > >::key_type const &key){
+        std::map< std::string, std::vector< std::string >, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end()) {
+          self->erase(iter);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__create_iterator_begin(std::map< std::string,std::vector< std::string > > *self){
+        return new std::map< std::string, std::vector< std::string >, std::less< std::string > >::iterator(self->begin());
+      }
+SWIGINTERN std::map< std::string,std::vector< std::string > >::key_type const &std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__get_next_key(std::map< std::string,std::vector< std::string > > *self,std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *swigiterator){
+        (void)self;
+        std::map< std::string, std::vector< std::string >, std::less< std::string > >::iterator iter = *swigiterator;
+        (*swigiterator)++;
+        return (*iter).first;
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__destroy_iterator(std::map< std::string,std::vector< std::string > > *self,std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *swigiterator){
+        (void)self;
+        delete swigiterator;
+      }
+SWIGINTERN std::map< std::string,std::string >::mapped_type const &std_map_Sl_std_string_Sc_std_string_Sg__getitem(std::map< std::string,std::string > *self,std::map< std::string,std::string >::key_type const &key){
+        std::map< std::string, std::string, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end())
+          return iter->second;
+        else
+          throw std::out_of_range("key not found");
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_std_string_Sg__setitem(std::map< std::string,std::string > *self,std::map< std::string,std::string >::key_type const &key,std::map< std::string,std::string >::mapped_type const &x){
+#ifdef __cpp_lib_map_try_emplace
+        (*self).insert_or_assign(key, x);
+#else
+        (*self)[key] = x;
+#endif
+      }
+SWIGINTERN bool std_map_Sl_std_string_Sc_std_string_Sg__ContainsKey(std::map< std::string,std::string > *self,std::map< std::string,std::string >::key_type const &key){
+        std::map< std::string, std::string, std::less< std::string > >::iterator iter = self->find(key);
+        return iter != self->end();
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_std_string_Sg__Add(std::map< std::string,std::string > *self,std::map< std::string,std::string >::key_type const &key,std::map< std::string,std::string >::mapped_type const &value){
+        std::map< std::string, std::string, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end())
+          throw std::out_of_range("key already exists");
+        self->insert(std::pair< std::string, std::string >(key, value));
+      }
+SWIGINTERN bool std_map_Sl_std_string_Sc_std_string_Sg__Remove(std::map< std::string,std::string > *self,std::map< std::string,std::string >::key_type const &key){
+        std::map< std::string, std::string, std::less< std::string > >::iterator iter = self->find(key);
+        if (iter != self->end()) {
+          self->erase(iter);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::map< std::string,std::string,std::less< std::string > >::iterator *std_map_Sl_std_string_Sc_std_string_Sg__create_iterator_begin(std::map< std::string,std::string > *self){
+        return new std::map< std::string, std::string, std::less< std::string > >::iterator(self->begin());
+      }
+SWIGINTERN std::map< std::string,std::string >::key_type const &std_map_Sl_std_string_Sc_std_string_Sg__get_next_key(std::map< std::string,std::string > *self,std::map< std::string,std::string,std::less< std::string > >::iterator *swigiterator){
+        (void)self;
+        std::map< std::string, std::string, std::less< std::string > >::iterator iter = *swigiterator;
+        (*swigiterator)++;
+        return (*iter).first;
+      }
+SWIGINTERN void std_map_Sl_std_string_Sc_std_string_Sg__destroy_iterator(std::map< std::string,std::string > *self,std::map< std::string,std::string,std::less< std::string > >::iterator *swigiterator){
+        (void)self;
+        delete swigiterator;
+      }
+SWIGINTERN std::list< CityFlow::Vehicle >::const_reference std_list_Sl_CityFlow_Vehicle_Sg__getItem(std::list< CityFlow::Vehicle > *self,std::list< CityFlow::Vehicle >::iterator *iter){
+      return **iter;
+    }
+SWIGINTERN void std_list_Sl_CityFlow_Vehicle_Sg__setItem(std::list< CityFlow::Vehicle > *self,std::list< CityFlow::Vehicle >::iterator *iter,CityFlow::Vehicle const &val){
+      *(*iter) = val;
+    }
+SWIGINTERN std::list< CityFlow::Vehicle >::iterator *std_list_Sl_CityFlow_Vehicle_Sg__getFirstIter(std::list< CityFlow::Vehicle > *self){
+      if (self->size() == 0)
+        return NULL;
+      return new std::list< CityFlow::Vehicle >::iterator(self->begin());
+    }
+SWIGINTERN std::list< CityFlow::Vehicle >::iterator *std_list_Sl_CityFlow_Vehicle_Sg__getLastIter(std::list< CityFlow::Vehicle > *self){
+      if (self->size() == 0)
+        return NULL;
+      return new std::list< CityFlow::Vehicle >::iterator(--self->end());
+    }
+SWIGINTERN std::list< CityFlow::Vehicle >::iterator *std_list_Sl_CityFlow_Vehicle_Sg__getNextIter(std::list< CityFlow::Vehicle > *self,std::list< CityFlow::Vehicle >::iterator *iter){
+      std::list< CityFlow::Vehicle >::iterator it = *iter;
+      if (std::distance(it, --self->end()) != 0) {
+        std::list< CityFlow::Vehicle >::iterator* itnext = new std::list< CityFlow::Vehicle >::iterator(++it);
+        return itnext;
+      }
+      return NULL;
+    }
+SWIGINTERN std::list< CityFlow::Vehicle >::iterator *std_list_Sl_CityFlow_Vehicle_Sg__getPrevIter(std::list< CityFlow::Vehicle > *self,std::list< CityFlow::Vehicle >::iterator *iter){
+      std::list< CityFlow::Vehicle >::iterator it = *iter;
+      if (std::distance(self->begin(), it) != 0) {
+        std::list< CityFlow::Vehicle >::iterator* itprev = new std::list< CityFlow::Vehicle >::iterator(--it);
+        return itprev;
+      }
+      return NULL;
+    }
+SWIGINTERN std::list< CityFlow::Vehicle >::iterator *std_list_Sl_CityFlow_Vehicle_Sg__insertNode(std::list< CityFlow::Vehicle > *self,std::list< CityFlow::Vehicle >::iterator *iter,CityFlow::Vehicle const &value){
+      std::list< CityFlow::Vehicle >::iterator it = self->insert(*iter, value);
+      return new std::list< CityFlow::Vehicle >::iterator(it);
+    }
+SWIGINTERN void std_list_Sl_CityFlow_Vehicle_Sg__eraseIter(std::list< CityFlow::Vehicle > *self,std::list< CityFlow::Vehicle >::iterator *iter){
+      std::list< CityFlow::Vehicle >::iterator it = *iter;
+      self->erase(it);
+    }
+SWIGINTERN void std_list_Sl_CityFlow_Vehicle_Sg__deleteIter(std::list< CityFlow::Vehicle > *self,std::list< CityFlow::Vehicle >::iterator *iter){
+      delete iter;
+    }
+SWIGINTERN bool std_list_Sl_CityFlow_Vehicle_Sg__equals(std::list< CityFlow::Vehicle > *self,std::list< CityFlow::Vehicle >::iterator *iter1,std::list< CityFlow::Vehicle >::iterator *iter2){
+      if (iter1 == NULL && iter2 == NULL)
+        return true;
+      if (iter1 == NULL || iter2 == NULL)
+        return false;
+      std::list< CityFlow::Vehicle >::iterator it1 = *iter1;
+      std::list< CityFlow::Vehicle >::iterator it2 = *iter2;
+      return it1 == it2;
+    }
+SWIGINTERN std::list< CityFlow::Vehicle * >::const_reference std_list_Sl_CityFlow_Vehicle_Sm__Sg__getItem(std::list< CityFlow::Vehicle * > *self,std::list< CityFlow::Vehicle * >::iterator *iter){
+      return **iter;
+    }
+SWIGINTERN void std_list_Sl_CityFlow_Vehicle_Sm__Sg__setItem(std::list< CityFlow::Vehicle * > *self,std::list< CityFlow::Vehicle * >::iterator *iter,CityFlow::Vehicle *const &val){
+      *(*iter) = val;
+    }
+SWIGINTERN std::list< CityFlow::Vehicle * >::iterator *std_list_Sl_CityFlow_Vehicle_Sm__Sg__getFirstIter(std::list< CityFlow::Vehicle * > *self){
+      if (self->size() == 0)
+        return NULL;
+      return new std::list< CityFlow::Vehicle * >::iterator(self->begin());
+    }
+SWIGINTERN std::list< CityFlow::Vehicle * >::iterator *std_list_Sl_CityFlow_Vehicle_Sm__Sg__getLastIter(std::list< CityFlow::Vehicle * > *self){
+      if (self->size() == 0)
+        return NULL;
+      return new std::list< CityFlow::Vehicle * >::iterator(--self->end());
+    }
+SWIGINTERN std::list< CityFlow::Vehicle * >::iterator *std_list_Sl_CityFlow_Vehicle_Sm__Sg__getNextIter(std::list< CityFlow::Vehicle * > *self,std::list< CityFlow::Vehicle * >::iterator *iter){
+      std::list< CityFlow::Vehicle * >::iterator it = *iter;
+      if (std::distance(it, --self->end()) != 0) {
+        std::list< CityFlow::Vehicle * >::iterator* itnext = new std::list< CityFlow::Vehicle * >::iterator(++it);
+        return itnext;
+      }
+      return NULL;
+    }
+SWIGINTERN std::list< CityFlow::Vehicle * >::iterator *std_list_Sl_CityFlow_Vehicle_Sm__Sg__getPrevIter(std::list< CityFlow::Vehicle * > *self,std::list< CityFlow::Vehicle * >::iterator *iter){
+      std::list< CityFlow::Vehicle * >::iterator it = *iter;
+      if (std::distance(self->begin(), it) != 0) {
+        std::list< CityFlow::Vehicle * >::iterator* itprev = new std::list< CityFlow::Vehicle * >::iterator(--it);
+        return itprev;
+      }
+      return NULL;
+    }
+SWIGINTERN std::list< CityFlow::Vehicle * >::iterator *std_list_Sl_CityFlow_Vehicle_Sm__Sg__insertNode(std::list< CityFlow::Vehicle * > *self,std::list< CityFlow::Vehicle * >::iterator *iter,CityFlow::Vehicle *const &value){
+      std::list< CityFlow::Vehicle * >::iterator it = self->insert(*iter, value);
+      return new std::list< CityFlow::Vehicle * >::iterator(it);
+    }
+SWIGINTERN void std_list_Sl_CityFlow_Vehicle_Sm__Sg__eraseIter(std::list< CityFlow::Vehicle * > *self,std::list< CityFlow::Vehicle * >::iterator *iter){
+      std::list< CityFlow::Vehicle * >::iterator it = *iter;
+      self->erase(it);
+    }
+SWIGINTERN void std_list_Sl_CityFlow_Vehicle_Sm__Sg__deleteIter(std::list< CityFlow::Vehicle * > *self,std::list< CityFlow::Vehicle * >::iterator *iter){
+      delete iter;
+    }
+SWIGINTERN bool std_list_Sl_CityFlow_Vehicle_Sm__Sg__equals(std::list< CityFlow::Vehicle * > *self,std::list< CityFlow::Vehicle * >::iterator *iter1,std::list< CityFlow::Vehicle * >::iterator *iter2){
+      if (iter1 == NULL && iter2 == NULL)
+        return true;
+      if (iter1 == NULL || iter2 == NULL)
+        return false;
+      std::list< CityFlow::Vehicle * >::iterator it1 = *iter1;
+      std::list< CityFlow::Vehicle * >::iterator it2 = *iter2;
+      return it1 == it2;
+    }
+SWIGINTERN bool std_list_Sl_CityFlow_Vehicle_Sm__Sg__Contains(std::list< CityFlow::Vehicle * > *self,CityFlow::Vehicle *const &value){
+      return std::find(self->begin(), self->end(), value) != self->end();
+    }
+SWIGINTERN bool std_list_Sl_CityFlow_Vehicle_Sm__Sg__Remove(std::list< CityFlow::Vehicle * > *self,CityFlow::Vehicle *const &value){
+      std::list< CityFlow::Vehicle * >::iterator it = std::find(self->begin(), self->end(), value);
+      if (it != self->end()) {
+        self->erase(it);
+        return true;
+      }
+      return false;
+    }
+SWIGINTERN std::list< CityFlow::Vehicle * >::iterator *std_list_Sl_CityFlow_Vehicle_Sm__Sg__find(std::list< CityFlow::Vehicle * > *self,CityFlow::Vehicle *const &value){
+      if (std::find(self->begin(), self->end(), value) != self->end()) {
+        return new std::list< CityFlow::Vehicle * >::iterator(std::find(self->begin(), self->end(), value));
+      }
+      return NULL;
+    }
+SWIGINTERN std::list< std::list< CityFlow::Vehicle > >::const_reference std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getItem(std::list< std::list< CityFlow::Vehicle > > *self,std::list< std::list< CityFlow::Vehicle > >::iterator *iter){
+      return **iter;
+    }
+SWIGINTERN void std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__setItem(std::list< std::list< CityFlow::Vehicle > > *self,std::list< std::list< CityFlow::Vehicle > >::iterator *iter,std::list< CityFlow::Vehicle > const &val){
+      *(*iter) = val;
+    }
+SWIGINTERN std::list< std::list< CityFlow::Vehicle > >::iterator *std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getFirstIter(std::list< std::list< CityFlow::Vehicle > > *self){
+      if (self->size() == 0)
+        return NULL;
+      return new std::list< std::list< CityFlow::Vehicle > >::iterator(self->begin());
+    }
+SWIGINTERN std::list< std::list< CityFlow::Vehicle > >::iterator *std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getLastIter(std::list< std::list< CityFlow::Vehicle > > *self){
+      if (self->size() == 0)
+        return NULL;
+      return new std::list< std::list< CityFlow::Vehicle > >::iterator(--self->end());
+    }
+SWIGINTERN std::list< std::list< CityFlow::Vehicle > >::iterator *std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getNextIter(std::list< std::list< CityFlow::Vehicle > > *self,std::list< std::list< CityFlow::Vehicle > >::iterator *iter){
+      std::list< std::list< CityFlow::Vehicle > >::iterator it = *iter;
+      if (std::distance(it, --self->end()) != 0) {
+        std::list< std::list< CityFlow::Vehicle > >::iterator* itnext = new std::list< std::list< CityFlow::Vehicle > >::iterator(++it);
+        return itnext;
+      }
+      return NULL;
+    }
+SWIGINTERN std::list< std::list< CityFlow::Vehicle > >::iterator *std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getPrevIter(std::list< std::list< CityFlow::Vehicle > > *self,std::list< std::list< CityFlow::Vehicle > >::iterator *iter){
+      std::list< std::list< CityFlow::Vehicle > >::iterator it = *iter;
+      if (std::distance(self->begin(), it) != 0) {
+        std::list< std::list< CityFlow::Vehicle > >::iterator* itprev = new std::list< std::list< CityFlow::Vehicle > >::iterator(--it);
+        return itprev;
+      }
+      return NULL;
+    }
+SWIGINTERN std::list< std::list< CityFlow::Vehicle > >::iterator *std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__insertNode(std::list< std::list< CityFlow::Vehicle > > *self,std::list< std::list< CityFlow::Vehicle > >::iterator *iter,std::list< CityFlow::Vehicle > const &value){
+      std::list< std::list< CityFlow::Vehicle > >::iterator it = self->insert(*iter, value);
+      return new std::list< std::list< CityFlow::Vehicle > >::iterator(it);
+    }
+SWIGINTERN void std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__eraseIter(std::list< std::list< CityFlow::Vehicle > > *self,std::list< std::list< CityFlow::Vehicle > >::iterator *iter){
+      std::list< std::list< CityFlow::Vehicle > >::iterator it = *iter;
+      self->erase(it);
+    }
+SWIGINTERN void std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__deleteIter(std::list< std::list< CityFlow::Vehicle > > *self,std::list< std::list< CityFlow::Vehicle > >::iterator *iter){
+      delete iter;
+    }
+SWIGINTERN bool std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__equals(std::list< std::list< CityFlow::Vehicle > > *self,std::list< std::list< CityFlow::Vehicle > >::iterator *iter1,std::list< std::list< CityFlow::Vehicle > >::iterator *iter2){
+      if (iter1 == NULL && iter2 == NULL)
+        return true;
+      if (iter1 == NULL || iter2 == NULL)
+        return false;
+      std::list< std::list< CityFlow::Vehicle > >::iterator it1 = *iter1;
+      std::list< std::list< CityFlow::Vehicle > >::iterator it2 = *iter2;
+      return it1 == it2;
+    }
+SWIGINTERN std::vector< std::string > *new_std_vector_Sl_std_string_Sg___SWIG_2(int capacity){
+        std::vector< std::string >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< std::string >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN std::string std_vector_Sl_std_string_Sg__getitemcopy(std::vector< std::string > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< std::string >::value_type const &std_vector_Sl_std_string_Sg__getitem(std::vector< std::string > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__setitem(std::vector< std::string > *self,int index,std::string const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__AddRange(std::vector< std::string > *self,std::vector< std::string > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< std::string > *std_vector_Sl_std_string_Sg__GetRange(std::vector< std::string > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< std::string >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__Insert(std::vector< std::string > *self,int index,std::string const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__InsertRange(std::vector< std::string > *self,int index,std::vector< std::string > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__RemoveAt(std::vector< std::string > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__RemoveRange(std::vector< std::string > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< std::string > *std_vector_Sl_std_string_Sg__Repeat(std::string const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< std::string >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__Reverse__SWIG_0(std::vector< std::string > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__Reverse__SWIG_1(std::vector< std::string > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_std_string_Sg__SetRange(std::vector< std::string > *self,int index,std::vector< std::string > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_std_string_Sg__Contains(std::vector< std::string > *self,std::string const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_std_string_Sg__IndexOf(std::vector< std::string > *self,std::string const &value){
+        int index = -1;
+        std::vector< std::string >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_std_string_Sg__LastIndexOf(std::vector< std::string > *self,std::string const &value){
+        int index = -1;
+        std::vector< std::string >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_std_string_Sg__Remove(std::vector< std::string > *self,std::string const &value){
+        std::vector< std::string >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< int > *new_std_vector_Sl_int_Sg___SWIG_2(int capacity){
+        std::vector< int >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< int >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN int std_vector_Sl_int_Sg__getitemcopy(std::vector< int > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< int >::value_type const &std_vector_Sl_int_Sg__getitem(std::vector< int > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__setitem(std::vector< int > *self,int index,int const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__AddRange(std::vector< int > *self,std::vector< int > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< int > *std_vector_Sl_int_Sg__GetRange(std::vector< int > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< int >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__Insert(std::vector< int > *self,int index,int const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__InsertRange(std::vector< int > *self,int index,std::vector< int > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__RemoveAt(std::vector< int > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__RemoveRange(std::vector< int > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< int > *std_vector_Sl_int_Sg__Repeat(int const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< int >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__Reverse__SWIG_0(std::vector< int > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__Reverse__SWIG_1(std::vector< int > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_int_Sg__SetRange(std::vector< int > *self,int index,std::vector< int > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_int_Sg__Contains(std::vector< int > *self,int const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_int_Sg__IndexOf(std::vector< int > *self,int const &value){
+        int index = -1;
+        std::vector< int >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_int_Sg__LastIndexOf(std::vector< int > *self,int const &value){
+        int index = -1;
+        std::vector< int >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_int_Sg__Remove(std::vector< int > *self,int const &value){
+        std::vector< int >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< CityFlow::Cross > *new_std_vector_Sl_CityFlow_Cross_Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Cross >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Cross >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Cross std_vector_Sl_CityFlow_Cross_Sg__getitemcopy(std::vector< CityFlow::Cross > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Cross >::value_type const &std_vector_Sl_CityFlow_Cross_Sg__getitem(std::vector< CityFlow::Cross > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__setitem(std::vector< CityFlow::Cross > *self,int index,CityFlow::Cross const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__AddRange(std::vector< CityFlow::Cross > *self,std::vector< CityFlow::Cross > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Cross > *std_vector_Sl_CityFlow_Cross_Sg__GetRange(std::vector< CityFlow::Cross > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Cross >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__Insert(std::vector< CityFlow::Cross > *self,int index,CityFlow::Cross const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__InsertRange(std::vector< CityFlow::Cross > *self,int index,std::vector< CityFlow::Cross > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__RemoveAt(std::vector< CityFlow::Cross > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__RemoveRange(std::vector< CityFlow::Cross > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Cross > *std_vector_Sl_CityFlow_Cross_Sg__Repeat(CityFlow::Cross const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Cross >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__Reverse__SWIG_0(std::vector< CityFlow::Cross > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__Reverse__SWIG_1(std::vector< CityFlow::Cross > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sg__SetRange(std::vector< CityFlow::Cross > *self,int index,std::vector< CityFlow::Cross > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< CityFlow::Cross * > *new_std_vector_Sl_CityFlow_Cross_Sm__Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Cross * >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Cross * >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Cross *std_vector_Sl_CityFlow_Cross_Sm__Sg__getitemcopy(std::vector< CityFlow::Cross * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Cross * >::value_type const &std_vector_Sl_CityFlow_Cross_Sm__Sg__getitem(std::vector< CityFlow::Cross * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__setitem(std::vector< CityFlow::Cross * > *self,int index,CityFlow::Cross *const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__AddRange(std::vector< CityFlow::Cross * > *self,std::vector< CityFlow::Cross * > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Cross * > *std_vector_Sl_CityFlow_Cross_Sm__Sg__GetRange(std::vector< CityFlow::Cross * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Cross * >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__Insert(std::vector< CityFlow::Cross * > *self,int index,CityFlow::Cross *const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__InsertRange(std::vector< CityFlow::Cross * > *self,int index,std::vector< CityFlow::Cross * > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__RemoveAt(std::vector< CityFlow::Cross * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__RemoveRange(std::vector< CityFlow::Cross * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Cross * > *std_vector_Sl_CityFlow_Cross_Sm__Sg__Repeat(CityFlow::Cross *const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Cross * >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__Reverse__SWIG_0(std::vector< CityFlow::Cross * > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__Reverse__SWIG_1(std::vector< CityFlow::Cross * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Cross_Sm__Sg__SetRange(std::vector< CityFlow::Cross * > *self,int index,std::vector< CityFlow::Cross * > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Cross_Sm__Sg__Contains(std::vector< CityFlow::Cross * > *self,CityFlow::Cross *const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Cross_Sm__Sg__IndexOf(std::vector< CityFlow::Cross * > *self,CityFlow::Cross *const &value){
+        int index = -1;
+        std::vector< CityFlow::Cross * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Cross_Sm__Sg__LastIndexOf(std::vector< CityFlow::Cross * > *self,CityFlow::Cross *const &value){
+        int index = -1;
+        std::vector< CityFlow::Cross * >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Cross_Sm__Sg__Remove(std::vector< CityFlow::Cross * > *self,CityFlow::Cross *const &value){
+        std::vector< CityFlow::Cross * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< CityFlow::Drivable > *new_std_vector_Sl_CityFlow_Drivable_Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Drivable >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Drivable >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Drivable std_vector_Sl_CityFlow_Drivable_Sg__getitemcopy(std::vector< CityFlow::Drivable > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Drivable >::value_type const &std_vector_Sl_CityFlow_Drivable_Sg__getitem(std::vector< CityFlow::Drivable > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__setitem(std::vector< CityFlow::Drivable > *self,int index,CityFlow::Drivable const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__AddRange(std::vector< CityFlow::Drivable > *self,std::vector< CityFlow::Drivable > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Drivable > *std_vector_Sl_CityFlow_Drivable_Sg__GetRange(std::vector< CityFlow::Drivable > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Drivable >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__Insert(std::vector< CityFlow::Drivable > *self,int index,CityFlow::Drivable const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__InsertRange(std::vector< CityFlow::Drivable > *self,int index,std::vector< CityFlow::Drivable > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__RemoveAt(std::vector< CityFlow::Drivable > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__RemoveRange(std::vector< CityFlow::Drivable > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Drivable > *std_vector_Sl_CityFlow_Drivable_Sg__Repeat(CityFlow::Drivable const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Drivable >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__Reverse__SWIG_0(std::vector< CityFlow::Drivable > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__Reverse__SWIG_1(std::vector< CityFlow::Drivable > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sg__SetRange(std::vector< CityFlow::Drivable > *self,int index,std::vector< CityFlow::Drivable > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< CityFlow::Drivable * > *new_std_vector_Sl_CityFlow_Drivable_Sm__Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Drivable * >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Drivable * >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Drivable *std_vector_Sl_CityFlow_Drivable_Sm__Sg__getitemcopy(std::vector< CityFlow::Drivable * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Drivable * >::value_type const &std_vector_Sl_CityFlow_Drivable_Sm__Sg__getitem(std::vector< CityFlow::Drivable * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__setitem(std::vector< CityFlow::Drivable * > *self,int index,CityFlow::Drivable *const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__AddRange(std::vector< CityFlow::Drivable * > *self,std::vector< CityFlow::Drivable * > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Drivable * > *std_vector_Sl_CityFlow_Drivable_Sm__Sg__GetRange(std::vector< CityFlow::Drivable * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Drivable * >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__Insert(std::vector< CityFlow::Drivable * > *self,int index,CityFlow::Drivable *const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__InsertRange(std::vector< CityFlow::Drivable * > *self,int index,std::vector< CityFlow::Drivable * > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__RemoveAt(std::vector< CityFlow::Drivable * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__RemoveRange(std::vector< CityFlow::Drivable * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Drivable * > *std_vector_Sl_CityFlow_Drivable_Sm__Sg__Repeat(CityFlow::Drivable *const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Drivable * >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__Reverse__SWIG_0(std::vector< CityFlow::Drivable * > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__Reverse__SWIG_1(std::vector< CityFlow::Drivable * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Drivable_Sm__Sg__SetRange(std::vector< CityFlow::Drivable * > *self,int index,std::vector< CityFlow::Drivable * > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Drivable_Sm__Sg__Contains(std::vector< CityFlow::Drivable * > *self,CityFlow::Drivable *const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Drivable_Sm__Sg__IndexOf(std::vector< CityFlow::Drivable * > *self,CityFlow::Drivable *const &value){
+        int index = -1;
+        std::vector< CityFlow::Drivable * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Drivable_Sm__Sg__LastIndexOf(std::vector< CityFlow::Drivable * > *self,CityFlow::Drivable *const &value){
+        int index = -1;
+        std::vector< CityFlow::Drivable * >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Drivable_Sm__Sg__Remove(std::vector< CityFlow::Drivable * > *self,CityFlow::Drivable *const &value){
+        std::vector< CityFlow::Drivable * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< CityFlow::Intersection > *new_std_vector_Sl_CityFlow_Intersection_Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Intersection >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Intersection >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Intersection std_vector_Sl_CityFlow_Intersection_Sg__getitemcopy(std::vector< CityFlow::Intersection > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Intersection >::value_type const &std_vector_Sl_CityFlow_Intersection_Sg__getitem(std::vector< CityFlow::Intersection > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__setitem(std::vector< CityFlow::Intersection > *self,int index,CityFlow::Intersection const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__AddRange(std::vector< CityFlow::Intersection > *self,std::vector< CityFlow::Intersection > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Intersection > *std_vector_Sl_CityFlow_Intersection_Sg__GetRange(std::vector< CityFlow::Intersection > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Intersection >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__Insert(std::vector< CityFlow::Intersection > *self,int index,CityFlow::Intersection const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__InsertRange(std::vector< CityFlow::Intersection > *self,int index,std::vector< CityFlow::Intersection > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__RemoveAt(std::vector< CityFlow::Intersection > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__RemoveRange(std::vector< CityFlow::Intersection > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Intersection > *std_vector_Sl_CityFlow_Intersection_Sg__Repeat(CityFlow::Intersection const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Intersection >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__Reverse__SWIG_0(std::vector< CityFlow::Intersection > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__Reverse__SWIG_1(std::vector< CityFlow::Intersection > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Intersection_Sg__SetRange(std::vector< CityFlow::Intersection > *self,int index,std::vector< CityFlow::Intersection > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< CityFlow::Lane > *new_std_vector_Sl_CityFlow_Lane_Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Lane >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Lane >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Lane std_vector_Sl_CityFlow_Lane_Sg__getitemcopy(std::vector< CityFlow::Lane > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Lane >::value_type const &std_vector_Sl_CityFlow_Lane_Sg__getitem(std::vector< CityFlow::Lane > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__setitem(std::vector< CityFlow::Lane > *self,int index,CityFlow::Lane const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__AddRange(std::vector< CityFlow::Lane > *self,std::vector< CityFlow::Lane > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Lane > *std_vector_Sl_CityFlow_Lane_Sg__GetRange(std::vector< CityFlow::Lane > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Lane >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__Insert(std::vector< CityFlow::Lane > *self,int index,CityFlow::Lane const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__InsertRange(std::vector< CityFlow::Lane > *self,int index,std::vector< CityFlow::Lane > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__RemoveAt(std::vector< CityFlow::Lane > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__RemoveRange(std::vector< CityFlow::Lane > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Lane > *std_vector_Sl_CityFlow_Lane_Sg__Repeat(CityFlow::Lane const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Lane >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__Reverse__SWIG_0(std::vector< CityFlow::Lane > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__Reverse__SWIG_1(std::vector< CityFlow::Lane > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sg__SetRange(std::vector< CityFlow::Lane > *self,int index,std::vector< CityFlow::Lane > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< CityFlow::Lane * > *new_std_vector_Sl_CityFlow_Lane_Sm__Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Lane * >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Lane * >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Lane *std_vector_Sl_CityFlow_Lane_Sm__Sg__getitemcopy(std::vector< CityFlow::Lane * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Lane * >::value_type const &std_vector_Sl_CityFlow_Lane_Sm__Sg__getitem(std::vector< CityFlow::Lane * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__setitem(std::vector< CityFlow::Lane * > *self,int index,CityFlow::Lane *const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__AddRange(std::vector< CityFlow::Lane * > *self,std::vector< CityFlow::Lane * > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Lane * > *std_vector_Sl_CityFlow_Lane_Sm__Sg__GetRange(std::vector< CityFlow::Lane * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Lane * >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__Insert(std::vector< CityFlow::Lane * > *self,int index,CityFlow::Lane *const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__InsertRange(std::vector< CityFlow::Lane * > *self,int index,std::vector< CityFlow::Lane * > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__RemoveAt(std::vector< CityFlow::Lane * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__RemoveRange(std::vector< CityFlow::Lane * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Lane * > *std_vector_Sl_CityFlow_Lane_Sm__Sg__Repeat(CityFlow::Lane *const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Lane * >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__Reverse__SWIG_0(std::vector< CityFlow::Lane * > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__Reverse__SWIG_1(std::vector< CityFlow::Lane * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Lane_Sm__Sg__SetRange(std::vector< CityFlow::Lane * > *self,int index,std::vector< CityFlow::Lane * > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Lane_Sm__Sg__Contains(std::vector< CityFlow::Lane * > *self,CityFlow::Lane *const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Lane_Sm__Sg__IndexOf(std::vector< CityFlow::Lane * > *self,CityFlow::Lane *const &value){
+        int index = -1;
+        std::vector< CityFlow::Lane * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Lane_Sm__Sg__LastIndexOf(std::vector< CityFlow::Lane * > *self,CityFlow::Lane *const &value){
+        int index = -1;
+        std::vector< CityFlow::Lane * >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Lane_Sm__Sg__Remove(std::vector< CityFlow::Lane * > *self,CityFlow::Lane *const &value){
+        std::vector< CityFlow::Lane * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< CityFlow::LaneLink > *new_std_vector_Sl_CityFlow_LaneLink_Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::LaneLink >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::LaneLink >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::LaneLink std_vector_Sl_CityFlow_LaneLink_Sg__getitemcopy(std::vector< CityFlow::LaneLink > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::LaneLink >::value_type const &std_vector_Sl_CityFlow_LaneLink_Sg__getitem(std::vector< CityFlow::LaneLink > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__setitem(std::vector< CityFlow::LaneLink > *self,int index,CityFlow::LaneLink const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__AddRange(std::vector< CityFlow::LaneLink > *self,std::vector< CityFlow::LaneLink > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::LaneLink > *std_vector_Sl_CityFlow_LaneLink_Sg__GetRange(std::vector< CityFlow::LaneLink > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::LaneLink >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__Insert(std::vector< CityFlow::LaneLink > *self,int index,CityFlow::LaneLink const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__InsertRange(std::vector< CityFlow::LaneLink > *self,int index,std::vector< CityFlow::LaneLink > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__RemoveAt(std::vector< CityFlow::LaneLink > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__RemoveRange(std::vector< CityFlow::LaneLink > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::LaneLink > *std_vector_Sl_CityFlow_LaneLink_Sg__Repeat(CityFlow::LaneLink const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::LaneLink >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__Reverse__SWIG_0(std::vector< CityFlow::LaneLink > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__Reverse__SWIG_1(std::vector< CityFlow::LaneLink > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sg__SetRange(std::vector< CityFlow::LaneLink > *self,int index,std::vector< CityFlow::LaneLink > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< CityFlow::LaneLink * > *new_std_vector_Sl_CityFlow_LaneLink_Sm__Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::LaneLink * >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::LaneLink * >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::LaneLink *std_vector_Sl_CityFlow_LaneLink_Sm__Sg__getitemcopy(std::vector< CityFlow::LaneLink * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::LaneLink * >::value_type const &std_vector_Sl_CityFlow_LaneLink_Sm__Sg__getitem(std::vector< CityFlow::LaneLink * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__setitem(std::vector< CityFlow::LaneLink * > *self,int index,CityFlow::LaneLink *const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__AddRange(std::vector< CityFlow::LaneLink * > *self,std::vector< CityFlow::LaneLink * > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::LaneLink * > *std_vector_Sl_CityFlow_LaneLink_Sm__Sg__GetRange(std::vector< CityFlow::LaneLink * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::LaneLink * >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Insert(std::vector< CityFlow::LaneLink * > *self,int index,CityFlow::LaneLink *const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__InsertRange(std::vector< CityFlow::LaneLink * > *self,int index,std::vector< CityFlow::LaneLink * > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__RemoveAt(std::vector< CityFlow::LaneLink * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__RemoveRange(std::vector< CityFlow::LaneLink * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::LaneLink * > *std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Repeat(CityFlow::LaneLink *const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::LaneLink * >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Reverse__SWIG_0(std::vector< CityFlow::LaneLink * > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Reverse__SWIG_1(std::vector< CityFlow::LaneLink * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LaneLink_Sm__Sg__SetRange(std::vector< CityFlow::LaneLink * > *self,int index,std::vector< CityFlow::LaneLink * > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Contains(std::vector< CityFlow::LaneLink * > *self,CityFlow::LaneLink *const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_LaneLink_Sm__Sg__IndexOf(std::vector< CityFlow::LaneLink * > *self,CityFlow::LaneLink *const &value){
+        int index = -1;
+        std::vector< CityFlow::LaneLink * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_LaneLink_Sm__Sg__LastIndexOf(std::vector< CityFlow::LaneLink * > *self,CityFlow::LaneLink *const &value){
+        int index = -1;
+        std::vector< CityFlow::LaneLink * >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Remove(std::vector< CityFlow::LaneLink * > *self,CityFlow::LaneLink *const &value){
+        std::vector< CityFlow::LaneLink * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< CityFlow::LightPhase > *new_std_vector_Sl_CityFlow_LightPhase_Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::LightPhase >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::LightPhase >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::LightPhase std_vector_Sl_CityFlow_LightPhase_Sg__getitemcopy(std::vector< CityFlow::LightPhase > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::LightPhase >::value_type const &std_vector_Sl_CityFlow_LightPhase_Sg__getitem(std::vector< CityFlow::LightPhase > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__setitem(std::vector< CityFlow::LightPhase > *self,int index,CityFlow::LightPhase const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__AddRange(std::vector< CityFlow::LightPhase > *self,std::vector< CityFlow::LightPhase > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::LightPhase > *std_vector_Sl_CityFlow_LightPhase_Sg__GetRange(std::vector< CityFlow::LightPhase > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::LightPhase >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__Insert(std::vector< CityFlow::LightPhase > *self,int index,CityFlow::LightPhase const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__InsertRange(std::vector< CityFlow::LightPhase > *self,int index,std::vector< CityFlow::LightPhase > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__RemoveAt(std::vector< CityFlow::LightPhase > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__RemoveRange(std::vector< CityFlow::LightPhase > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::LightPhase > *std_vector_Sl_CityFlow_LightPhase_Sg__Repeat(CityFlow::LightPhase const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::LightPhase >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__Reverse__SWIG_0(std::vector< CityFlow::LightPhase > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__Reverse__SWIG_1(std::vector< CityFlow::LightPhase > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_LightPhase_Sg__SetRange(std::vector< CityFlow::LightPhase > *self,int index,std::vector< CityFlow::LightPhase > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< CityFlow::Road > *new_std_vector_Sl_CityFlow_Road_Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Road >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Road >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Road std_vector_Sl_CityFlow_Road_Sg__getitemcopy(std::vector< CityFlow::Road > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Road >::value_type const &std_vector_Sl_CityFlow_Road_Sg__getitem(std::vector< CityFlow::Road > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__setitem(std::vector< CityFlow::Road > *self,int index,CityFlow::Road const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__AddRange(std::vector< CityFlow::Road > *self,std::vector< CityFlow::Road > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Road > *std_vector_Sl_CityFlow_Road_Sg__GetRange(std::vector< CityFlow::Road > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Road >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__Insert(std::vector< CityFlow::Road > *self,int index,CityFlow::Road const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__InsertRange(std::vector< CityFlow::Road > *self,int index,std::vector< CityFlow::Road > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__RemoveAt(std::vector< CityFlow::Road > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__RemoveRange(std::vector< CityFlow::Road > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Road > *std_vector_Sl_CityFlow_Road_Sg__Repeat(CityFlow::Road const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Road >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__Reverse__SWIG_0(std::vector< CityFlow::Road > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__Reverse__SWIG_1(std::vector< CityFlow::Road > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sg__SetRange(std::vector< CityFlow::Road > *self,int index,std::vector< CityFlow::Road > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< CityFlow::Road * > *new_std_vector_Sl_CityFlow_Road_Sm__Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Road * >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Road * >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Road *std_vector_Sl_CityFlow_Road_Sm__Sg__getitemcopy(std::vector< CityFlow::Road * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Road * >::value_type const &std_vector_Sl_CityFlow_Road_Sm__Sg__getitem(std::vector< CityFlow::Road * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__setitem(std::vector< CityFlow::Road * > *self,int index,CityFlow::Road *const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__AddRange(std::vector< CityFlow::Road * > *self,std::vector< CityFlow::Road * > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Road * > *std_vector_Sl_CityFlow_Road_Sm__Sg__GetRange(std::vector< CityFlow::Road * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Road * >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__Insert(std::vector< CityFlow::Road * > *self,int index,CityFlow::Road *const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__InsertRange(std::vector< CityFlow::Road * > *self,int index,std::vector< CityFlow::Road * > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__RemoveAt(std::vector< CityFlow::Road * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__RemoveRange(std::vector< CityFlow::Road * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Road * > *std_vector_Sl_CityFlow_Road_Sm__Sg__Repeat(CityFlow::Road *const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Road * >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__Reverse__SWIG_0(std::vector< CityFlow::Road * > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__Reverse__SWIG_1(std::vector< CityFlow::Road * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Road_Sm__Sg__SetRange(std::vector< CityFlow::Road * > *self,int index,std::vector< CityFlow::Road * > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Road_Sm__Sg__Contains(std::vector< CityFlow::Road * > *self,CityFlow::Road *const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Road_Sm__Sg__IndexOf(std::vector< CityFlow::Road * > *self,CityFlow::Road *const &value){
+        int index = -1;
+        std::vector< CityFlow::Road * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Road_Sm__Sg__LastIndexOf(std::vector< CityFlow::Road * > *self,CityFlow::Road *const &value){
+        int index = -1;
+        std::vector< CityFlow::Road * >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Road_Sm__Sg__Remove(std::vector< CityFlow::Road * > *self,CityFlow::Road *const &value){
+        std::vector< CityFlow::Road * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< CityFlow::Segment > *new_std_vector_Sl_CityFlow_Segment_Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Segment >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Segment >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Segment std_vector_Sl_CityFlow_Segment_Sg__getitemcopy(std::vector< CityFlow::Segment > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Segment >::value_type const &std_vector_Sl_CityFlow_Segment_Sg__getitem(std::vector< CityFlow::Segment > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__setitem(std::vector< CityFlow::Segment > *self,int index,CityFlow::Segment const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__AddRange(std::vector< CityFlow::Segment > *self,std::vector< CityFlow::Segment > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Segment > *std_vector_Sl_CityFlow_Segment_Sg__GetRange(std::vector< CityFlow::Segment > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Segment >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__Insert(std::vector< CityFlow::Segment > *self,int index,CityFlow::Segment const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__InsertRange(std::vector< CityFlow::Segment > *self,int index,std::vector< CityFlow::Segment > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__RemoveAt(std::vector< CityFlow::Segment > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__RemoveRange(std::vector< CityFlow::Segment > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Segment > *std_vector_Sl_CityFlow_Segment_Sg__Repeat(CityFlow::Segment const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Segment >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__Reverse__SWIG_0(std::vector< CityFlow::Segment > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__Reverse__SWIG_1(std::vector< CityFlow::Segment > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Segment_Sg__SetRange(std::vector< CityFlow::Segment > *self,int index,std::vector< CityFlow::Segment > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< CityFlow::Vehicle * > *new_std_vector_Sl_CityFlow_Vehicle_Sm__Sg___SWIG_2(int capacity){
+        std::vector< CityFlow::Vehicle * >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< CityFlow::Vehicle * >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN CityFlow::Vehicle *std_vector_Sl_CityFlow_Vehicle_Sm__Sg__getitemcopy(std::vector< CityFlow::Vehicle * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< CityFlow::Vehicle * >::value_type const &std_vector_Sl_CityFlow_Vehicle_Sm__Sg__getitem(std::vector< CityFlow::Vehicle * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__setitem(std::vector< CityFlow::Vehicle * > *self,int index,CityFlow::Vehicle *const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__AddRange(std::vector< CityFlow::Vehicle * > *self,std::vector< CityFlow::Vehicle * > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< CityFlow::Vehicle * > *std_vector_Sl_CityFlow_Vehicle_Sm__Sg__GetRange(std::vector< CityFlow::Vehicle * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< CityFlow::Vehicle * >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Insert(std::vector< CityFlow::Vehicle * > *self,int index,CityFlow::Vehicle *const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__InsertRange(std::vector< CityFlow::Vehicle * > *self,int index,std::vector< CityFlow::Vehicle * > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__RemoveAt(std::vector< CityFlow::Vehicle * > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__RemoveRange(std::vector< CityFlow::Vehicle * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< CityFlow::Vehicle * > *std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Repeat(CityFlow::Vehicle *const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< CityFlow::Vehicle * >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Reverse__SWIG_0(std::vector< CityFlow::Vehicle * > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Reverse__SWIG_1(std::vector< CityFlow::Vehicle * > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_CityFlow_Vehicle_Sm__Sg__SetRange(std::vector< CityFlow::Vehicle * > *self,int index,std::vector< CityFlow::Vehicle * > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Contains(std::vector< CityFlow::Vehicle * > *self,CityFlow::Vehicle *const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Vehicle_Sm__Sg__IndexOf(std::vector< CityFlow::Vehicle * > *self,CityFlow::Vehicle *const &value){
+        int index = -1;
+        std::vector< CityFlow::Vehicle * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_CityFlow_Vehicle_Sm__Sg__LastIndexOf(std::vector< CityFlow::Vehicle * > *self,CityFlow::Vehicle *const &value){
+        int index = -1;
+        std::vector< CityFlow::Vehicle * >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Remove(std::vector< CityFlow::Vehicle * > *self,CityFlow::Vehicle *const &value){
+        std::vector< CityFlow::Vehicle * >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+          return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< Point > *new_std_vector_Sl_Point_Sg___SWIG_2(int capacity){
+        std::vector< Point >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< Point >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN Point std_vector_Sl_Point_Sg__getitemcopy(std::vector< Point > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< Point >::value_type const &std_vector_Sl_Point_Sg__getitem(std::vector< Point > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__setitem(std::vector< Point > *self,int index,Point const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__AddRange(std::vector< Point > *self,std::vector< Point > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< Point > *std_vector_Sl_Point_Sg__GetRange(std::vector< Point > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< Point >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__Insert(std::vector< Point > *self,int index,Point const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__InsertRange(std::vector< Point > *self,int index,std::vector< Point > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__RemoveAt(std::vector< Point > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__RemoveRange(std::vector< Point > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< Point > *std_vector_Sl_Point_Sg__Repeat(Point const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< Point >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__Reverse__SWIG_0(std::vector< Point > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__Reverse__SWIG_1(std::vector< Point > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_Point_Sg__SetRange(std::vector< Point > *self,int index,std::vector< Point > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN std::vector< RoadLink > *new_std_vector_Sl_RoadLink_Sg___SWIG_2(int capacity){
+        std::vector< RoadLink >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< RoadLink >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN RoadLink std_vector_Sl_RoadLink_Sg__getitemcopy(std::vector< RoadLink > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< RoadLink >::value_type const &std_vector_Sl_RoadLink_Sg__getitem(std::vector< RoadLink > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__setitem(std::vector< RoadLink > *self,int index,RoadLink const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__AddRange(std::vector< RoadLink > *self,std::vector< RoadLink > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< RoadLink > *std_vector_Sl_RoadLink_Sg__GetRange(std::vector< RoadLink > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< RoadLink >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__Insert(std::vector< RoadLink > *self,int index,RoadLink const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__InsertRange(std::vector< RoadLink > *self,int index,std::vector< RoadLink > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__RemoveAt(std::vector< RoadLink > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__RemoveRange(std::vector< RoadLink > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< RoadLink > *std_vector_Sl_RoadLink_Sg__Repeat(RoadLink const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< RoadLink >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__Reverse__SWIG_0(std::vector< RoadLink > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__Reverse__SWIG_1(std::vector< RoadLink > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_RoadLink_Sg__SetRange(std::vector< RoadLink > *self,int index,std::vector< RoadLink > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
 
 #ifdef __cplusplus
 extern "C" {
@@ -399,17 +2739,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_rnd_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Engine(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Engine(const char * jarg1, int jarg2) {
   void * jresult ;
   std::string *arg1 = 0 ;
   int arg2 ;
   CityFlow::Engine *result = 0 ;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   arg2 = (int)jarg2; 
   result = (CityFlow::Engine *)new CityFlow::Engine((std::string const &)*arg1,arg2);
   jresult = (void *)result; 
@@ -441,18 +2782,19 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Engine_hasLaneChange(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Engine_loadConfig(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Engine_loadConfig(void * jarg1, const char * jarg2) {
   unsigned int jresult ;
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
   bool result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = (bool)(arg1)->loadConfig((std::string const &)*arg2);
   jresult = result; 
   return jresult;
@@ -511,22 +2853,24 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_pushVehicle__SWIG_1(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setLogFile(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setLogFile(void * jarg1, const char * jarg2, const char * jarg3) {
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
-  } 
-  arg3 = (std::string *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
-  } 
+  }
+  std::string arg3_str(jarg3);
+  arg3 = &arg3_str; 
   (arg1)->setLogFile((std::string const &)*arg2,(std::string const &)*arg3);
 }
 
@@ -549,13 +2893,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_Engine(void * jarg1) {
 
 SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_pushVehicle__SWIG_2(void * jarg1, void * jarg2, void * jarg3) {
   CityFlow::Engine *arg1 = 0 ;
-  std::map< std::string,double > *arg2 = 0 ;
+  std::map< std::string,double,std::less< std::string > > *arg2 = 0 ;
   std::vector< std::string > *arg3 = 0 ;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::map< std::string,double > *)jarg2;
+  arg2 = (std::map< std::string,double,std::less< std::string > > *)jarg2;
   if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::map< std::string,double > const & is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::map< std::string,double,std::less< std::string > > const & is null", 0);
     return ;
   } 
   arg3 = (std::vector< std::string > *)jarg3;
@@ -563,7 +2907,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_pushVehicle__SWIG_2(void 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
     return ;
   } 
-  (arg1)->pushVehicle((std::map< std::string,double > const &)*arg2,(std::vector< std::string > const &)*arg3);
+  (arg1)->pushVehicle((std::map< std::string,double,std::less< std::string > > const &)*arg2,(std::vector< std::string > const &)*arg3);
 }
 
 
@@ -573,7 +2917,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Engine_getVehicleCount(v
   size_t result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  result = ((CityFlow::Engine const *)arg1)->getVehicleCount();
+  result = (size_t)((CityFlow::Engine const *)arg1)->getVehicleCount();
   jresult = (unsigned int)result; 
   return jresult;
 }
@@ -608,11 +2952,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getVehicles__SWIG_1(voi
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getLaneVehicleCount(void * jarg1) {
   void * jresult ;
   CityFlow::Engine *arg1 = 0 ;
-  std::map< std::string,int > result;
+  std::map< std::string,int,std::less< std::string > > result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
   result = ((CityFlow::Engine const *)arg1)->getLaneVehicleCount();
-  jresult = new std::map< std::string,int >(result); 
+  jresult = new std::map< std::string,int,std::less< std::string > >(result); 
   return jresult;
 }
 
@@ -620,11 +2964,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getLaneVehicleCount(voi
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getLaneWaitingVehicleCount(void * jarg1) {
   void * jresult ;
   CityFlow::Engine *arg1 = 0 ;
-  std::map< std::string,int > result;
+  std::map< std::string,int,std::less< std::string > > result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
   result = ((CityFlow::Engine const *)arg1)->getLaneWaitingVehicleCount();
-  jresult = new std::map< std::string,int >(result); 
+  jresult = new std::map< std::string,int,std::less< std::string > >(result); 
   return jresult;
 }
 
@@ -632,11 +2976,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getLaneWaitingVehicleCo
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getLaneVehicles(void * jarg1) {
   void * jresult ;
   CityFlow::Engine *arg1 = 0 ;
-  std::map< std::string,std::vector< std::string > > result;
+  std::map< std::string,std::vector< std::string >,std::less< std::string > > result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
   result = (arg1)->getLaneVehicles();
-  jresult = new std::map< std::string,std::vector< std::string > >(result); 
+  jresult = new std::map< std::string,std::vector< std::string >,std::less< std::string > >(result); 
   return jresult;
 }
 
@@ -644,11 +2988,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getLaneVehicles(void * 
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getVehicleSpeed(void * jarg1) {
   void * jresult ;
   CityFlow::Engine *arg1 = 0 ;
-  std::map< std::string,double > result;
+  std::map< std::string,double,std::less< std::string > > result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
   result = ((CityFlow::Engine const *)arg1)->getVehicleSpeed();
-  jresult = new std::map< std::string,double >(result); 
+  jresult = new std::map< std::string,double,std::less< std::string > >(result); 
   return jresult;
 }
 
@@ -656,29 +3000,30 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getVehicleSpeed(void * 
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getVehicleDistance(void * jarg1) {
   void * jresult ;
   CityFlow::Engine *arg1 = 0 ;
-  std::map< std::string,double > result;
+  std::map< std::string,double,std::less< std::string > > result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
   result = ((CityFlow::Engine const *)arg1)->getVehicleDistance();
-  jresult = new std::map< std::string,double >(result); 
+  jresult = new std::map< std::string,double,std::less< std::string > >(result); 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getLeader(void * jarg1, void * jarg2) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Engine_getLeader(void * jarg1, const char * jarg2) {
+  const char * jresult ;
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
   std::string result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = ((CityFlow::Engine const *)arg1)->getLeader((std::string const &)*arg2);
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -707,32 +3052,34 @@ SWIGEXPORT double SWIGSTDCALL CSharp_CityFlowCore_Engine_getAverageTravelTime(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setTrafficLightPhase(void * jarg1, void * jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setTrafficLightPhase(void * jarg1, const char * jarg2, int jarg3) {
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
   int arg3 ;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   arg3 = (int)jarg3; 
   (arg1)->setTrafficLightPhase((std::string const &)*arg2,arg3);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setReplayLogFile(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setReplayLogFile(void * jarg1, const char * jarg2) {
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   (arg1)->setReplayLogFile((std::string const &)*arg2);
 }
 
@@ -747,17 +3094,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setSaveReplay(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setVehicleSpeed(void * jarg1, void * jarg2, double jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_setVehicleSpeed(void * jarg1, const char * jarg2, double jarg3) {
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
   double arg3 ;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   arg3 = (double)jarg3; 
   (arg1)->setVehicleSpeed((std::string const &)*arg2,arg3);
 }
@@ -827,7 +3175,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Engine_loadFromFile(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Engine_setRoute(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Engine_setRoute(void * jarg1, const char * jarg2, void * jarg3) {
   unsigned int jresult ;
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -835,11 +3183,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Engine_setRoute(void * j
   bool result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   arg3 = (std::vector< std::string > *)jarg3;
   if (!arg3) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
@@ -851,20 +3200,21 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Engine_setRoute(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getVehicleInfo(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Engine_getVehicleInfo(void * jarg1, const char * jarg2) {
   void * jresult ;
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
-  std::map< std::string,std::string > result;
+  std::map< std::string,std::string,std::less< std::string > > result;
   
   arg1 = (CityFlow::Engine *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = ((CityFlow::Engine const *)arg1)->getVehicleInfo((std::string const &)*arg2);
-  jresult = new std::map< std::string,std::string >(result); 
+  jresult = new std::map< std::string,std::string,std::less< std::string > >(result); 
   return jresult;
 }
 
@@ -895,7 +3245,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Archive__SWIG_1(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Archive__SWIG_2(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Archive__SWIG_2(void * jarg1, const char * jarg2) {
   void * jresult ;
   CityFlow::Engine *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -906,11 +3256,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Archive__SWIG_2(void * jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Engine & is null", 0);
     return 0;
   } 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = (CityFlow::Archive *)new CityFlow::Archive(*arg1,(std::string const &)*arg2);
   jresult = (void *)result; 
   return jresult;
@@ -931,16 +3282,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Archive_resume(void * jarg1, voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Archive_dump(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Archive_dump(void * jarg1, const char * jarg2) {
   CityFlow::Archive *arg1 = 0 ;
   std::string *arg2 = 0 ;
   
   arg1 = (CityFlow::Archive *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   ((CityFlow::Archive const *)arg1)->dump((std::string const &)*arg2);
 }
 
@@ -953,7 +3305,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_Archive(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Flow(void * jarg1, double jarg2, void * jarg3, int jarg4, int jarg5, void * jarg6) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Flow(void * jarg1, double jarg2, void * jarg3, int jarg4, int jarg5, const char * jarg6) {
   void * jresult ;
   CityFlow::VehicleInfo *arg1 = 0 ;
   double arg2 ;
@@ -972,11 +3324,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Flow(void * jarg1, double 
   arg3 = (CityFlow::Engine *)jarg3; 
   arg4 = (int)jarg4; 
   arg5 = (int)jarg5; 
-  arg6 = (std::string *)jarg6;
-  if (!arg6) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg6) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg6_str(jarg6);
+  arg6 = &arg6_str; 
   result = (CityFlow::Flow *)new CityFlow::Flow((CityFlow::VehicleInfo const &)*arg1,arg2,arg3,arg4,arg5,(std::string const &)*arg6);
   jresult = (void *)result; 
   return jresult;
@@ -993,14 +3346,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Flow_nextStep(void * jarg1, doub
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Flow_getId(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Flow_getId(void * jarg1) {
+  const char * jresult ;
   CityFlow::Flow *arg1 = 0 ;
   std::string result;
   
   arg1 = (CityFlow::Flow *)jarg1; 
   result = ((CityFlow::Flow const *)arg1)->getId();
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -1072,7 +3425,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Route__SWIG_1(void * jarg1
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Route_getRoute(void * jarg1) {
   void * jresult ;
   CityFlow::Route *arg1 = 0 ;
-  SwigValueWrapper< std::vector< CityFlow::Road * > > result;
+  std::vector< CityFlow::Road * > result;
   
   arg1 = (CityFlow::Route *)jarg1; 
   result = ((CityFlow::Route const *)arg1)->getRoute();
@@ -1111,7 +3464,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Segment__SWIG_1(unsigned i
   arg2 = (CityFlow::Lane *)jarg2; 
   arg3 = (double)jarg3; 
   arg4 = (double)jarg4; 
-  result = (CityFlow::Segment *)new CityFlow::Segment(SWIG_STD_MOVE(arg1),arg2,arg3,arg4);
+  result = (CityFlow::Segment *)new CityFlow::Segment(arg1,arg2,arg3,arg4);
   jresult = (void *)result; 
   return jresult;
 }
@@ -1147,7 +3500,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Segment_getIndex(void * 
   size_t result;
   
   arg1 = (CityFlow::Segment *)jarg1; 
-  result = ((CityFlow::Segment const *)arg1)->getIndex();
+  result = (size_t)((CityFlow::Segment const *)arg1)->getIndex();
   jresult = (unsigned int)result; 
   return jresult;
 }
@@ -1169,7 +3522,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Segment_findVehicle(void * jar
   void * jresult ;
   CityFlow::Segment *arg1 = 0 ;
   CityFlow::Vehicle *arg2 = 0 ;
-  SwigValueWrapper< std::list< CityFlow::Vehicle * >::iterator > result;
+  std::list< CityFlow::Vehicle * >::iterator result;
   
   arg1 = (CityFlow::Segment *)jarg1; 
   arg2 = (CityFlow::Vehicle *)jarg2; 
@@ -1211,14 +3564,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_Segment(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Intersection_getId(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Intersection_getId(void * jarg1) {
+  const char * jresult ;
   CityFlow::Intersection *arg1 = 0 ;
   std::string result;
   
   arg1 = (CityFlow::Intersection *)jarg1; 
   result = ((CityFlow::Intersection const *)arg1)->getId();
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -1529,14 +3882,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_Cross(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Road_getId(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Road_getId(void * jarg1) {
+  const char * jresult ;
   CityFlow::Road *arg1 = 0 ;
   std::string result;
   
   arg1 = (CityFlow::Road *)jarg1; 
   result = ((CityFlow::Road const *)arg1)->getId();
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -1791,7 +4144,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Drivable_getVehicleCount
   size_t result;
   
   arg1 = (CityFlow::Drivable *)jarg1; 
-  result = ((CityFlow::Drivable const *)arg1)->getVehicleCount();
+  result = (size_t)((CityFlow::Drivable const *)arg1)->getVehicleCount();
   jresult = (unsigned int)result; 
   return jresult;
 }
@@ -1903,14 +4256,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Drivable_popVehicle(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Drivable_getId(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Drivable_getId(void * jarg1) {
+  const char * jresult ;
   CityFlow::Drivable *arg1 = 0 ;
   std::string result;
   
   arg1 = (CityFlow::Drivable *)jarg1; 
   result = ((CityFlow::Drivable const *)arg1)->getId();
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -1943,14 +4296,14 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Lane__SWIG_1(double jarg1,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Lane_getId(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Lane_getId(void * jarg1) {
+  const char * jresult ;
   CityFlow::Lane *arg1 = 0 ;
   std::string result;
   
   arg1 = (CityFlow::Lane *)jarg1; 
   result = ((CityFlow::Lane const *)arg1)->getId();
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -2001,7 +4354,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Lane_getLaneIndex(void *
   size_t result;
   
   arg1 = (CityFlow::Lane *)jarg1; 
-  result = ((CityFlow::Lane const *)arg1)->getLaneIndex();
+  result = (size_t)((CityFlow::Lane const *)arg1)->getLaneIndex();
   jresult = (unsigned int)result; 
   return jresult;
 }
@@ -2071,7 +4424,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Lane_getLaneLinksToRoad(void *
   void * jresult ;
   CityFlow::Lane *arg1 = 0 ;
   CityFlow::Road *arg2 = 0 ;
-  SwigValueWrapper< std::vector< CityFlow::LaneLink * > > result;
+  std::vector< CityFlow::LaneLink * > result;
   
   arg1 = (CityFlow::Lane *)jarg1; 
   arg2 = (CityFlow::Road *)jarg2; 
@@ -2117,7 +4470,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Lane_buildSegmentation(void * ja
   
   arg1 = (CityFlow::Lane *)jarg1; 
   arg2 = (size_t)jarg2; 
-  (arg1)->buildSegmentation(SWIG_STD_MOVE(arg2));
+  (arg1)->buildSegmentation(arg2);
 }
 
 
@@ -2137,7 +4490,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Lane_getSegment__SWIG_0(void *
   
   arg1 = (CityFlow::Lane *)jarg1; 
   arg2 = (size_t)jarg2; 
-  result = (CityFlow::Segment *)((CityFlow::Lane const *)arg1)->getSegment(SWIG_STD_MOVE(arg2));
+  result = (CityFlow::Segment *)((CityFlow::Lane const *)arg1)->getSegment(arg2);
   jresult = (void *)result; 
   return jresult;
 }
@@ -2161,7 +4514,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Lane_getSegmentNum(void 
   size_t result;
   
   arg1 = (CityFlow::Lane *)jarg1; 
-  result = ((CityFlow::Lane const *)arg1)->getSegmentNum();
+  result = (size_t)((CityFlow::Lane const *)arg1)->getSegmentNum();
   jresult = (unsigned int)result; 
   return jresult;
 }
@@ -2173,13 +4526,13 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Lane_getVehiclesBeforeDistance
   double arg2 ;
   size_t arg3 ;
   double arg4 ;
-  SwigValueWrapper< std::vector< CityFlow::Vehicle * > > result;
+  std::vector< CityFlow::Vehicle * > result;
   
   arg1 = (CityFlow::Lane *)jarg1; 
   arg2 = (double)jarg2; 
   arg3 = (size_t)jarg3; 
   arg4 = (double)jarg4; 
-  result = (arg1)->getVehiclesBeforeDistance(arg2,SWIG_STD_MOVE(arg3),arg4);
+  result = (arg1)->getVehiclesBeforeDistance(arg2,arg3,arg4);
   jresult = new std::vector< CityFlow::Vehicle * >(result); 
   return jresult;
 }
@@ -2190,12 +4543,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Lane_getVehiclesBeforeDistance
   CityFlow::Lane *arg1 = 0 ;
   double arg2 ;
   size_t arg3 ;
-  SwigValueWrapper< std::vector< CityFlow::Vehicle * > > result;
+  std::vector< CityFlow::Vehicle * > result;
   
   arg1 = (CityFlow::Lane *)jarg1; 
   arg2 = (double)jarg2; 
   arg3 = (size_t)jarg3; 
-  result = (arg1)->getVehiclesBeforeDistance(arg2,SWIG_STD_MOVE(arg3));
+  result = (arg1)->getVehiclesBeforeDistance(arg2,arg3);
   jresult = new std::vector< CityFlow::Vehicle * >(result); 
   return jresult;
 }
@@ -2243,7 +4596,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Lane_getVehicleBeforeDistance(
   arg1 = (CityFlow::Lane *)jarg1; 
   arg2 = (double)jarg2; 
   arg3 = (size_t)jarg3; 
-  result = (CityFlow::Vehicle *)((CityFlow::Lane const *)arg1)->getVehicleBeforeDistance(arg2,SWIG_STD_MOVE(arg3));
+  result = (CityFlow::Vehicle *)((CityFlow::Lane const *)arg1)->getVehicleBeforeDistance(arg2,arg3);
   jresult = (void *)result; 
   return jresult;
 }
@@ -2259,7 +4612,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Lane_getVehicleAfterDistance(v
   arg1 = (CityFlow::Lane *)jarg1; 
   arg2 = (double)jarg2; 
   arg3 = (size_t)jarg3; 
-  result = (CityFlow::Vehicle *)((CityFlow::Lane const *)arg1)->getVehicleAfterDistance(arg2,SWIG_STD_MOVE(arg3));
+  result = (CityFlow::Vehicle *)((CityFlow::Lane const *)arg1)->getVehicleAfterDistance(arg2,arg3);
   jresult = (void *)result; 
   return jresult;
 }
@@ -2473,14 +4826,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLink_reset(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLink_getId(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_LaneLink_getId(void * jarg1) {
+  const char * jresult ;
   CityFlow::LaneLink *arg1 = 0 ;
   std::string result;
   
   arg1 = (CityFlow::LaneLink *)jarg1; 
   result = ((CityFlow::LaneLink const *)arg1)->getId();
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -2493,20 +4846,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_LaneLink(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadNet_loadFromJson(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadNet_loadFromJson(void * jarg1, const char * jarg2) {
   unsigned int jresult ;
   CityFlow::RoadNet *arg1 = 0 ;
   std::string arg2 ;
-  std::string *argp2 ;
   bool result;
   
   arg1 = (CityFlow::RoadNet *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg2 = *argp2; 
+  (&arg2)->assign(jarg2); 
   result = (bool)(arg1)->loadFromJson(SWIG_STD_MOVE(arg2));
   jresult = result; 
   return jresult;
@@ -2555,54 +4906,57 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadNet_getIntersections__SWIG
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadNet_getRoadById(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadNet_getRoadById(void * jarg1, const char * jarg2) {
   void * jresult ;
   CityFlow::RoadNet *arg1 = 0 ;
   std::string *arg2 = 0 ;
   CityFlow::Road *result = 0 ;
   
   arg1 = (CityFlow::RoadNet *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = (CityFlow::Road *)((CityFlow::RoadNet const *)arg1)->getRoadById((std::string const &)*arg2);
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadNet_getIntersectionById(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadNet_getIntersectionById(void * jarg1, const char * jarg2) {
   void * jresult ;
   CityFlow::RoadNet *arg1 = 0 ;
   std::string *arg2 = 0 ;
   CityFlow::Intersection *result = 0 ;
   
   arg1 = (CityFlow::RoadNet *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = (CityFlow::Intersection *)((CityFlow::RoadNet const *)arg1)->getIntersectionById((std::string const &)*arg2);
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadNet_getDrivableById(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadNet_getDrivableById(void * jarg1, const char * jarg2) {
   void * jresult ;
   CityFlow::RoadNet *arg1 = 0 ;
   std::string *arg2 = 0 ;
   CityFlow::Drivable *result = 0 ;
   
   arg1 = (CityFlow::RoadNet *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = (CityFlow::Drivable *)((CityFlow::RoadNet const *)arg1)->getDrivableById((std::string const &)*arg2);
   jresult = (void *)result; 
   return jresult;
@@ -2793,19 +5147,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_TrafficLight(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Barrier(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Barrier(unsigned int jarg1) {
   void * jresult ;
   std::size_t arg1 ;
-  std::size_t *argp1 ;
   CityFlow::Barrier *result = 0 ;
   
-  argp1 = (std::size_t *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::size_t", 0);
-    return 0;
-  }
-  arg1 = *argp1; 
-  result = (CityFlow::Barrier *)new CityFlow::Barrier(SWIG_STD_MOVE(arg1));
+  arg1 = (std::size_t)jarg1; 
+  result = (CityFlow::Barrier *)new CityFlow::Barrier(arg1);
   jresult = (void *)result; 
   return jresult;
 }
@@ -2827,12 +5175,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_Barrier(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_ARGS_END_get() {
-  void * jresult ;
-  std::string result;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_ARGS_END_get() {
+  const char * jresult ;
+  std::string *result = 0 ;
   
-  result = (std::string)ARGS_END;
-  jresult = new std::string(result); 
+  result = (std::string *) &ARGS_END;
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
   return jresult;
 }
 
@@ -2859,30 +5207,29 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DictionaryEntry_pos_get(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DictionaryEntry_name_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DictionaryEntry_name_set(void * jarg1, const char * jarg2) {
   optionparser::DictionaryEntry *arg1 = 0 ;
-  std::string arg2 ;
-  std::string *argp2 ;
+  std::string *arg2 = 0 ;
   
   arg1 = (optionparser::DictionaryEntry *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->name = arg2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (arg1) (arg1)->name = *arg2;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DictionaryEntry_name_get(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_DictionaryEntry_name_get(void * jarg1) {
+  const char * jresult ;
   optionparser::DictionaryEntry *arg1 = 0 ;
-  std::string result;
+  std::string *result = 0 ;
   
   arg1 = (optionparser::DictionaryEntry *)jarg1; 
-  result =  ((arg1)->name);
-  jresult = new std::string(result); 
+  result = (std::string *) & ((arg1)->name);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
   return jresult;
 }
 
@@ -2997,86 +5344,83 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_pos_flag(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_short_flag_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_short_flag_set(void * jarg1, const char * jarg2) {
   optionparser::Option *arg1 = 0 ;
-  std::string arg2 ;
-  std::string *argp2 ;
+  std::string *arg2 = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->m_short_flag = arg2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (arg1) (arg1)->m_short_flag = *arg2;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_m_short_flag_get(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Option_m_short_flag_get(void * jarg1) {
+  const char * jresult ;
   optionparser::Option *arg1 = 0 ;
-  std::string result;
+  std::string *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  result =  ((arg1)->m_short_flag);
-  jresult = new std::string(result); 
+  result = (std::string *) & ((arg1)->m_short_flag);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_long_flag_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_long_flag_set(void * jarg1, const char * jarg2) {
   optionparser::Option *arg1 = 0 ;
-  std::string arg2 ;
-  std::string *argp2 ;
+  std::string *arg2 = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->m_long_flag = arg2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (arg1) (arg1)->m_long_flag = *arg2;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_m_long_flag_get(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Option_m_long_flag_get(void * jarg1) {
+  const char * jresult ;
   optionparser::Option *arg1 = 0 ;
-  std::string result;
+  std::string *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  result =  ((arg1)->m_long_flag);
-  jresult = new std::string(result); 
+  result = (std::string *) & ((arg1)->m_long_flag);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_pos_flag_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_pos_flag_set(void * jarg1, const char * jarg2) {
   optionparser::Option *arg1 = 0 ;
-  std::string arg2 ;
-  std::string *argp2 ;
+  std::string *arg2 = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->m_pos_flag = arg2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (arg1) (arg1)->m_pos_flag = *arg2;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_m_pos_flag_get(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Option_m_pos_flag_get(void * jarg1) {
+  const char * jresult ;
   optionparser::Option *arg1 = 0 ;
-  std::string result;
+  std::string *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  result =  ((arg1)->m_pos_flag);
-  jresult = new std::string(result); 
+  result = (std::string *) & ((arg1)->m_pos_flag);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
   return jresult;
 }
 
@@ -3121,18 +5465,19 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_help__SWIG_0(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_help__SWIG_1(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_help__SWIG_1(void * jarg1, const char * jarg2) {
   void * jresult ;
   optionparser::Option *arg1 = 0 ;
   std::string *arg2 = 0 ;
   optionparser::Option *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = (optionparser::Option *) &(arg1)->help((std::string const &)*arg2);
   jresult = (void *)result; 
   return jresult;
@@ -3151,18 +5496,19 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_dest__SWIG_0(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_dest__SWIG_1(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_dest__SWIG_1(void * jarg1, const char * jarg2) {
   void * jresult ;
   optionparser::Option *arg1 = 0 ;
   std::string *arg2 = 0 ;
   optionparser::Option *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = (optionparser::Option *) &(arg1)->dest((std::string const &)*arg2);
   jresult = (void *)result; 
   return jresult;
@@ -3181,33 +5527,20 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_default_value__SWIG_0(v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_default_value__SWIG_1(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_default_value__SWIG_1(void * jarg1, const char * jarg2) {
   void * jresult ;
   optionparser::Option *arg1 = 0 ;
   std::string *arg2 = 0 ;
   optionparser::Option *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   result = (optionparser::Option *) &(arg1)->default_value((std::string const &)*arg2);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_default_value__SWIG_2(void * jarg1, char * jarg2) {
-  void * jresult ;
-  optionparser::Option *arg1 = 0 ;
-  char *arg2 = 0 ;
-  optionparser::Option *result = 0 ;
-  
-  arg1 = (optionparser::Option *)jarg1; 
-  arg2 = (char *)jarg2; 
-  result = (optionparser::Option *) &(arg1)->default_value((char const *)arg2);
   jresult = (void *)result; 
   return jresult;
 }
@@ -3279,134 +5612,125 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_Option_m_mode_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_help_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_help_set(void * jarg1, const char * jarg2) {
   optionparser::Option *arg1 = 0 ;
-  std::string arg2 ;
-  std::string *argp2 ;
+  std::string *arg2 = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->m_help = arg2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (arg1) (arg1)->m_help = *arg2;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_m_help_get(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Option_m_help_get(void * jarg1) {
+  const char * jresult ;
   optionparser::Option *arg1 = 0 ;
-  std::string result;
+  std::string *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  result =  ((arg1)->m_help);
-  jresult = new std::string(result); 
+  result = (std::string *) & ((arg1)->m_help);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_dest_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_dest_set(void * jarg1, const char * jarg2) {
   optionparser::Option *arg1 = 0 ;
-  std::string arg2 ;
-  std::string *argp2 ;
+  std::string *arg2 = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->m_dest = arg2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (arg1) (arg1)->m_dest = *arg2;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_m_dest_get(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Option_m_dest_get(void * jarg1) {
+  const char * jresult ;
   optionparser::Option *arg1 = 0 ;
-  std::string result;
+  std::string *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  result =  ((arg1)->m_dest);
-  jresult = new std::string(result); 
+  result = (std::string *) & ((arg1)->m_dest);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_default_value_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Option_m_default_value_set(void * jarg1, const char * jarg2) {
   optionparser::Option *arg1 = 0 ;
-  std::string arg2 ;
-  std::string *argp2 ;
+  std::string *arg2 = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
   }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->m_default_value = arg2;
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (arg1) (arg1)->m_default_value = *arg2;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_m_default_value_get(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Option_m_default_value_get(void * jarg1) {
+  const char * jresult ;
   optionparser::Option *arg1 = 0 ;
-  std::string result;
+  std::string *result = 0 ;
   
   arg1 = (optionparser::Option *)jarg1; 
-  result =  ((arg1)->m_default_value);
-  jresult = new std::string(result); 
+  result = (std::string *) & ((arg1)->m_default_value);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_Option_get_type(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_Option_get_type(const char * jarg1) {
   int jresult ;
   std::string arg1 ;
-  std::string *argp1 ;
   optionparser::OptionType result;
   
-  argp1 = (std::string *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg1 = *argp1; 
+  (&arg1)->assign(jarg1); 
   result = (optionparser::OptionType)optionparser::Option::get_type(SWIG_STD_MOVE(arg1));
   jresult = (int)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Option_get_destination(void * jarg1, void * jarg2, int jarg3, int jarg4) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Option_get_destination(const char * jarg1, const char * jarg2, int jarg3, int jarg4) {
+  const char * jresult ;
   std::string arg1 ;
   std::string arg2 ;
   optionparser::OptionType arg3 ;
   optionparser::OptionType arg4 ;
-  std::string *argp1 ;
-  std::string *argp2 ;
   std::string result;
   
-  argp1 = (std::string *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg1 = *argp1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  (&arg1)->assign(jarg1); 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg2 = *argp2; 
+  (&arg2)->assign(jarg2); 
   arg3 = (optionparser::OptionType)jarg3; 
   arg4 = (optionparser::OptionType)jarg4; 
   result = optionparser::Option::get_destination(SWIG_STD_MOVE(arg1),SWIG_STD_MOVE(arg2),arg3,arg4);
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -3419,39 +5743,35 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_Option(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_remove_character(void * jarg1, char jarg2) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_remove_character(const char * jarg1, char jarg2) {
+  const char * jresult ;
   std::string arg1 ;
   char arg2 ;
-  std::string *argp1 ;
   std::string result;
   
-  argp1 = (std::string *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg1 = *argp1; 
+  (&arg1)->assign(jarg1); 
   arg2 = (char)jarg2; 
   result = optionparser::remove_character(SWIG_STD_MOVE(arg1),arg2);
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_OptionParser__SWIG_0(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_OptionParser__SWIG_0(const char * jarg1, unsigned int jarg2) {
   void * jresult ;
   std::string arg1 ;
   bool arg2 ;
-  std::string *argp1 ;
   optionparser::OptionParser *result = 0 ;
   
-  argp1 = (std::string *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg1 = *argp1; 
+  (&arg1)->assign(jarg1); 
   arg2 = jarg2 ? true : false; 
   result = (optionparser::OptionParser *)new optionparser::OptionParser(SWIG_STD_MOVE(arg1),arg2);
   jresult = (void *)result; 
@@ -3459,18 +5779,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_OptionParser__SWIG_0(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_OptionParser__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_OptionParser__SWIG_1(const char * jarg1) {
   void * jresult ;
   std::string arg1 ;
-  std::string *argp1 ;
   optionparser::OptionParser *result = 0 ;
   
-  argp1 = (std::string *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg1 = *argp1; 
+  (&arg1)->assign(jarg1); 
   result = (optionparser::OptionParser *)new optionparser::OptionParser(SWIG_STD_MOVE(arg1));
   jresult = (void *)result; 
   return jresult;
@@ -3507,48 +5825,42 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_OptionParser_eat_arguments(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_OptionParser_add_option__SWIG_0(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_OptionParser_add_option__SWIG_0(void * jarg1, const char * jarg2, const char * jarg3) {
   void * jresult ;
   optionparser::OptionParser *arg1 = 0 ;
   std::string arg2 ;
   std::string arg3 ;
-  std::string *argp2 ;
-  std::string *argp3 ;
   optionparser::Option *result = 0 ;
   
   arg1 = (optionparser::OptionParser *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg2 = *argp2; 
-  argp3 = (std::string *)jarg3; 
-  if (!argp3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  (&arg2)->assign(jarg2); 
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg3 = *argp3; 
+  (&arg3)->assign(jarg3); 
   result = (optionparser::Option *) &(arg1)->add_option(SWIG_STD_MOVE(arg2),SWIG_STD_MOVE(arg3));
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_OptionParser_add_option__SWIG_1(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_OptionParser_add_option__SWIG_1(void * jarg1, const char * jarg2) {
   void * jresult ;
   optionparser::OptionParser *arg1 = 0 ;
   std::string arg2 ;
-  std::string *argp2 ;
   optionparser::Option *result = 0 ;
   
   arg1 = (optionparser::OptionParser *)jarg1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg2 = *argp2; 
+  (&arg2)->assign(jarg2); 
   result = (optionparser::Option *) &(arg1)->add_option(SWIG_STD_MOVE(arg2));
   jresult = (void *)result; 
   return jresult;
@@ -3563,44 +5875,38 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_OptionParser_help(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_split_str__SWIG_0(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_split_str__SWIG_0(const char * jarg1, const char * jarg2) {
   void * jresult ;
   std::string arg1 ;
   std::string arg2 ;
-  std::string *argp1 ;
-  std::string *argp2 ;
   std::vector< std::string > result;
   
-  argp1 = (std::string *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg1 = *argp1; 
-  argp2 = (std::string *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  (&arg1)->assign(jarg1); 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg2 = *argp2; 
+  (&arg2)->assign(jarg2); 
   result = optionparser::split_str(SWIG_STD_MOVE(arg1),SWIG_STD_MOVE(arg2));
   jresult = new std::vector< std::string >(result); 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_split_str__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_split_str__SWIG_1(const char * jarg1) {
   void * jresult ;
   std::string arg1 ;
-  std::string *argp1 ;
   std::vector< std::string > result;
   
-  argp1 = (std::string *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::string", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
   }
-  arg1 = *argp1; 
+  (&arg1)->assign(jarg1); 
   result = optionparser::split_str(SWIG_STD_MOVE(arg1));
   jresult = new std::vector< std::string >(result); 
   return jresult;
@@ -3621,7 +5927,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_JSON_BUFFER_SIZE_get() {
   unsigned int jresult ;
   size_t result;
   
-  result = CityFlow::JSON_BUFFER_SIZE;
+  result = (size_t)CityFlow::JSON_BUFFER_SIZE;
   jresult = (unsigned int)result; 
   return jresult;
 }
@@ -3770,84 +6076,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_Point(void * jarg1) {
   
   arg1 = (CityFlow::Point *)jarg1; 
   delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_MultiplyValue(void * jarg1, double jarg2) {
-  void * jresult ;
-  CityFlow::Point *arg1 = 0 ;
-  double arg2 ;
-  CityFlow::Point result;
-  
-  arg1 = (CityFlow::Point *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Point const & is null", 0);
-    return 0;
-  } 
-  arg2 = (double)jarg2; 
-  result = CityFlow::operator *((CityFlow::Point const &)*arg1,arg2);
-  jresult = new CityFlow::Point(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_SubtractPoint(void * jarg1, void * jarg2) {
-  void * jresult ;
-  CityFlow::Point *arg1 = 0 ;
-  CityFlow::Point *arg2 = 0 ;
-  CityFlow::Point result;
-  
-  arg1 = (CityFlow::Point *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Point const & is null", 0);
-    return 0;
-  } 
-  arg2 = (CityFlow::Point *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Point const & is null", 0);
-    return 0;
-  } 
-  result = CityFlow::operator -((CityFlow::Point const &)*arg1,(CityFlow::Point const &)*arg2);
-  jresult = new CityFlow::Point(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_AddPoint(void * jarg1, void * jarg2) {
-  void * jresult ;
-  CityFlow::Point *arg1 = 0 ;
-  CityFlow::Point *arg2 = 0 ;
-  CityFlow::Point result;
-  
-  arg1 = (CityFlow::Point *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Point const & is null", 0);
-    return 0;
-  } 
-  arg2 = (CityFlow::Point *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Point const & is null", 0);
-    return 0;
-  } 
-  result = CityFlow::operator +((CityFlow::Point const &)*arg1,(CityFlow::Point const &)*arg2);
-  jresult = new CityFlow::Point(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Negative(void * jarg1) {
-  void * jresult ;
-  CityFlow::Point *arg1 = 0 ;
-  CityFlow::Point result;
-  
-  arg1 = (CityFlow::Point *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Point const & is null", 0);
-    return 0;
-  } 
-  result = CityFlow::operator -((CityFlow::Point const &)*arg1);
-  jresult = new CityFlow::Point(result); 
-  return jresult;
 }
 
 
@@ -4255,14 +6483,14 @@ SWIGEXPORT double SWIGSTDCALL CSharp_CityFlowCore_min2double(double jarg1, doubl
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_double2string(double jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_double2string(double jarg1) {
+  const char * jresult ;
   double arg1 ;
   std::string result;
   
   arg1 = (double)jarg1; 
   result = CityFlow::double2string(arg1);
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -4275,23 +6503,24 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_generateRandomIndices(unsigned
   
   arg1 = (size_t)jarg1; 
   arg2 = (std::mt19937 *)jarg2; 
-  result = CityFlow::generateRandomIndices(SWIG_STD_MOVE(arg1),arg2);
+  result = CityFlow::generateRandomIndices(arg1,arg2);
   jresult = new std::vector< int >(result); 
   return jresult;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_readJsonFromFile(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_readJsonFromFile(const char * jarg1, void * jarg2) {
   unsigned int jresult ;
   std::string *arg1 = 0 ;
   rapidjson::Document *arg2 = 0 ;
   bool result;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   arg2 = (rapidjson::Document *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rapidjson::Document & is null", 0);
@@ -4303,17 +6532,18 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_readJsonFromFile(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_writeJsonToFile(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_writeJsonToFile(const char * jarg1, void * jarg2) {
   unsigned int jresult ;
   std::string *arg1 = 0 ;
   rapidjson::Document *arg2 = 0 ;
   bool result;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   arg2 = (rapidjson::Document *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rapidjson::Document const & is null", 0);
@@ -4325,16 +6555,17 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_writeJsonToFile(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_JsonFormatError(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_JsonFormatError(const char * jarg1) {
   void * jresult ;
   std::string *arg1 = 0 ;
   CityFlow::JsonFormatError *result = 0 ;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   result = (CityFlow::JsonFormatError *)new CityFlow::JsonFormatError((std::string const &)*arg1);
   jresult = (void *)result; 
   return jresult;
@@ -4349,16 +6580,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_JsonFormatError(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_JsonMemberMiss(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_JsonMemberMiss(const char * jarg1) {
   void * jresult ;
   std::string *arg1 = 0 ;
   CityFlow::JsonMemberMiss *result = 0 ;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   result = (CityFlow::JsonMemberMiss *)new CityFlow::JsonMemberMiss((std::string const &)*arg1);
   jresult = (void *)result; 
   return jresult;
@@ -4373,41 +6605,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_JsonMemberMiss(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_JsonTypeError__SWIG_0(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_JsonTypeError__SWIG_0(const char * jarg1, char * jarg2) {
   void * jresult ;
   std::string *arg1 = 0 ;
   char *arg2 = 0 ;
   CityFlow::JsonTypeError *result = 0 ;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   arg2 = (char *)jarg2; 
   result = (CityFlow::JsonTypeError *)new CityFlow::JsonTypeError((std::string const &)*arg1,(char const *)arg2);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_JsonTypeError__SWIG_1(void * jarg1, void * jarg2) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  std::string *arg2 = 0 ;
-  CityFlow::JsonTypeError *result = 0 ;
-  
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
-    return 0;
-  } 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
-    return 0;
-  } 
-  result = (CityFlow::JsonTypeError *)new CityFlow::JsonTypeError((std::string const &)*arg1,(std::string const &)*arg2);
   jresult = (void *)result; 
   return jresult;
 }
@@ -4421,17 +6632,18 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_JsonTypeError(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_getJsonMemberValue(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_getJsonMemberValue(const char * jarg1, void * jarg2) {
   void * jresult ;
   std::string *arg1 = 0 ;
   rapidjson::Value *arg2 = 0 ;
   rapidjson::Value *result = 0 ;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   arg2 = (rapidjson::Value *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rapidjson::Value const & is null", 0);
@@ -4443,17 +6655,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_getJsonMemberValue(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_getJsonMemberObject(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_getJsonMemberObject(const char * jarg1, void * jarg2) {
   void * jresult ;
   std::string *arg1 = 0 ;
   rapidjson::Value *arg2 = 0 ;
   rapidjson::Value *result = 0 ;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   arg2 = (rapidjson::Value *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rapidjson::Value const & is null", 0);
@@ -4465,17 +6678,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_getJsonMemberObject(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_getJsonMemberArray(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_getJsonMemberArray(const char * jarg1, void * jarg2) {
   void * jresult ;
   std::string *arg1 = 0 ;
   rapidjson::Value *arg2 = 0 ;
   rapidjson::Value *result = 0 ;
   
-  arg1 = (std::string *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
   arg2 = (rapidjson::Value *)jarg2;
   if (!arg2) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "rapidjson::Value const & is null", 0);
@@ -4826,7 +7040,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Router__SWIG_0(void * jarg
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Router__SWIG_1(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
   CityFlow::Vehicle *arg1 = 0 ;
-  SwigValueWrapper< std::shared_ptr< CityFlow::Route const > > arg2 ;
+  std::shared_ptr< CityFlow::Route const > arg2 ;
   std::mt19937 *arg3 = 0 ;
   std::shared_ptr< CityFlow::Route const > *argp2 ;
   CityFlow::Router *result = 0 ;
@@ -4877,7 +7091,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Router_getNextDrivable__SWIG_0
   
   arg1 = (CityFlow::Router *)jarg1; 
   arg2 = (size_t)jarg2; 
-  result = (CityFlow::Drivable *)((CityFlow::Router const *)arg1)->getNextDrivable(SWIG_STD_MOVE(arg2));
+  result = (CityFlow::Drivable *)((CityFlow::Router const *)arg1)->getNextDrivable(arg2);
   jresult = (void *)result; 
   return jresult;
 }
@@ -5034,7 +7248,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Router_setRoute(void * j
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Router_getFollowingRoads(void * jarg1) {
   void * jresult ;
   CityFlow::Router *arg1 = 0 ;
-  SwigValueWrapper< std::vector< CityFlow::Road * > > result;
+  std::vector< CityFlow::Road * > result;
   
   arg1 = (CityFlow::Router *)jarg1; 
   result = ((CityFlow::Router const *)arg1)->getFollowingRoads();
@@ -5320,7 +7534,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleInfo_route_set(void * jar
   std::shared_ptr< CityFlow::Route const > *arg2 = 0 ;
   
   arg1 = (CityFlow::VehicleInfo *)jarg1; 
-  arg2 = (std::shared_ptr< CityFlow::Route const > *)jarg2; 
+  arg2 = (std::shared_ptr< CityFlow::Route const > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::shared_ptr< CityFlow::Route const > const & is null", 0);
+    return ;
+  } 
   if (arg1) (arg1)->route = *arg2;
 }
 
@@ -5331,7 +7549,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleInfo_route_get(void * j
   std::shared_ptr< CityFlow::Route const > *result = 0 ;
   
   arg1 = (CityFlow::VehicleInfo *)jarg1; 
-  result = (std::shared_ptr< CityFlow::Route const > *)& ((arg1)->route);
+  result = (std::shared_ptr< CityFlow::Route const > *) & ((arg1)->route);
   jresult = (void *)result; 
   return jresult;
 }
@@ -5411,7 +7629,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_1(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_2(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_2(void * jarg1, const char * jarg2, void * jarg3, void * jarg4) {
   void * jresult ;
   CityFlow::Vehicle *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -5424,11 +7642,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_2(void * jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Vehicle const & is null", 0);
     return 0;
   } 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   arg3 = (CityFlow::Engine *)jarg3; 
   arg4 = (CityFlow::Flow *)jarg4; 
   result = (CityFlow::Vehicle *)new CityFlow::Vehicle((CityFlow::Vehicle const &)*arg1,(std::string const &)*arg2,arg3,arg4);
@@ -5437,7 +7656,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_2(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_3(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_3(void * jarg1, const char * jarg2, void * jarg3) {
   void * jresult ;
   CityFlow::Vehicle *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -5449,11 +7668,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_3(void * jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Vehicle const & is null", 0);
     return 0;
   } 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   arg3 = (CityFlow::Engine *)jarg3; 
   result = (CityFlow::Vehicle *)new CityFlow::Vehicle((CityFlow::Vehicle const &)*arg1,(std::string const &)*arg2,arg3);
   jresult = (void *)result; 
@@ -5461,7 +7681,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_3(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_4(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_4(void * jarg1, const char * jarg2, void * jarg3, void * jarg4) {
   void * jresult ;
   CityFlow::VehicleInfo *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -5474,11 +7694,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_4(void * jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::VehicleInfo const & is null", 0);
     return 0;
   } 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   arg3 = (CityFlow::Engine *)jarg3; 
   arg4 = (CityFlow::Flow *)jarg4; 
   result = (CityFlow::Vehicle *)new CityFlow::Vehicle((CityFlow::VehicleInfo const &)*arg1,(std::string const &)*arg2,arg3,arg4);
@@ -5487,7 +7708,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_4(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_5(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_5(void * jarg1, const char * jarg2, void * jarg3) {
   void * jresult ;
   CityFlow::VehicleInfo *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -5499,11 +7720,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_Vehicle__SWIG_5(void * jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::VehicleInfo const & is null", 0);
     return 0;
   } 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return 0;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   arg3 = (CityFlow::Engine *)jarg3; 
   result = (CityFlow::Vehicle *)new CityFlow::Vehicle((CityFlow::VehicleInfo const &)*arg1,(std::string const &)*arg2,arg3);
   jresult = (void *)result; 
@@ -5653,7 +7875,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Vehicle_setEnterLaneLinkTime(voi
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
   arg2 = (size_t)jarg2; 
-  (arg1)->setEnterLaneLinkTime(SWIG_STD_MOVE(arg2));
+  (arg1)->setEnterLaneLinkTime(arg2);
 }
 
 
@@ -5697,14 +7919,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Vehicle_setPriority(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getId(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getId(void * jarg1) {
+  const char * jresult ;
   CityFlow::Vehicle *arg1 = 0 ;
   std::string result;
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
   result = ((CityFlow::Vehicle const *)arg1)->getId();
-  jresult = new std::string(result); 
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 
@@ -5968,7 +8190,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getPriority(void * jarg1)
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getCurPos(void * jarg1) {
   void * jresult ;
   CityFlow::Vehicle *arg1 = 0 ;
-  SwigValueWrapper< std::pair< CityFlow::Point,CityFlow::Point > > result;
+  std::pair< CityFlow::Point,CityFlow::Point > result;
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
   result = ((CityFlow::Vehicle const *)arg1)->getCurPos();
@@ -6345,7 +8567,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getSegmentIndex(
   size_t result;
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
-  result = ((CityFlow::Vehicle const *)arg1)->getSegmentIndex();
+  result = (size_t)((CityFlow::Vehicle const *)arg1)->getSegmentIndex();
   jresult = (unsigned int)result; 
   return jresult;
 }
@@ -6433,16 +8655,17 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getPartner(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Vehicle_setId(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Vehicle_setId(void * jarg1, const char * jarg2) {
   CityFlow::Vehicle *arg1 = 0 ;
   std::string *arg2 = 0 ;
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
-  arg2 = (std::string *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::string const & is null", 0);
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
     return ;
-  } 
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
   (arg1)->setId((std::string const &)*arg2);
 }
 
@@ -6506,7 +8729,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_Vehicle_updateLaneChangeNeighbor
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getLaneChange(void * jarg1) {
   void * jresult ;
   CityFlow::Vehicle *arg1 = 0 ;
-  SwigValueWrapper< std::shared_ptr< CityFlow::LaneChange > > result;
+  std::shared_ptr< CityFlow::LaneChange > result;
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
   result = (arg1)->getLaneChange();
@@ -6518,7 +8741,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getLaneChange(void * j
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getListIterator(void * jarg1) {
   void * jresult ;
   CityFlow::Vehicle *arg1 = 0 ;
-  SwigValueWrapper< std::list< CityFlow::Vehicle * >::iterator > result;
+  std::list< CityFlow::Vehicle * >::iterator result;
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
   result = (arg1)->getListIterator();
@@ -6738,11 +8961,11 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_Vehicle_setRoute(void * 
 SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_Vehicle_getInfo(void * jarg1) {
   void * jresult ;
   CityFlow::Vehicle *arg1 = 0 ;
-  std::map< std::string,std::string > result;
+  std::map< std::string,std::string,std::less< std::string > > result;
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
   result = ((CityFlow::Vehicle const *)arg1)->getInfo();
-  jresult = new std::map< std::string,std::string >(result); 
+  jresult = new std::map< std::string,std::string,std::less< std::string > >(result); 
   return jresult;
 }
 
@@ -6751,6 +8974,9009 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_Vehicle(void * jarg1) {
   CityFlow::Vehicle *arg1 = 0 ;
   
   arg1 = (CityFlow::Vehicle *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  result = (bool)((std::deque< CityFlow::Vehicle * > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleDeque__SWIG_0() {
+  void * jresult ;
+  std::deque< CityFlow::Vehicle * > *result = 0 ;
+  
+  result = (std::deque< CityFlow::Vehicle * > *)new std::deque< CityFlow::Vehicle * >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleDeque__SWIG_1(unsigned int jarg1, void * jarg2) {
+  void * jresult ;
+  unsigned int arg1 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  std::deque< CityFlow::Vehicle * > *result = 0 ;
+  
+  arg1 = (unsigned int)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  result = (std::deque< CityFlow::Vehicle * > *)new std::deque< CityFlow::Vehicle * >(arg1,(CityFlow::Vehicle *const &)*arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleDeque__SWIG_2(unsigned int jarg1) {
+  void * jresult ;
+  unsigned int arg1 ;
+  std::deque< CityFlow::Vehicle * > *result = 0 ;
+  
+  arg1 = (unsigned int)jarg1; 
+  result = (std::deque< CityFlow::Vehicle * > *)new std::deque< CityFlow::Vehicle * >(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleDeque__SWIG_3(void * jarg1) {
+  void * jresult ;
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::deque< CityFlow::Vehicle * > *result = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::deque< CityFlow::Vehicle * > const & is null", 0);
+    return 0;
+  } 
+  result = (std::deque< CityFlow::Vehicle * > *)new std::deque< CityFlow::Vehicle * >((std::deque< CityFlow::Vehicle * > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_VehicleDeque(void * jarg1) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_assign(void * jarg1, unsigned int jarg2, void * jarg3) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  unsigned int arg2 ;
+  CityFlow::Vehicle **arg3 = 0 ;
+  CityFlow::Vehicle *temp3 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  temp3 = (CityFlow::Vehicle *)jarg3;
+  arg3 = (CityFlow::Vehicle **)&temp3; 
+  (arg1)->assign(arg2,(CityFlow::Vehicle *const &)*arg3);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_swap(void * jarg1, void * jarg2) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::deque< CityFlow::Vehicle * > *arg2 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::deque< CityFlow::Vehicle * > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::deque< CityFlow::Vehicle * > & is null", 0);
+    return ;
+  } 
+  (arg1)->swap(*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_size(void * jarg1) {
+  unsigned int jresult ;
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  unsigned int result;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  result = (unsigned int)((std::deque< CityFlow::Vehicle * > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_max_size(void * jarg1) {
+  unsigned int jresult ;
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  unsigned int result;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  result = (unsigned int)((std::deque< CityFlow::Vehicle * > const *)arg1)->max_size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_resize__SWIG_0(void * jarg1, unsigned int jarg2, void * jarg3) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  unsigned int arg2 ;
+  CityFlow::Vehicle *arg3 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (CityFlow::Vehicle *)jarg3; 
+  (arg1)->resize(arg2,arg3);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_resize__SWIG_1(void * jarg1, unsigned int jarg2) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  unsigned int arg2 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  (arg1)->resize(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_front(void * jarg1) {
+  void * jresult ;
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::deque< CityFlow::Vehicle * >::value_type *result = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  result = (std::deque< CityFlow::Vehicle * >::value_type *) &(arg1)->front();
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_back(void * jarg1) {
+  void * jresult ;
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::deque< CityFlow::Vehicle * >::value_type *result = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  result = (std::deque< CityFlow::Vehicle * >::value_type *) &(arg1)->back();
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_push_front(void * jarg1, void * jarg2) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  (arg1)->push_front((CityFlow::Vehicle *const &)*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_push_back(void * jarg1, void * jarg2) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  (arg1)->push_back((CityFlow::Vehicle *const &)*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_pop_front(void * jarg1) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  (arg1)->pop_front();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_pop_back(void * jarg1) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  (arg1)->pop_back();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_clear(void * jarg1) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  std::deque< CityFlow::Vehicle * >::value_type *result = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::deque< CityFlow::Vehicle * >::value_type *) &std_deque_Sl_CityFlow_Vehicle_Sm__Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Vehicle **arg3 = 0 ;
+  CityFlow::Vehicle *temp3 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Vehicle *)jarg3;
+  arg3 = (CityFlow::Vehicle **)&temp3; 
+  try {
+    std_deque_Sl_CityFlow_Vehicle_Sm__Sg__setitem(arg1,arg2,(CityFlow::Vehicle *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_delitem(void * jarg1, int jarg2) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_deque_Sl_CityFlow_Vehicle_Sm__Sg__delitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_getslice(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::deque< CityFlow::Vehicle * > result;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  result = std_deque_Sl_CityFlow_Vehicle_Sm__Sg__getslice(arg1,arg2,arg3);
+  jresult = new std::deque< CityFlow::Vehicle * >(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_setslice(void * jarg1, int jarg2, int jarg3, void * jarg4) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::deque< CityFlow::Vehicle * > *arg4 = 0 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  arg4 = (std::deque< CityFlow::Vehicle * > *)jarg4;
+  if (!arg4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::deque< CityFlow::Vehicle * > const & is null", 0);
+    return ;
+  } 
+  std_deque_Sl_CityFlow_Vehicle_Sm__Sg__setslice(arg1,arg2,arg3,(std::deque< CityFlow::Vehicle * > const &)*arg4);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleDeque_delslice(void * jarg1, int jarg2, int jarg3) {
+  std::deque< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::deque< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  std_deque_Sl_CityFlow_Vehicle_Sm__Sg__delslice(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringDoubleMap__SWIG_0() {
+  void * jresult ;
+  std::map< std::string,double > *result = 0 ;
+  
+  result = (std::map< std::string,double > *)new std::map< std::string,double >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringDoubleMap__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double > *result = 0 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::map< std::string,double > const & is null", 0);
+    return 0;
+  } 
+  result = (std::map< std::string,double > *)new std::map< std::string,double >((std::map< std::string,double > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_size(void * jarg1) {
+  unsigned int jresult ;
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double >::size_type result;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  result = (std::map< std::string,double >::size_type)((std::map< std::string,double > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::map< std::string,double > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  result = (bool)((std::map< std::string,double > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_Clear(void * jarg1) {
+  std::map< std::string,double > *arg1 = 0 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_getitem(void * jarg1, const char * jarg2) {
+  double jresult ;
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double >::key_type *arg2 = 0 ;
+  std::map< std::string,double >::mapped_type *result = 0 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,double >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  try {
+    result = (std::map< std::string,double >::mapped_type *) &std_map_Sl_std_string_Sc_double_Sg__getitem(arg1,(std::string const &)*arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = *result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_setitem(void * jarg1, const char * jarg2, double jarg3) {
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double >::key_type *arg2 = 0 ;
+  std::map< std::string,double >::mapped_type *arg3 = 0 ;
+  std::map< std::string,double >::mapped_type temp3 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,double >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  temp3 = (std::map< std::string,double >::mapped_type)jarg3; 
+  arg3 = &temp3; 
+  std_map_Sl_std_string_Sc_double_Sg__setitem(arg1,(std::string const &)*arg2,(double const &)*arg3);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_ContainsKey(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double >::key_type *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,double >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_map_Sl_std_string_Sc_double_Sg__ContainsKey(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_Add(void * jarg1, const char * jarg2, double jarg3) {
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double >::key_type *arg2 = 0 ;
+  std::map< std::string,double >::mapped_type *arg3 = 0 ;
+  std::map< std::string,double >::mapped_type temp3 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,double >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  temp3 = (std::map< std::string,double >::mapped_type)jarg3; 
+  arg3 = &temp3; 
+  try {
+    std_map_Sl_std_string_Sc_double_Sg__Add(arg1,(std::string const &)*arg2,(double const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_Remove(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double >::key_type *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,double >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_map_Sl_std_string_Sc_double_Sg__Remove(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_create_iterator_begin(void * jarg1) {
+  void * jresult ;
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double,std::less< std::string > >::iterator *result = 0 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  result = (std::map< std::string,double,std::less< std::string > >::iterator *)std_map_Sl_std_string_Sc_double_Sg__create_iterator_begin(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_get_next_key(void * jarg1, void * jarg2) {
+  const char * jresult ;
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double,std::less< std::string > >::iterator *arg2 = 0 ;
+  std::map< std::string,double >::key_type *result = 0 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  arg2 = (std::map< std::string,double,std::less< std::string > >::iterator *)jarg2; 
+  result = (std::map< std::string,double >::key_type *) &std_map_Sl_std_string_Sc_double_Sg__get_next_key(arg1,arg2);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringDoubleMap_destroy_iterator(void * jarg1, void * jarg2) {
+  std::map< std::string,double > *arg1 = 0 ;
+  std::map< std::string,double,std::less< std::string > >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  arg2 = (std::map< std::string,double,std::less< std::string > >::iterator *)jarg2; 
+  std_map_Sl_std_string_Sc_double_Sg__destroy_iterator(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_StringDoubleMap(void * jarg1) {
+  std::map< std::string,double > *arg1 = 0 ;
+  
+  arg1 = (std::map< std::string,double > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringIntMap__SWIG_0() {
+  void * jresult ;
+  std::map< std::string,int > *result = 0 ;
+  
+  result = (std::map< std::string,int > *)new std::map< std::string,int >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringIntMap__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int > *result = 0 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::map< std::string,int > const & is null", 0);
+    return 0;
+  } 
+  result = (std::map< std::string,int > *)new std::map< std::string,int >((std::map< std::string,int > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_size(void * jarg1) {
+  unsigned int jresult ;
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int >::size_type result;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  result = (std::map< std::string,int >::size_type)((std::map< std::string,int > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::map< std::string,int > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  result = (bool)((std::map< std::string,int > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_Clear(void * jarg1) {
+  std::map< std::string,int > *arg1 = 0 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_getitem(void * jarg1, const char * jarg2) {
+  int jresult ;
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int >::key_type *arg2 = 0 ;
+  std::map< std::string,int >::mapped_type *result = 0 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,int >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  try {
+    result = (std::map< std::string,int >::mapped_type *) &std_map_Sl_std_string_Sc_int_Sg__getitem(arg1,(std::string const &)*arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = *result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_setitem(void * jarg1, const char * jarg2, int jarg3) {
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int >::key_type *arg2 = 0 ;
+  std::map< std::string,int >::mapped_type *arg3 = 0 ;
+  std::map< std::string,int >::mapped_type temp3 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,int >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  temp3 = (std::map< std::string,int >::mapped_type)jarg3; 
+  arg3 = &temp3; 
+  std_map_Sl_std_string_Sc_int_Sg__setitem(arg1,(std::string const &)*arg2,(int const &)*arg3);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_ContainsKey(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int >::key_type *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,int >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_map_Sl_std_string_Sc_int_Sg__ContainsKey(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_Add(void * jarg1, const char * jarg2, int jarg3) {
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int >::key_type *arg2 = 0 ;
+  std::map< std::string,int >::mapped_type *arg3 = 0 ;
+  std::map< std::string,int >::mapped_type temp3 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,int >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  temp3 = (std::map< std::string,int >::mapped_type)jarg3; 
+  arg3 = &temp3; 
+  try {
+    std_map_Sl_std_string_Sc_int_Sg__Add(arg1,(std::string const &)*arg2,(int const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_Remove(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int >::key_type *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,int >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_map_Sl_std_string_Sc_int_Sg__Remove(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_create_iterator_begin(void * jarg1) {
+  void * jresult ;
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int,std::less< std::string > >::iterator *result = 0 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  result = (std::map< std::string,int,std::less< std::string > >::iterator *)std_map_Sl_std_string_Sc_int_Sg__create_iterator_begin(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_get_next_key(void * jarg1, void * jarg2) {
+  const char * jresult ;
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int,std::less< std::string > >::iterator *arg2 = 0 ;
+  std::map< std::string,int >::key_type *result = 0 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  arg2 = (std::map< std::string,int,std::less< std::string > >::iterator *)jarg2; 
+  result = (std::map< std::string,int >::key_type *) &std_map_Sl_std_string_Sc_int_Sg__get_next_key(arg1,arg2);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringIntMap_destroy_iterator(void * jarg1, void * jarg2) {
+  std::map< std::string,int > *arg1 = 0 ;
+  std::map< std::string,int,std::less< std::string > >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  arg2 = (std::map< std::string,int,std::less< std::string > >::iterator *)jarg2; 
+  std_map_Sl_std_string_Sc_int_Sg__destroy_iterator(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_StringIntMap(void * jarg1) {
+  std::map< std::string,int > *arg1 = 0 ;
+  
+  arg1 = (std::map< std::string,int > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringStringVectorMap__SWIG_0() {
+  void * jresult ;
+  std::map< std::string,std::vector< std::string > > *result = 0 ;
+  
+  result = (std::map< std::string,std::vector< std::string > > *)new std::map< std::string,std::vector< std::string > >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringStringVectorMap__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string > > *result = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::map< std::string,std::vector< std::string > > const & is null", 0);
+    return 0;
+  } 
+  result = (std::map< std::string,std::vector< std::string > > *)new std::map< std::string,std::vector< std::string > >((std::map< std::string,std::vector< std::string > > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_size(void * jarg1) {
+  unsigned int jresult ;
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string > >::size_type result;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  result = (std::map< std::string,std::vector< std::string > >::size_type)((std::map< std::string,std::vector< std::string > > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  result = (bool)((std::map< std::string,std::vector< std::string > > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_Clear(void * jarg1) {
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_getitem(void * jarg1, const char * jarg2) {
+  void * jresult ;
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string > >::key_type *arg2 = 0 ;
+  std::map< std::string,std::vector< std::string > >::mapped_type *result = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,std::vector< std::string > >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  try {
+    result = (std::map< std::string,std::vector< std::string > >::mapped_type *) &std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__getitem(arg1,(std::string const &)*arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_setitem(void * jarg1, const char * jarg2, void * jarg3) {
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string > >::key_type *arg2 = 0 ;
+  std::map< std::string,std::vector< std::string > >::mapped_type *arg3 = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,std::vector< std::string > >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  arg3 = (std::map< std::string,std::vector< std::string > >::mapped_type *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::map< std::string,std::vector< std::string > >::mapped_type const & is null", 0);
+    return ;
+  } 
+  std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__setitem(arg1,(std::string const &)*arg2,(std::vector< std::string > const &)*arg3);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_ContainsKey(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string > >::key_type *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,std::vector< std::string > >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__ContainsKey(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_Add(void * jarg1, const char * jarg2, void * jarg3) {
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string > >::key_type *arg2 = 0 ;
+  std::map< std::string,std::vector< std::string > >::mapped_type *arg3 = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,std::vector< std::string > >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  arg3 = (std::map< std::string,std::vector< std::string > >::mapped_type *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::map< std::string,std::vector< std::string > >::mapped_type const & is null", 0);
+    return ;
+  } 
+  try {
+    std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__Add(arg1,(std::string const &)*arg2,(std::vector< std::string > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_Remove(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string > >::key_type *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,std::vector< std::string > >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__Remove(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_create_iterator_begin(void * jarg1) {
+  void * jresult ;
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *result = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  result = (std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *)std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__create_iterator_begin(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_get_next_key(void * jarg1, void * jarg2) {
+  const char * jresult ;
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *arg2 = 0 ;
+  std::map< std::string,std::vector< std::string > >::key_type *result = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  arg2 = (std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *)jarg2; 
+  result = (std::map< std::string,std::vector< std::string > >::key_type *) &std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__get_next_key(arg1,arg2);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringStringVectorMap_destroy_iterator(void * jarg1, void * jarg2) {
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  arg2 = (std::map< std::string,std::vector< std::string >,std::less< std::string > >::iterator *)jarg2; 
+  std_map_Sl_std_string_Sc_std_vector_Sl_std_string_Sg__Sg__destroy_iterator(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_StringStringVectorMap(void * jarg1) {
+  std::map< std::string,std::vector< std::string > > *arg1 = 0 ;
+  
+  arg1 = (std::map< std::string,std::vector< std::string > > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringStringMap__SWIG_0() {
+  void * jresult ;
+  std::map< std::string,std::string > *result = 0 ;
+  
+  result = (std::map< std::string,std::string > *)new std::map< std::string,std::string >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringStringMap__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string > *result = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::map< std::string,std::string > const & is null", 0);
+    return 0;
+  } 
+  result = (std::map< std::string,std::string > *)new std::map< std::string,std::string >((std::map< std::string,std::string > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_size(void * jarg1) {
+  unsigned int jresult ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string >::size_type result;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  result = (std::map< std::string,std::string >::size_type)((std::map< std::string,std::string > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  result = (bool)((std::map< std::string,std::string > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_Clear(void * jarg1) {
+  std::map< std::string,std::string > *arg1 = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_getitem(void * jarg1, const char * jarg2) {
+  const char * jresult ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string >::key_type *arg2 = 0 ;
+  std::map< std::string,std::string >::mapped_type *result = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,std::string >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  try {
+    result = (std::map< std::string,std::string >::mapped_type *) &std_map_Sl_std_string_Sc_std_string_Sg__getitem(arg1,(std::string const &)*arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_setitem(void * jarg1, const char * jarg2, const char * jarg3) {
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string >::key_type *arg2 = 0 ;
+  std::map< std::string,std::string >::mapped_type *arg3 = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,std::string >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,std::string >::mapped_type arg3_str(jarg3);
+  arg3 = &arg3_str; 
+  std_map_Sl_std_string_Sc_std_string_Sg__setitem(arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_ContainsKey(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string >::key_type *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,std::string >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_map_Sl_std_string_Sc_std_string_Sg__ContainsKey(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_Add(void * jarg1, const char * jarg2, const char * jarg3) {
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string >::key_type *arg2 = 0 ;
+  std::map< std::string,std::string >::mapped_type *arg3 = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,std::string >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::map< std::string,std::string >::mapped_type arg3_str(jarg3);
+  arg3 = &arg3_str; 
+  try {
+    std_map_Sl_std_string_Sc_std_string_Sg__Add(arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_Remove(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string >::key_type *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::map< std::string,std::string >::key_type arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_map_Sl_std_string_Sc_std_string_Sg__Remove(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_create_iterator_begin(void * jarg1) {
+  void * jresult ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string,std::less< std::string > >::iterator *result = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  result = (std::map< std::string,std::string,std::less< std::string > >::iterator *)std_map_Sl_std_string_Sc_std_string_Sg__create_iterator_begin(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_get_next_key(void * jarg1, void * jarg2) {
+  const char * jresult ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string,std::less< std::string > >::iterator *arg2 = 0 ;
+  std::map< std::string,std::string >::key_type *result = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  arg2 = (std::map< std::string,std::string,std::less< std::string > >::iterator *)jarg2; 
+  result = (std::map< std::string,std::string >::key_type *) &std_map_Sl_std_string_Sc_std_string_Sg__get_next_key(arg1,arg2);
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringStringMap_destroy_iterator(void * jarg1, void * jarg2) {
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string,std::less< std::string > >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  arg2 = (std::map< std::string,std::string,std::less< std::string > >::iterator *)jarg2; 
+  std_map_Sl_std_string_Sc_std_string_Sg__destroy_iterator(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_StringStringMap(void * jarg1) {
+  std::map< std::string,std::string > *arg1 = 0 ;
+  
+  arg1 = (std::map< std::string,std::string > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleList_push_front(void * jarg1, void * jarg2) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  CityFlow::Vehicle *arg2 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (CityFlow::Vehicle *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Vehicle const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_front((CityFlow::Vehicle const &)*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleList_push_back(void * jarg1, void * jarg2) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  CityFlow::Vehicle *arg2 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (CityFlow::Vehicle *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Vehicle const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::Vehicle const &)*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleList_RemoveFirst(void * jarg1) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  (arg1)->pop_front();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleList_RemoveLast(void * jarg1) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  (arg1)->pop_back();
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::size_type result;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  result = (std::list< CityFlow::Vehicle >::size_type)((std::list< CityFlow::Vehicle > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleList_Clear(void * jarg1) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleList_getItem(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle >::value_type *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle >::iterator *)jarg2; 
+  result = (std::list< CityFlow::Vehicle >::value_type *) &std_list_Sl_CityFlow_Vehicle_Sg__getItem(arg1,arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleList_setItem(void * jarg1, void * jarg2, void * jarg3) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg2 = 0 ;
+  CityFlow::Vehicle *arg3 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle >::iterator *)jarg2; 
+  arg3 = (CityFlow::Vehicle *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Vehicle const & is null", 0);
+    return ;
+  } 
+  std_list_Sl_CityFlow_Vehicle_Sg__setItem(arg1,arg2,(CityFlow::Vehicle const &)*arg3);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleList_getFirstIter(void * jarg1) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  result = (std::list< CityFlow::Vehicle >::iterator *)std_list_Sl_CityFlow_Vehicle_Sg__getFirstIter(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleList_getLastIter(void * jarg1) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  result = (std::list< CityFlow::Vehicle >::iterator *)std_list_Sl_CityFlow_Vehicle_Sg__getLastIter(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleList_getNextIter(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle >::iterator *)jarg2; 
+  result = (std::list< CityFlow::Vehicle >::iterator *)std_list_Sl_CityFlow_Vehicle_Sg__getNextIter(arg1,arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleList_getPrevIter(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle >::iterator *)jarg2; 
+  result = (std::list< CityFlow::Vehicle >::iterator *)std_list_Sl_CityFlow_Vehicle_Sg__getPrevIter(arg1,arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleList_insertNode(void * jarg1, void * jarg2, void * jarg3) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg2 = 0 ;
+  CityFlow::Vehicle *arg3 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle >::iterator *)jarg2; 
+  arg3 = (CityFlow::Vehicle *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Vehicle const & is null", 0);
+    return 0;
+  } 
+  result = (std::list< CityFlow::Vehicle >::iterator *)std_list_Sl_CityFlow_Vehicle_Sg__insertNode(arg1,arg2,(CityFlow::Vehicle const &)*arg3);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleList_eraseIter(void * jarg1, void * jarg2) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle >::iterator *)jarg2; 
+  std_list_Sl_CityFlow_Vehicle_Sg__eraseIter(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleList_deleteIter(void * jarg1, void * jarg2) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle >::iterator *)jarg2; 
+  std_list_Sl_CityFlow_Vehicle_Sg__deleteIter(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleList_equals(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle >::iterator *arg3 = 0 ;
+  bool result;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle >::iterator *)jarg2; 
+  arg3 = (std::list< CityFlow::Vehicle >::iterator *)jarg3; 
+  result = (bool)std_list_Sl_CityFlow_Vehicle_Sg__equals(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleList() {
+  void * jresult ;
+  std::list< CityFlow::Vehicle > *result = 0 ;
+  
+  result = (std::list< CityFlow::Vehicle > *)new std::list< CityFlow::Vehicle >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_VehicleList(void * jarg1) {
+  std::list< CityFlow::Vehicle > *arg1 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_push_front(void * jarg1, void * jarg2) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  (arg1)->push_front((CityFlow::Vehicle *const &)*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_push_back(void * jarg1, void * jarg2) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  (arg1)->push_back((CityFlow::Vehicle *const &)*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_RemoveFirst(void * jarg1) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  (arg1)->pop_front();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_RemoveLast(void * jarg1) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  (arg1)->pop_back();
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::size_type result;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  result = (std::list< CityFlow::Vehicle * >::size_type)((std::list< CityFlow::Vehicle * > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_Clear(void * jarg1) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_getItem(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle * >::value_type *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle * >::iterator *)jarg2; 
+  result = (std::list< CityFlow::Vehicle * >::value_type *) &std_list_Sl_CityFlow_Vehicle_Sm__Sg__getItem(arg1,arg2);
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_setItem(void * jarg1, void * jarg2, void * jarg3) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg2 = 0 ;
+  CityFlow::Vehicle **arg3 = 0 ;
+  CityFlow::Vehicle *temp3 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle * >::iterator *)jarg2; 
+  temp3 = (CityFlow::Vehicle *)jarg3;
+  arg3 = (CityFlow::Vehicle **)&temp3; 
+  std_list_Sl_CityFlow_Vehicle_Sm__Sg__setItem(arg1,arg2,(CityFlow::Vehicle *const &)*arg3);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_getFirstIter(void * jarg1) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  result = (std::list< CityFlow::Vehicle * >::iterator *)std_list_Sl_CityFlow_Vehicle_Sm__Sg__getFirstIter(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_getLastIter(void * jarg1) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  result = (std::list< CityFlow::Vehicle * >::iterator *)std_list_Sl_CityFlow_Vehicle_Sm__Sg__getLastIter(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_getNextIter(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle * >::iterator *)jarg2; 
+  result = (std::list< CityFlow::Vehicle * >::iterator *)std_list_Sl_CityFlow_Vehicle_Sm__Sg__getNextIter(arg1,arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_getPrevIter(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle * >::iterator *)jarg2; 
+  result = (std::list< CityFlow::Vehicle * >::iterator *)std_list_Sl_CityFlow_Vehicle_Sm__Sg__getPrevIter(arg1,arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_insertNode(void * jarg1, void * jarg2, void * jarg3) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg2 = 0 ;
+  CityFlow::Vehicle **arg3 = 0 ;
+  CityFlow::Vehicle *temp3 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle * >::iterator *)jarg2; 
+  temp3 = (CityFlow::Vehicle *)jarg3;
+  arg3 = (CityFlow::Vehicle **)&temp3; 
+  result = (std::list< CityFlow::Vehicle * >::iterator *)std_list_Sl_CityFlow_Vehicle_Sm__Sg__insertNode(arg1,arg2,(CityFlow::Vehicle *const &)*arg3);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_eraseIter(void * jarg1, void * jarg2) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle * >::iterator *)jarg2; 
+  std_list_Sl_CityFlow_Vehicle_Sm__Sg__eraseIter(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_deleteIter(void * jarg1, void * jarg2) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle * >::iterator *)jarg2; 
+  std_list_Sl_CityFlow_Vehicle_Sm__Sg__deleteIter(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_equals(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *arg3 = 0 ;
+  bool result;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle * >::iterator *)jarg2; 
+  arg3 = (std::list< CityFlow::Vehicle * >::iterator *)jarg3; 
+  result = (bool)std_list_Sl_CityFlow_Vehicle_Sm__Sg__equals(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_Contains(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  result = (bool)std_list_Sl_CityFlow_Vehicle_Sm__Sg__Contains(arg1,(CityFlow::Vehicle *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_Remove(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  result = (bool)std_list_Sl_CityFlow_Vehicle_Sm__Sg__Remove(arg1,(CityFlow::Vehicle *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehiclePointerList_find(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  std::list< CityFlow::Vehicle * >::iterator *result = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  result = (std::list< CityFlow::Vehicle * >::iterator *)std_list_Sl_CityFlow_Vehicle_Sm__Sg__find(arg1,(CityFlow::Vehicle *const &)*arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehiclePointerList() {
+  void * jresult ;
+  std::list< CityFlow::Vehicle * > *result = 0 ;
+  
+  result = (std::list< CityFlow::Vehicle * > *)new std::list< CityFlow::Vehicle * >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_VehiclePointerList(void * jarg1) {
+  std::list< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::list< CityFlow::Vehicle * > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_push_front(void * jarg1, void * jarg2) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle > *arg2 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::list< CityFlow::Vehicle > const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_front((std::list< CityFlow::Vehicle > const &)*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_push_back(void * jarg1, void * jarg2) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< CityFlow::Vehicle > *arg2 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< CityFlow::Vehicle > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::list< CityFlow::Vehicle > const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((std::list< CityFlow::Vehicle > const &)*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_RemoveFirst(void * jarg1) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  (arg1)->pop_front();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_RemoveLast(void * jarg1) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  (arg1)->pop_back();
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::size_type result;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  result = (std::list< std::list< CityFlow::Vehicle > >::size_type)((std::list< std::list< CityFlow::Vehicle > > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_Clear(void * jarg1) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_getItem(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg2 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::value_type *result = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg2; 
+  result = (std::list< std::list< CityFlow::Vehicle > >::value_type *) &std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getItem(arg1,arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_setItem(void * jarg1, void * jarg2, void * jarg3) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle > *arg3 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg2; 
+  arg3 = (std::list< CityFlow::Vehicle > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::list< CityFlow::Vehicle > const & is null", 0);
+    return ;
+  } 
+  std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__setItem(arg1,arg2,(std::list< CityFlow::Vehicle > const &)*arg3);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_getFirstIter(void * jarg1) {
+  void * jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *result = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  result = (std::list< std::list< CityFlow::Vehicle > >::iterator *)std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getFirstIter(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_getLastIter(void * jarg1) {
+  void * jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *result = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  result = (std::list< std::list< CityFlow::Vehicle > >::iterator *)std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getLastIter(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_getNextIter(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg2 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *result = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg2; 
+  result = (std::list< std::list< CityFlow::Vehicle > >::iterator *)std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getNextIter(arg1,arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_getPrevIter(void * jarg1, void * jarg2) {
+  void * jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg2 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *result = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg2; 
+  result = (std::list< std::list< CityFlow::Vehicle > >::iterator *)std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__getPrevIter(arg1,arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_insertNode(void * jarg1, void * jarg2, void * jarg3) {
+  void * jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg2 = 0 ;
+  std::list< CityFlow::Vehicle > *arg3 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *result = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg2; 
+  arg3 = (std::list< CityFlow::Vehicle > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::list< CityFlow::Vehicle > const & is null", 0);
+    return 0;
+  } 
+  result = (std::list< std::list< CityFlow::Vehicle > >::iterator *)std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__insertNode(arg1,arg2,(std::list< CityFlow::Vehicle > const &)*arg3);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_eraseIter(void * jarg1, void * jarg2) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg2; 
+  std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__eraseIter(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_deleteIter(void * jarg1, void * jarg2) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg2 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg2; 
+  std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__deleteIter(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleListList_equals(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg2 = 0 ;
+  std::list< std::list< CityFlow::Vehicle > >::iterator *arg3 = 0 ;
+  bool result;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  arg2 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg2; 
+  arg3 = (std::list< std::list< CityFlow::Vehicle > >::iterator *)jarg3; 
+  result = (bool)std_list_Sl_std_list_Sl_CityFlow_Vehicle_Sg__Sg__equals(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleListList() {
+  void * jresult ;
+  std::list< std::list< CityFlow::Vehicle > > *result = 0 ;
+  
+  result = (std::list< std::list< CityFlow::Vehicle > > *)new std::list< std::list< CityFlow::Vehicle > >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_VehicleListList(void * jarg1) {
+  std::list< std::list< CityFlow::Vehicle > > *arg1 = 0 ;
+  
+  arg1 = (std::list< std::list< CityFlow::Vehicle > > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_PointPointPair__SWIG_0() {
+  void * jresult ;
+  std::pair< CityFlow::Point,CityFlow::Point > *result = 0 ;
+  
+  result = (std::pair< CityFlow::Point,CityFlow::Point > *)new std::pair< CityFlow::Point,CityFlow::Point >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_PointPointPair__SWIG_1(void * jarg1, void * jarg2) {
+  void * jresult ;
+  CityFlow::Point arg1 ;
+  CityFlow::Point arg2 ;
+  CityFlow::Point *argp1 ;
+  CityFlow::Point *argp2 ;
+  std::pair< CityFlow::Point,CityFlow::Point > *result = 0 ;
+  
+  argp1 = (CityFlow::Point *)jarg1; 
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null CityFlow::Point", 0);
+    return 0;
+  }
+  arg1 = *argp1; 
+  argp2 = (CityFlow::Point *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null CityFlow::Point", 0);
+    return 0;
+  }
+  arg2 = *argp2; 
+  result = (std::pair< CityFlow::Point,CityFlow::Point > *)new std::pair< CityFlow::Point,CityFlow::Point >(SWIG_STD_MOVE(arg1),SWIG_STD_MOVE(arg2));
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_PointPointPair__SWIG_2(void * jarg1) {
+  void * jresult ;
+  std::pair< CityFlow::Point,CityFlow::Point > *arg1 = 0 ;
+  std::pair< CityFlow::Point,CityFlow::Point > *result = 0 ;
+  
+  arg1 = (std::pair< CityFlow::Point,CityFlow::Point > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::pair< CityFlow::Point,CityFlow::Point > const & is null", 0);
+    return 0;
+  } 
+  result = (std::pair< CityFlow::Point,CityFlow::Point > *)new std::pair< CityFlow::Point,CityFlow::Point >((std::pair< CityFlow::Point,CityFlow::Point > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointPointPair_first_set(void * jarg1, void * jarg2) {
+  std::pair< CityFlow::Point,CityFlow::Point > *arg1 = 0 ;
+  CityFlow::Point *arg2 = 0 ;
+  
+  arg1 = (std::pair< CityFlow::Point,CityFlow::Point > *)jarg1; 
+  arg2 = (CityFlow::Point *)jarg2; 
+  if (arg1) (arg1)->first = *arg2;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_PointPointPair_first_get(void * jarg1) {
+  void * jresult ;
+  std::pair< CityFlow::Point,CityFlow::Point > *arg1 = 0 ;
+  CityFlow::Point *result = 0 ;
+  
+  arg1 = (std::pair< CityFlow::Point,CityFlow::Point > *)jarg1; 
+  result = (CityFlow::Point *)& ((arg1)->first);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointPointPair_second_set(void * jarg1, void * jarg2) {
+  std::pair< CityFlow::Point,CityFlow::Point > *arg1 = 0 ;
+  CityFlow::Point *arg2 = 0 ;
+  
+  arg1 = (std::pair< CityFlow::Point,CityFlow::Point > *)jarg1; 
+  arg2 = (CityFlow::Point *)jarg2; 
+  if (arg1) (arg1)->second = *arg2;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_PointPointPair_second_get(void * jarg1) {
+  void * jresult ;
+  std::pair< CityFlow::Point,CityFlow::Point > *arg1 = 0 ;
+  CityFlow::Point *result = 0 ;
+  
+  arg1 = (std::pair< CityFlow::Point,CityFlow::Point > *)jarg1; 
+  result = (CityFlow::Point *)& ((arg1)->second);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_PointPointPair(void * jarg1) {
+  std::pair< CityFlow::Point,CityFlow::Point > *arg1 = 0 ;
+  
+  arg1 = (std::pair< CityFlow::Point,CityFlow::Point > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringVector__SWIG_0() {
+  void * jresult ;
+  std::vector< std::string > *result = 0 ;
+  
+  result = (std::vector< std::string > *)new std::vector< std::string >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  std::vector< std::string > *result = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< std::string > *)new std::vector< std::string >((std::vector< std::string > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_Clear(void * jarg1) {
+  std::vector< std::string > *arg1 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_Add(void * jarg1, const char * jarg2) {
+  std::vector< std::string > *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  (arg1)->push_back((std::string const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  std::vector< std::string >::size_type result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  result = (std::vector< std::string >::size_type)((std::vector< std::string > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  result = (bool)((std::vector< std::string > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  std::vector< std::string >::size_type result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  result = (std::vector< std::string >::size_type)((std::vector< std::string > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< std::string > *arg1 = 0 ;
+  std::vector< std::string >::size_type arg2 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (std::vector< std::string >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_StringVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< std::string > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< std::string > *)new_std_vector_Sl_std_string_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_StringVector_getitemcopy(void * jarg1, int jarg2) {
+  const char * jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  std::string result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_std_string_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_CityFlowCore_StringVector_getitem(void * jarg1, int jarg2) {
+  const char * jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< std::string >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< std::string >::value_type *) &std_vector_Sl_std_string_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_setitem(void * jarg1, int jarg2, const char * jarg3) {
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  std::string *arg3 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg3_str(jarg3);
+  arg3 = &arg3_str; 
+  try {
+    std_vector_Sl_std_string_Sg__setitem(arg1,arg2,(std::string const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< std::string > *arg1 = 0 ;
+  std::vector< std::string > *arg2 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (std::vector< std::string > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_std_string_Sg__AddRange(arg1,(std::vector< std::string > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_StringVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< std::string > *result = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< std::string > *)std_vector_Sl_std_string_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_Insert(void * jarg1, int jarg2, const char * jarg3) {
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  std::string *arg3 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg3_str(jarg3);
+  arg3 = &arg3_str; 
+  try {
+    std_vector_Sl_std_string_Sg__Insert(arg1,arg2,(std::string const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< std::string > *arg3 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< std::string > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_std_string_Sg__InsertRange(arg1,arg2,(std::vector< std::string > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_std_string_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_std_string_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_StringVector_Repeat(const char * jarg1, int jarg2) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  int arg2 ;
+  std::vector< std::string > *result = 0 ;
+  
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< std::string > *)std_vector_Sl_std_string_Sg__Repeat((std::string const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< std::string > *arg1 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  std_vector_Sl_std_string_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_std_string_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_StringVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< std::string > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< std::string > *arg3 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< std::string > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_std_string_Sg__SetRange(arg1,arg2,(std::vector< std::string > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringVector_Contains(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_vector_Sl_std_string_Sg__Contains(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_StringVector_IndexOf(void * jarg1, const char * jarg2) {
+  int jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (int)std_vector_Sl_std_string_Sg__IndexOf(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_StringVector_LastIndexOf(void * jarg1, const char * jarg2) {
+  int jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (int)std_vector_Sl_std_string_Sg__LastIndexOf(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_StringVector_Remove(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  result = (bool)std_vector_Sl_std_string_Sg__Remove(arg1,(std::string const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_StringVector(void * jarg1) {
+  std::vector< std::string > *arg1 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_IntVector__SWIG_0() {
+  void * jresult ;
+  std::vector< int > *result = 0 ;
+  
+  result = (std::vector< int > *)new std::vector< int >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_IntVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< int > *arg1 = 0 ;
+  std::vector< int > *result = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< int > *)new std::vector< int >((std::vector< int > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_Clear(void * jarg1) {
+  std::vector< int > *arg1 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_Add(void * jarg1, int jarg2) {
+  std::vector< int > *arg1 = 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->push_back((int const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_IntVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  std::vector< int >::size_type result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  result = (std::vector< int >::size_type)((std::vector< int > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_IntVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  result = (bool)((std::vector< int > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_IntVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  std::vector< int >::size_type result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  result = (std::vector< int >::size_type)((std::vector< int > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< int > *arg1 = 0 ;
+  std::vector< int >::size_type arg2 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (std::vector< int >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_IntVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< int > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< int > *)new_std_vector_Sl_int_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_IntVector_getitemcopy(void * jarg1, int jarg2) {
+  int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  int result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (int)std_vector_Sl_int_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_IntVector_getitem(void * jarg1, int jarg2) {
+  int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< int >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< int >::value_type *) &std_vector_Sl_int_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = *result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_setitem(void * jarg1, int jarg2, int jarg3) {
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  int *arg3 = 0 ;
+  int temp3 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (int)jarg3; 
+  arg3 = &temp3; 
+  try {
+    std_vector_Sl_int_Sg__setitem(arg1,arg2,(int const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< int > *arg1 = 0 ;
+  std::vector< int > *arg2 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (std::vector< int > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_int_Sg__AddRange(arg1,(std::vector< int > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_IntVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< int > *result = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< int > *)std_vector_Sl_int_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_Insert(void * jarg1, int jarg2, int jarg3) {
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  int *arg3 = 0 ;
+  int temp3 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (int)jarg3; 
+  arg3 = &temp3; 
+  try {
+    std_vector_Sl_int_Sg__Insert(arg1,arg2,(int const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< int > *arg3 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< int > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_int_Sg__InsertRange(arg1,arg2,(std::vector< int > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_int_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_int_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_IntVector_Repeat(int jarg1, int jarg2) {
+  void * jresult ;
+  int *arg1 = 0 ;
+  int arg2 ;
+  int temp1 ;
+  std::vector< int > *result = 0 ;
+  
+  temp1 = (int)jarg1; 
+  arg1 = &temp1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< int > *)std_vector_Sl_int_Sg__Repeat((int const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< int > *arg1 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  std_vector_Sl_int_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_int_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< int > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< int > *arg3 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< int > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_int_Sg__SetRange(arg1,arg2,(std::vector< int > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_IntVector_Contains(void * jarg1, int jarg2) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  bool result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  result = (bool)std_vector_Sl_int_Sg__Contains(arg1,(int const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_IntVector_IndexOf(void * jarg1, int jarg2) {
+  int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  int result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  result = (int)std_vector_Sl_int_Sg__IndexOf(arg1,(int const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_IntVector_LastIndexOf(void * jarg1, int jarg2) {
+  int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  int result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  result = (int)std_vector_Sl_int_Sg__LastIndexOf(arg1,(int const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_IntVector_Remove(void * jarg1, int jarg2) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  bool result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  result = (bool)std_vector_Sl_int_Sg__Remove(arg1,(int const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_IntVector(void * jarg1) {
+  std::vector< int > *arg1 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_CrossVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Cross > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Cross > *)new std::vector< CityFlow::Cross >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_CrossVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  std::vector< CityFlow::Cross > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Cross > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Cross > *)new std::vector< CityFlow::Cross >((std::vector< CityFlow::Cross > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  CityFlow::Cross *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (CityFlow::Cross *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Cross const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::Cross const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_CrossVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  std::vector< CityFlow::Cross >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  result = (std::vector< CityFlow::Cross >::size_type)((std::vector< CityFlow::Cross > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_CrossVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Cross > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_CrossVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  std::vector< CityFlow::Cross >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  result = (std::vector< CityFlow::Cross >::size_type)((std::vector< CityFlow::Cross > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  std::vector< CityFlow::Cross >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Cross >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_CrossVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Cross > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Cross > *)new_std_vector_Sl_CityFlow_Cross_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_CrossVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Cross result;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_CityFlow_Cross_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new CityFlow::Cross(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_CrossVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Cross >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Cross >::value_type *) &std_vector_Sl_CityFlow_Cross_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Cross *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Cross *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Cross const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sg__setitem(arg1,arg2,(CityFlow::Cross const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  std::vector< CityFlow::Cross > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Cross > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Cross > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Cross_Sg__AddRange(arg1,(std::vector< CityFlow::Cross > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_CrossVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Cross > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Cross > *)std_vector_Sl_CityFlow_Cross_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Cross *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Cross *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Cross const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sg__Insert(arg1,arg2,(CityFlow::Cross const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Cross > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Cross > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Cross > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Cross > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_CrossVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Cross *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Cross > *result = 0 ;
+  
+  arg1 = (CityFlow::Cross *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Cross const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Cross > *)std_vector_Sl_CityFlow_Cross_Sg__Repeat((CityFlow::Cross const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  std_vector_Sl_CityFlow_Cross_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Cross > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Cross > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Cross > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Cross > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_CrossVector(void * jarg1) {
+  std::vector< CityFlow::Cross > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_CrossPointerVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Cross * > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Cross * > *)new std::vector< CityFlow::Cross * >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_CrossPointerVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  std::vector< CityFlow::Cross * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Cross * > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Cross * > *)new std::vector< CityFlow::Cross * >((std::vector< CityFlow::Cross * > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  CityFlow::Cross **arg2 = 0 ;
+  CityFlow::Cross *temp2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  temp2 = (CityFlow::Cross *)jarg2;
+  arg2 = (CityFlow::Cross **)&temp2; 
+  (arg1)->push_back((CityFlow::Cross *const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  std::vector< CityFlow::Cross * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  result = (std::vector< CityFlow::Cross * >::size_type)((std::vector< CityFlow::Cross * > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Cross * > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  std::vector< CityFlow::Cross * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  result = (std::vector< CityFlow::Cross * >::size_type)((std::vector< CityFlow::Cross * > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  std::vector< CityFlow::Cross * >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Cross * >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_CrossPointerVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Cross * > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Cross * > *)new_std_vector_Sl_CityFlow_Cross_Sm__Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Cross *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (CityFlow::Cross *)std_vector_Sl_CityFlow_Cross_Sm__Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Cross * >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Cross * >::value_type *) &std_vector_Sl_CityFlow_Cross_Sm__Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Cross **arg3 = 0 ;
+  CityFlow::Cross *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Cross *)jarg3;
+  arg3 = (CityFlow::Cross **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sm__Sg__setitem(arg1,arg2,(CityFlow::Cross *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  std::vector< CityFlow::Cross * > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Cross * > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Cross * > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Cross_Sm__Sg__AddRange(arg1,(std::vector< CityFlow::Cross * > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Cross * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Cross * > *)std_vector_Sl_CityFlow_Cross_Sm__Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Cross **arg3 = 0 ;
+  CityFlow::Cross *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Cross *)jarg3;
+  arg3 = (CityFlow::Cross **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sm__Sg__Insert(arg1,arg2,(CityFlow::Cross *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Cross * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Cross * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Cross * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sm__Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Cross * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sm__Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sm__Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Cross **arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Cross *temp1 = 0 ;
+  std::vector< CityFlow::Cross * > *result = 0 ;
+  
+  temp1 = (CityFlow::Cross *)jarg1;
+  arg1 = (CityFlow::Cross **)&temp1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Cross * > *)std_vector_Sl_CityFlow_Cross_Sm__Sg__Repeat((CityFlow::Cross *const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  std_vector_Sl_CityFlow_Cross_Sm__Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sm__Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Cross * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Cross * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Cross * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Cross_Sm__Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Cross * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_Contains(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  CityFlow::Cross **arg2 = 0 ;
+  CityFlow::Cross *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  temp2 = (CityFlow::Cross *)jarg2;
+  arg2 = (CityFlow::Cross **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Cross_Sm__Sg__Contains(arg1,(CityFlow::Cross *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_IndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  CityFlow::Cross **arg2 = 0 ;
+  CityFlow::Cross *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  temp2 = (CityFlow::Cross *)jarg2;
+  arg2 = (CityFlow::Cross **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Cross_Sm__Sg__IndexOf(arg1,(CityFlow::Cross *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_LastIndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  CityFlow::Cross **arg2 = 0 ;
+  CityFlow::Cross *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  temp2 = (CityFlow::Cross *)jarg2;
+  arg2 = (CityFlow::Cross **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Cross_Sm__Sg__LastIndexOf(arg1,(CityFlow::Cross *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_CrossPointerVector_Remove(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  CityFlow::Cross **arg2 = 0 ;
+  CityFlow::Cross *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  temp2 = (CityFlow::Cross *)jarg2;
+  arg2 = (CityFlow::Cross **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Cross_Sm__Sg__Remove(arg1,(CityFlow::Cross *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_CrossPointerVector(void * jarg1) {
+  std::vector< CityFlow::Cross * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Cross * > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_DrivableVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Drivable > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Drivable > *)new std::vector< CityFlow::Drivable >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_DrivableVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Drivable > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Drivable > *)new std::vector< CityFlow::Drivable >((std::vector< CityFlow::Drivable > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  CityFlow::Drivable *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (CityFlow::Drivable *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Drivable const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::Drivable const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  result = (std::vector< CityFlow::Drivable >::size_type)((std::vector< CityFlow::Drivable > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Drivable > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  result = (std::vector< CityFlow::Drivable >::size_type)((std::vector< CityFlow::Drivable > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Drivable >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_DrivableVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Drivable > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Drivable > *)new_std_vector_Sl_CityFlow_Drivable_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Drivable result;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_CityFlow_Drivable_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new CityFlow::Drivable(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Drivable >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Drivable >::value_type *) &std_vector_Sl_CityFlow_Drivable_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Drivable *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Drivable *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Drivable const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sg__setitem(arg1,arg2,(CityFlow::Drivable const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Drivable > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Drivable > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Drivable_Sg__AddRange(arg1,(std::vector< CityFlow::Drivable > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Drivable > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Drivable > *)std_vector_Sl_CityFlow_Drivable_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Drivable *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Drivable *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Drivable const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sg__Insert(arg1,arg2,(CityFlow::Drivable const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Drivable > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Drivable > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Drivable > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Drivable > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Drivable *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Drivable > *result = 0 ;
+  
+  arg1 = (CityFlow::Drivable *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Drivable const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Drivable > *)std_vector_Sl_CityFlow_Drivable_Sg__Repeat((CityFlow::Drivable const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  std_vector_Sl_CityFlow_Drivable_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivableVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Drivable > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Drivable > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Drivable > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Drivable > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_DrivableVector(void * jarg1) {
+  std::vector< CityFlow::Drivable > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_DrivablePointerVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Drivable * > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Drivable * > *)new std::vector< CityFlow::Drivable * >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_DrivablePointerVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Drivable * > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Drivable * > *)new std::vector< CityFlow::Drivable * >((std::vector< CityFlow::Drivable * > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  CityFlow::Drivable **arg2 = 0 ;
+  CityFlow::Drivable *temp2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  temp2 = (CityFlow::Drivable *)jarg2;
+  arg2 = (CityFlow::Drivable **)&temp2; 
+  (arg1)->push_back((CityFlow::Drivable *const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  result = (std::vector< CityFlow::Drivable * >::size_type)((std::vector< CityFlow::Drivable * > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Drivable * > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  result = (std::vector< CityFlow::Drivable * >::size_type)((std::vector< CityFlow::Drivable * > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable * >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Drivable * >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_DrivablePointerVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Drivable * > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Drivable * > *)new_std_vector_Sl_CityFlow_Drivable_Sm__Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Drivable *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (CityFlow::Drivable *)std_vector_Sl_CityFlow_Drivable_Sm__Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Drivable * >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Drivable * >::value_type *) &std_vector_Sl_CityFlow_Drivable_Sm__Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Drivable **arg3 = 0 ;
+  CityFlow::Drivable *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Drivable *)jarg3;
+  arg3 = (CityFlow::Drivable **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sm__Sg__setitem(arg1,arg2,(CityFlow::Drivable *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  std::vector< CityFlow::Drivable * > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Drivable * > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Drivable * > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Drivable_Sm__Sg__AddRange(arg1,(std::vector< CityFlow::Drivable * > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Drivable * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Drivable * > *)std_vector_Sl_CityFlow_Drivable_Sm__Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Drivable **arg3 = 0 ;
+  CityFlow::Drivable *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Drivable *)jarg3;
+  arg3 = (CityFlow::Drivable **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sm__Sg__Insert(arg1,arg2,(CityFlow::Drivable *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Drivable * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Drivable * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Drivable * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sm__Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Drivable * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sm__Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sm__Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Drivable **arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Drivable *temp1 = 0 ;
+  std::vector< CityFlow::Drivable * > *result = 0 ;
+  
+  temp1 = (CityFlow::Drivable *)jarg1;
+  arg1 = (CityFlow::Drivable **)&temp1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Drivable * > *)std_vector_Sl_CityFlow_Drivable_Sm__Sg__Repeat((CityFlow::Drivable *const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  std_vector_Sl_CityFlow_Drivable_Sm__Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sm__Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Drivable * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Drivable * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Drivable * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Drivable_Sm__Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Drivable * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_Contains(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  CityFlow::Drivable **arg2 = 0 ;
+  CityFlow::Drivable *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  temp2 = (CityFlow::Drivable *)jarg2;
+  arg2 = (CityFlow::Drivable **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Drivable_Sm__Sg__Contains(arg1,(CityFlow::Drivable *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_IndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  CityFlow::Drivable **arg2 = 0 ;
+  CityFlow::Drivable *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  temp2 = (CityFlow::Drivable *)jarg2;
+  arg2 = (CityFlow::Drivable **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Drivable_Sm__Sg__IndexOf(arg1,(CityFlow::Drivable *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_LastIndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  CityFlow::Drivable **arg2 = 0 ;
+  CityFlow::Drivable *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  temp2 = (CityFlow::Drivable *)jarg2;
+  arg2 = (CityFlow::Drivable **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Drivable_Sm__Sg__LastIndexOf(arg1,(CityFlow::Drivable *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_DrivablePointerVector_Remove(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  CityFlow::Drivable **arg2 = 0 ;
+  CityFlow::Drivable *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  temp2 = (CityFlow::Drivable *)jarg2;
+  arg2 = (CityFlow::Drivable **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Drivable_Sm__Sg__Remove(arg1,(CityFlow::Drivable *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_DrivablePointerVector(void * jarg1) {
+  std::vector< CityFlow::Drivable * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Drivable * > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_IntersectionVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Intersection > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Intersection > *)new std::vector< CityFlow::Intersection >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_IntersectionVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  std::vector< CityFlow::Intersection > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Intersection > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Intersection > *)new std::vector< CityFlow::Intersection >((std::vector< CityFlow::Intersection > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  CityFlow::Intersection *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (CityFlow::Intersection *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Intersection const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::Intersection const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  std::vector< CityFlow::Intersection >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  result = (std::vector< CityFlow::Intersection >::size_type)((std::vector< CityFlow::Intersection > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Intersection > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  std::vector< CityFlow::Intersection >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  result = (std::vector< CityFlow::Intersection >::size_type)((std::vector< CityFlow::Intersection > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  std::vector< CityFlow::Intersection >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Intersection >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_IntersectionVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Intersection > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Intersection > *)new_std_vector_Sl_CityFlow_Intersection_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Intersection result;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_CityFlow_Intersection_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new CityFlow::Intersection(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Intersection >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Intersection >::value_type *) &std_vector_Sl_CityFlow_Intersection_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Intersection *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Intersection *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Intersection const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Intersection_Sg__setitem(arg1,arg2,(CityFlow::Intersection const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  std::vector< CityFlow::Intersection > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Intersection > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Intersection > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Intersection_Sg__AddRange(arg1,(std::vector< CityFlow::Intersection > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Intersection > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Intersection > *)std_vector_Sl_CityFlow_Intersection_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Intersection *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Intersection *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Intersection const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Intersection_Sg__Insert(arg1,arg2,(CityFlow::Intersection const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Intersection > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Intersection > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Intersection > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Intersection_Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Intersection > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Intersection_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Intersection_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Intersection *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Intersection > *result = 0 ;
+  
+  arg1 = (CityFlow::Intersection *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Intersection const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Intersection > *)std_vector_Sl_CityFlow_Intersection_Sg__Repeat((CityFlow::Intersection const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  std_vector_Sl_CityFlow_Intersection_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Intersection_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_IntersectionVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Intersection > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Intersection > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Intersection > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Intersection_Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Intersection > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_IntersectionVector(void * jarg1) {
+  std::vector< CityFlow::Intersection > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Intersection > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Lane > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Lane > *)new std::vector< CityFlow::Lane >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  std::vector< CityFlow::Lane > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Lane > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Lane > *)new std::vector< CityFlow::Lane >((std::vector< CityFlow::Lane > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  CityFlow::Lane *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (CityFlow::Lane *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Lane const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::Lane const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  std::vector< CityFlow::Lane >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  result = (std::vector< CityFlow::Lane >::size_type)((std::vector< CityFlow::Lane > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Lane > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  std::vector< CityFlow::Lane >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  result = (std::vector< CityFlow::Lane >::size_type)((std::vector< CityFlow::Lane > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  std::vector< CityFlow::Lane >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Lane >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Lane > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Lane > *)new_std_vector_Sl_CityFlow_Lane_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Lane result;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_CityFlow_Lane_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new CityFlow::Lane(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Lane >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Lane >::value_type *) &std_vector_Sl_CityFlow_Lane_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Lane *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Lane *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Lane const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sg__setitem(arg1,arg2,(CityFlow::Lane const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  std::vector< CityFlow::Lane > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Lane > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Lane > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Lane_Sg__AddRange(arg1,(std::vector< CityFlow::Lane > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Lane > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Lane > *)std_vector_Sl_CityFlow_Lane_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Lane *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Lane *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Lane const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sg__Insert(arg1,arg2,(CityFlow::Lane const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Lane > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Lane > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Lane > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Lane > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Lane *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Lane > *result = 0 ;
+  
+  arg1 = (CityFlow::Lane *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Lane const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Lane > *)std_vector_Sl_CityFlow_Lane_Sg__Repeat((CityFlow::Lane const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  std_vector_Sl_CityFlow_Lane_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Lane > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Lane > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Lane > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Lane > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_LaneVector(void * jarg1) {
+  std::vector< CityFlow::Lane > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LanePointerVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Lane * > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Lane * > *)new std::vector< CityFlow::Lane * >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LanePointerVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  std::vector< CityFlow::Lane * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Lane * > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Lane * > *)new std::vector< CityFlow::Lane * >((std::vector< CityFlow::Lane * > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  CityFlow::Lane **arg2 = 0 ;
+  CityFlow::Lane *temp2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  temp2 = (CityFlow::Lane *)jarg2;
+  arg2 = (CityFlow::Lane **)&temp2; 
+  (arg1)->push_back((CityFlow::Lane *const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  std::vector< CityFlow::Lane * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  result = (std::vector< CityFlow::Lane * >::size_type)((std::vector< CityFlow::Lane * > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Lane * > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  std::vector< CityFlow::Lane * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  result = (std::vector< CityFlow::Lane * >::size_type)((std::vector< CityFlow::Lane * > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  std::vector< CityFlow::Lane * >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Lane * >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LanePointerVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Lane * > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Lane * > *)new_std_vector_Sl_CityFlow_Lane_Sm__Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Lane *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (CityFlow::Lane *)std_vector_Sl_CityFlow_Lane_Sm__Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Lane * >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Lane * >::value_type *) &std_vector_Sl_CityFlow_Lane_Sm__Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Lane **arg3 = 0 ;
+  CityFlow::Lane *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Lane *)jarg3;
+  arg3 = (CityFlow::Lane **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sm__Sg__setitem(arg1,arg2,(CityFlow::Lane *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  std::vector< CityFlow::Lane * > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Lane * > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Lane * > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Lane_Sm__Sg__AddRange(arg1,(std::vector< CityFlow::Lane * > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Lane * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Lane * > *)std_vector_Sl_CityFlow_Lane_Sm__Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Lane **arg3 = 0 ;
+  CityFlow::Lane *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Lane *)jarg3;
+  arg3 = (CityFlow::Lane **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sm__Sg__Insert(arg1,arg2,(CityFlow::Lane *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Lane * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Lane * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Lane * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sm__Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Lane * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sm__Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sm__Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Lane **arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Lane *temp1 = 0 ;
+  std::vector< CityFlow::Lane * > *result = 0 ;
+  
+  temp1 = (CityFlow::Lane *)jarg1;
+  arg1 = (CityFlow::Lane **)&temp1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Lane * > *)std_vector_Sl_CityFlow_Lane_Sm__Sg__Repeat((CityFlow::Lane *const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  std_vector_Sl_CityFlow_Lane_Sm__Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sm__Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Lane * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Lane * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Lane * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Lane_Sm__Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Lane * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_Contains(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  CityFlow::Lane **arg2 = 0 ;
+  CityFlow::Lane *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  temp2 = (CityFlow::Lane *)jarg2;
+  arg2 = (CityFlow::Lane **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Lane_Sm__Sg__Contains(arg1,(CityFlow::Lane *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_IndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  CityFlow::Lane **arg2 = 0 ;
+  CityFlow::Lane *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  temp2 = (CityFlow::Lane *)jarg2;
+  arg2 = (CityFlow::Lane **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Lane_Sm__Sg__IndexOf(arg1,(CityFlow::Lane *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_LastIndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  CityFlow::Lane **arg2 = 0 ;
+  CityFlow::Lane *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  temp2 = (CityFlow::Lane *)jarg2;
+  arg2 = (CityFlow::Lane **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Lane_Sm__Sg__LastIndexOf(arg1,(CityFlow::Lane *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LanePointerVector_Remove(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  CityFlow::Lane **arg2 = 0 ;
+  CityFlow::Lane *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  temp2 = (CityFlow::Lane *)jarg2;
+  arg2 = (CityFlow::Lane **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Lane_Sm__Sg__Remove(arg1,(CityFlow::Lane *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_LanePointerVector(void * jarg1) {
+  std::vector< CityFlow::Lane * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Lane * > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneLinkVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink > *result = 0 ;
+  
+  result = (std::vector< CityFlow::LaneLink > *)new std::vector< CityFlow::LaneLink >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneLinkVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LaneLink > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::LaneLink > *)new std::vector< CityFlow::LaneLink >((std::vector< CityFlow::LaneLink > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_Clear(void * jarg1) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  CityFlow::LaneLink *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (CityFlow::LaneLink *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::LaneLink const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::LaneLink const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  result = (std::vector< CityFlow::LaneLink >::size_type)((std::vector< CityFlow::LaneLink > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::LaneLink > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  result = (std::vector< CityFlow::LaneLink >::size_type)((std::vector< CityFlow::LaneLink > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (std::vector< CityFlow::LaneLink >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneLinkVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::LaneLink > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::LaneLink > *)new_std_vector_Sl_CityFlow_LaneLink_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LaneLink result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_CityFlow_LaneLink_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new CityFlow::LaneLink(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LaneLink >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::LaneLink >::value_type *) &std_vector_Sl_CityFlow_LaneLink_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LaneLink *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::LaneLink *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::LaneLink const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sg__setitem(arg1,arg2,(CityFlow::LaneLink const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (std::vector< CityFlow::LaneLink > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LaneLink > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_LaneLink_Sg__AddRange(arg1,(std::vector< CityFlow::LaneLink > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::LaneLink > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::LaneLink > *)std_vector_Sl_CityFlow_LaneLink_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LaneLink *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::LaneLink *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::LaneLink const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sg__Insert(arg1,arg2,(CityFlow::LaneLink const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LaneLink > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::LaneLink > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LaneLink > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::LaneLink > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::LaneLink *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LaneLink > *result = 0 ;
+  
+  arg1 = (CityFlow::LaneLink *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::LaneLink const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::LaneLink > *)std_vector_Sl_CityFlow_LaneLink_Sg__Repeat((CityFlow::LaneLink const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  std_vector_Sl_CityFlow_LaneLink_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LaneLink > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::LaneLink > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LaneLink > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sg__SetRange(arg1,arg2,(std::vector< CityFlow::LaneLink > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_LaneLinkVector(void * jarg1) {
+  std::vector< CityFlow::LaneLink > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneLinkPointerVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink * > *result = 0 ;
+  
+  result = (std::vector< CityFlow::LaneLink * > *)new std::vector< CityFlow::LaneLink * >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneLinkPointerVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LaneLink * > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::LaneLink * > *)new std::vector< CityFlow::LaneLink * >((std::vector< CityFlow::LaneLink * > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_Clear(void * jarg1) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  CityFlow::LaneLink **arg2 = 0 ;
+  CityFlow::LaneLink *temp2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  temp2 = (CityFlow::LaneLink *)jarg2;
+  arg2 = (CityFlow::LaneLink **)&temp2; 
+  (arg1)->push_back((CityFlow::LaneLink *const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  result = (std::vector< CityFlow::LaneLink * >::size_type)((std::vector< CityFlow::LaneLink * > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::LaneLink * > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  result = (std::vector< CityFlow::LaneLink * >::size_type)((std::vector< CityFlow::LaneLink * > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink * >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::LaneLink * >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LaneLinkPointerVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::LaneLink * > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::LaneLink * > *)new_std_vector_Sl_CityFlow_LaneLink_Sm__Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LaneLink *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (CityFlow::LaneLink *)std_vector_Sl_CityFlow_LaneLink_Sm__Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LaneLink * >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::LaneLink * >::value_type *) &std_vector_Sl_CityFlow_LaneLink_Sm__Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LaneLink **arg3 = 0 ;
+  CityFlow::LaneLink *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::LaneLink *)jarg3;
+  arg3 = (CityFlow::LaneLink **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sm__Sg__setitem(arg1,arg2,(CityFlow::LaneLink *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  std::vector< CityFlow::LaneLink * > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::LaneLink * > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LaneLink * > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_LaneLink_Sm__Sg__AddRange(arg1,(std::vector< CityFlow::LaneLink * > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::LaneLink * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::LaneLink * > *)std_vector_Sl_CityFlow_LaneLink_Sm__Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LaneLink **arg3 = 0 ;
+  CityFlow::LaneLink *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::LaneLink *)jarg3;
+  arg3 = (CityFlow::LaneLink **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Insert(arg1,arg2,(CityFlow::LaneLink *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LaneLink * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::LaneLink * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LaneLink * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sm__Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::LaneLink * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sm__Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sm__Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::LaneLink **arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LaneLink *temp1 = 0 ;
+  std::vector< CityFlow::LaneLink * > *result = 0 ;
+  
+  temp1 = (CityFlow::LaneLink *)jarg1;
+  arg1 = (CityFlow::LaneLink **)&temp1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::LaneLink * > *)std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Repeat((CityFlow::LaneLink *const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LaneLink * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::LaneLink * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LaneLink * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LaneLink_Sm__Sg__SetRange(arg1,arg2,(std::vector< CityFlow::LaneLink * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_Contains(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  CityFlow::LaneLink **arg2 = 0 ;
+  CityFlow::LaneLink *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  temp2 = (CityFlow::LaneLink *)jarg2;
+  arg2 = (CityFlow::LaneLink **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Contains(arg1,(CityFlow::LaneLink *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_IndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  CityFlow::LaneLink **arg2 = 0 ;
+  CityFlow::LaneLink *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  temp2 = (CityFlow::LaneLink *)jarg2;
+  arg2 = (CityFlow::LaneLink **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_LaneLink_Sm__Sg__IndexOf(arg1,(CityFlow::LaneLink *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_LastIndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  CityFlow::LaneLink **arg2 = 0 ;
+  CityFlow::LaneLink *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  temp2 = (CityFlow::LaneLink *)jarg2;
+  arg2 = (CityFlow::LaneLink **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_LaneLink_Sm__Sg__LastIndexOf(arg1,(CityFlow::LaneLink *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LaneLinkPointerVector_Remove(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  CityFlow::LaneLink **arg2 = 0 ;
+  CityFlow::LaneLink *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  temp2 = (CityFlow::LaneLink *)jarg2;
+  arg2 = (CityFlow::LaneLink **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_LaneLink_Sm__Sg__Remove(arg1,(CityFlow::LaneLink *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_LaneLinkPointerVector(void * jarg1) {
+  std::vector< CityFlow::LaneLink * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LaneLink * > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LightPhaseVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::LightPhase > *result = 0 ;
+  
+  result = (std::vector< CityFlow::LightPhase > *)new std::vector< CityFlow::LightPhase >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LightPhaseVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  std::vector< CityFlow::LightPhase > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LightPhase > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::LightPhase > *)new std::vector< CityFlow::LightPhase >((std::vector< CityFlow::LightPhase > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_Clear(void * jarg1) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  CityFlow::LightPhase *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (CityFlow::LightPhase *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::LightPhase const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::LightPhase const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  std::vector< CityFlow::LightPhase >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  result = (std::vector< CityFlow::LightPhase >::size_type)((std::vector< CityFlow::LightPhase > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::LightPhase > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  std::vector< CityFlow::LightPhase >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  result = (std::vector< CityFlow::LightPhase >::size_type)((std::vector< CityFlow::LightPhase > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  std::vector< CityFlow::LightPhase >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (std::vector< CityFlow::LightPhase >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_LightPhaseVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::LightPhase > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::LightPhase > *)new_std_vector_Sl_CityFlow_LightPhase_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LightPhase result;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_CityFlow_LightPhase_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new CityFlow::LightPhase(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LightPhase >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::LightPhase >::value_type *) &std_vector_Sl_CityFlow_LightPhase_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LightPhase *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::LightPhase *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::LightPhase const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LightPhase_Sg__setitem(arg1,arg2,(CityFlow::LightPhase const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  std::vector< CityFlow::LightPhase > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (std::vector< CityFlow::LightPhase > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LightPhase > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_LightPhase_Sg__AddRange(arg1,(std::vector< CityFlow::LightPhase > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::LightPhase > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::LightPhase > *)std_vector_Sl_CityFlow_LightPhase_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::LightPhase *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::LightPhase *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::LightPhase const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LightPhase_Sg__Insert(arg1,arg2,(CityFlow::LightPhase const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LightPhase > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::LightPhase > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LightPhase > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LightPhase_Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::LightPhase > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_LightPhase_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_LightPhase_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::LightPhase *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LightPhase > *result = 0 ;
+  
+  arg1 = (CityFlow::LightPhase *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::LightPhase const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::LightPhase > *)std_vector_Sl_CityFlow_LightPhase_Sg__Repeat((CityFlow::LightPhase const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  std_vector_Sl_CityFlow_LightPhase_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_LightPhase_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_LightPhaseVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::LightPhase > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::LightPhase > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::LightPhase > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_LightPhase_Sg__SetRange(arg1,arg2,(std::vector< CityFlow::LightPhase > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_LightPhaseVector(void * jarg1) {
+  std::vector< CityFlow::LightPhase > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::LightPhase > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Road > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Road > *)new std::vector< CityFlow::Road >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  std::vector< CityFlow::Road > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Road > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Road > *)new std::vector< CityFlow::Road >((std::vector< CityFlow::Road > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  CityFlow::Road *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (CityFlow::Road *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Road const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::Road const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  std::vector< CityFlow::Road >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  result = (std::vector< CityFlow::Road >::size_type)((std::vector< CityFlow::Road > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Road > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  std::vector< CityFlow::Road >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  result = (std::vector< CityFlow::Road >::size_type)((std::vector< CityFlow::Road > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  std::vector< CityFlow::Road >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Road >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Road > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Road > *)new_std_vector_Sl_CityFlow_Road_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Road result;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_CityFlow_Road_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new CityFlow::Road(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Road >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Road >::value_type *) &std_vector_Sl_CityFlow_Road_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Road *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Road *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Road const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Road_Sg__setitem(arg1,arg2,(CityFlow::Road const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  std::vector< CityFlow::Road > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Road > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Road > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Road_Sg__AddRange(arg1,(std::vector< CityFlow::Road > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Road > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Road > *)std_vector_Sl_CityFlow_Road_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Road *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Road *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Road const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Road_Sg__Insert(arg1,arg2,(CityFlow::Road const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Road > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Road > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Road > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Road_Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Road > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Road_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Road_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Road *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Road > *result = 0 ;
+  
+  arg1 = (CityFlow::Road *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Road const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Road > *)std_vector_Sl_CityFlow_Road_Sg__Repeat((CityFlow::Road const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  std_vector_Sl_CityFlow_Road_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Road_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Road > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Road > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Road > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Road_Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Road > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_RoadVector(void * jarg1) {
+  std::vector< CityFlow::Road > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadPointerVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Road * > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Road * > *)new std::vector< CityFlow::Road * >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadPointerVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  std::vector< CityFlow::Road * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Road * > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Road * > *)new std::vector< CityFlow::Road * >((std::vector< CityFlow::Road * > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  CityFlow::Road **arg2 = 0 ;
+  CityFlow::Road *temp2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  temp2 = (CityFlow::Road *)jarg2;
+  arg2 = (CityFlow::Road **)&temp2; 
+  (arg1)->push_back((CityFlow::Road *const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  std::vector< CityFlow::Road * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  result = (std::vector< CityFlow::Road * >::size_type)((std::vector< CityFlow::Road * > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Road * > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  std::vector< CityFlow::Road * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  result = (std::vector< CityFlow::Road * >::size_type)((std::vector< CityFlow::Road * > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  std::vector< CityFlow::Road * >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Road * >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadPointerVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Road * > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Road * > *)new_std_vector_Sl_CityFlow_Road_Sm__Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Road *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (CityFlow::Road *)std_vector_Sl_CityFlow_Road_Sm__Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Road * >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Road * >::value_type *) &std_vector_Sl_CityFlow_Road_Sm__Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Road **arg3 = 0 ;
+  CityFlow::Road *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Road *)jarg3;
+  arg3 = (CityFlow::Road **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Road_Sm__Sg__setitem(arg1,arg2,(CityFlow::Road *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  std::vector< CityFlow::Road * > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Road * > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Road * > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Road_Sm__Sg__AddRange(arg1,(std::vector< CityFlow::Road * > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Road * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Road * > *)std_vector_Sl_CityFlow_Road_Sm__Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Road **arg3 = 0 ;
+  CityFlow::Road *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Road *)jarg3;
+  arg3 = (CityFlow::Road **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Road_Sm__Sg__Insert(arg1,arg2,(CityFlow::Road *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Road * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Road * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Road * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Road_Sm__Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Road * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Road_Sm__Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Road_Sm__Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Road **arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Road *temp1 = 0 ;
+  std::vector< CityFlow::Road * > *result = 0 ;
+  
+  temp1 = (CityFlow::Road *)jarg1;
+  arg1 = (CityFlow::Road **)&temp1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Road * > *)std_vector_Sl_CityFlow_Road_Sm__Sg__Repeat((CityFlow::Road *const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  std_vector_Sl_CityFlow_Road_Sm__Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Road_Sm__Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Road * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Road * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Road * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Road_Sm__Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Road * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_Contains(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  CityFlow::Road **arg2 = 0 ;
+  CityFlow::Road *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  temp2 = (CityFlow::Road *)jarg2;
+  arg2 = (CityFlow::Road **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Road_Sm__Sg__Contains(arg1,(CityFlow::Road *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_IndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  CityFlow::Road **arg2 = 0 ;
+  CityFlow::Road *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  temp2 = (CityFlow::Road *)jarg2;
+  arg2 = (CityFlow::Road **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Road_Sm__Sg__IndexOf(arg1,(CityFlow::Road *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_LastIndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  CityFlow::Road **arg2 = 0 ;
+  CityFlow::Road *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  temp2 = (CityFlow::Road *)jarg2;
+  arg2 = (CityFlow::Road **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Road_Sm__Sg__LastIndexOf(arg1,(CityFlow::Road *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadPointerVector_Remove(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  CityFlow::Road **arg2 = 0 ;
+  CityFlow::Road *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  temp2 = (CityFlow::Road *)jarg2;
+  arg2 = (CityFlow::Road **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Road_Sm__Sg__Remove(arg1,(CityFlow::Road *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_RoadPointerVector(void * jarg1) {
+  std::vector< CityFlow::Road * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Road * > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_SegmentVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Segment > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Segment > *)new std::vector< CityFlow::Segment >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_SegmentVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  std::vector< CityFlow::Segment > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Segment > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Segment > *)new std::vector< CityFlow::Segment >((std::vector< CityFlow::Segment > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  CityFlow::Segment *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (CityFlow::Segment *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Segment const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((CityFlow::Segment const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  std::vector< CityFlow::Segment >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  result = (std::vector< CityFlow::Segment >::size_type)((std::vector< CityFlow::Segment > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Segment > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  std::vector< CityFlow::Segment >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  result = (std::vector< CityFlow::Segment >::size_type)((std::vector< CityFlow::Segment > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  std::vector< CityFlow::Segment >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Segment >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_SegmentVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Segment > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Segment > *)new_std_vector_Sl_CityFlow_Segment_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Segment result;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_CityFlow_Segment_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new CityFlow::Segment(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Segment >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Segment >::value_type *) &std_vector_Sl_CityFlow_Segment_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Segment *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Segment *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Segment const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Segment_Sg__setitem(arg1,arg2,(CityFlow::Segment const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  std::vector< CityFlow::Segment > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Segment > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Segment > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Segment_Sg__AddRange(arg1,(std::vector< CityFlow::Segment > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Segment > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Segment > *)std_vector_Sl_CityFlow_Segment_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Segment *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CityFlow::Segment *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Segment const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Segment_Sg__Insert(arg1,arg2,(CityFlow::Segment const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Segment > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Segment > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Segment > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Segment_Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Segment > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Segment_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Segment_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Segment *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Segment > *result = 0 ;
+  
+  arg1 = (CityFlow::Segment *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CityFlow::Segment const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Segment > *)std_vector_Sl_CityFlow_Segment_Sg__Repeat((CityFlow::Segment const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  std_vector_Sl_CityFlow_Segment_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Segment_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_SegmentVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Segment > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Segment > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Segment > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Segment_Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Segment > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_SegmentVector(void * jarg1) {
+  std::vector< CityFlow::Segment > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Segment > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleVector__SWIG_0() {
+  void * jresult ;
+  std::vector< CityFlow::Vehicle * > *result = 0 ;
+  
+  result = (std::vector< CityFlow::Vehicle * > *)new std::vector< CityFlow::Vehicle * >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::vector< CityFlow::Vehicle * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Vehicle * > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< CityFlow::Vehicle * > *)new std::vector< CityFlow::Vehicle * >((std::vector< CityFlow::Vehicle * > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_Clear(void * jarg1) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_Add(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  (arg1)->push_back((CityFlow::Vehicle *const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::vector< CityFlow::Vehicle * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  result = (std::vector< CityFlow::Vehicle * >::size_type)((std::vector< CityFlow::Vehicle * > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  result = (bool)((std::vector< CityFlow::Vehicle * > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::vector< CityFlow::Vehicle * >::size_type result;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  result = (std::vector< CityFlow::Vehicle * >::size_type)((std::vector< CityFlow::Vehicle * > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::vector< CityFlow::Vehicle * >::size_type arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Vehicle * >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_VehicleVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< CityFlow::Vehicle * > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< CityFlow::Vehicle * > *)new_std_vector_Sl_CityFlow_Vehicle_Sm__Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Vehicle *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (CityFlow::Vehicle *)std_vector_Sl_CityFlow_Vehicle_Sm__Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Vehicle * >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Vehicle * >::value_type *) &std_vector_Sl_CityFlow_Vehicle_Sm__Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Vehicle **arg3 = 0 ;
+  CityFlow::Vehicle *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Vehicle *)jarg3;
+  arg3 = (CityFlow::Vehicle **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Vehicle_Sm__Sg__setitem(arg1,arg2,(CityFlow::Vehicle *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  std::vector< CityFlow::Vehicle * > *arg2 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (std::vector< CityFlow::Vehicle * > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Vehicle * > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_CityFlow_Vehicle_Sm__Sg__AddRange(arg1,(std::vector< CityFlow::Vehicle * > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< CityFlow::Vehicle * > *result = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< CityFlow::Vehicle * > *)std_vector_Sl_CityFlow_Vehicle_Sm__Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Vehicle **arg3 = 0 ;
+  CityFlow::Vehicle *temp3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (CityFlow::Vehicle *)jarg3;
+  arg3 = (CityFlow::Vehicle **)&temp3; 
+  try {
+    std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Insert(arg1,arg2,(CityFlow::Vehicle *const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Vehicle * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Vehicle * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Vehicle * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Vehicle_Sm__Sg__InsertRange(arg1,arg2,(std::vector< CityFlow::Vehicle * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_CityFlow_Vehicle_Sm__Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Vehicle_Sm__Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  CityFlow::Vehicle **arg1 = 0 ;
+  int arg2 ;
+  CityFlow::Vehicle *temp1 = 0 ;
+  std::vector< CityFlow::Vehicle * > *result = 0 ;
+  
+  temp1 = (CityFlow::Vehicle *)jarg1;
+  arg1 = (CityFlow::Vehicle **)&temp1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< CityFlow::Vehicle * > *)std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Repeat((CityFlow::Vehicle *const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< CityFlow::Vehicle * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< CityFlow::Vehicle * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< CityFlow::Vehicle * > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_CityFlow_Vehicle_Sm__Sg__SetRange(arg1,arg2,(std::vector< CityFlow::Vehicle * > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_Contains(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Contains(arg1,(CityFlow::Vehicle *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_IndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Vehicle_Sm__Sg__IndexOf(arg1,(CityFlow::Vehicle *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_LastIndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  result = (int)std_vector_Sl_CityFlow_Vehicle_Sm__Sg__LastIndexOf(arg1,(CityFlow::Vehicle *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_VehicleVector_Remove(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  CityFlow::Vehicle **arg2 = 0 ;
+  CityFlow::Vehicle *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  temp2 = (CityFlow::Vehicle *)jarg2;
+  arg2 = (CityFlow::Vehicle **)&temp2; 
+  result = (bool)std_vector_Sl_CityFlow_Vehicle_Sm__Sg__Remove(arg1,(CityFlow::Vehicle *const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_VehicleVector(void * jarg1) {
+  std::vector< CityFlow::Vehicle * > *arg1 = 0 ;
+  
+  arg1 = (std::vector< CityFlow::Vehicle * > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_PointVector__SWIG_0() {
+  void * jresult ;
+  std::vector< Point > *result = 0 ;
+  
+  result = (std::vector< Point > *)new std::vector< Point >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_PointVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< Point > *arg1 = 0 ;
+  std::vector< Point > *result = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Point > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< Point > *)new std::vector< Point >((std::vector< Point > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_Clear(void * jarg1) {
+  std::vector< Point > *arg1 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_Add(void * jarg1, void * jarg2) {
+  std::vector< Point > *arg1 = 0 ;
+  Point *arg2 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (Point *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((Point const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_PointVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Point > *arg1 = 0 ;
+  std::vector< Point >::size_type result;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  result = (std::vector< Point >::size_type)((std::vector< Point > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_PointVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Point > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  result = (bool)((std::vector< Point > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_PointVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Point > *arg1 = 0 ;
+  std::vector< Point >::size_type result;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  result = (std::vector< Point >::size_type)((std::vector< Point > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< Point > *arg1 = 0 ;
+  std::vector< Point >::size_type arg2 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (std::vector< Point >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_PointVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< Point > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< Point > *)new_std_vector_Sl_Point_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_PointVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  Point result;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_Point_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new Point(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_PointVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< Point >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< Point >::value_type *) &std_vector_Sl_Point_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  Point *arg3 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Point *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_Point_Sg__setitem(arg1,arg2,(Point const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< Point > *arg1 = 0 ;
+  std::vector< Point > *arg2 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (std::vector< Point > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Point > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_Point_Sg__AddRange(arg1,(std::vector< Point > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_PointVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< Point > *result = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< Point > *)std_vector_Sl_Point_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  Point *arg3 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Point *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_Point_Sg__Insert(arg1,arg2,(Point const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< Point > *arg3 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Point > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Point > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_Point_Sg__InsertRange(arg1,arg2,(std::vector< Point > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_Point_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_Point_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_PointVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  Point *arg1 = 0 ;
+  int arg2 ;
+  std::vector< Point > *result = 0 ;
+  
+  arg1 = (Point *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< Point > *)std_vector_Sl_Point_Sg__Repeat((Point const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< Point > *arg1 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  std_vector_Sl_Point_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_Point_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_PointVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Point > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< Point > *arg3 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Point > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Point > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_Point_Sg__SetRange(arg1,arg2,(std::vector< Point > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_PointVector(void * jarg1) {
+  std::vector< Point > *arg1 = 0 ;
+  
+  arg1 = (std::vector< Point > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadLinkVector__SWIG_0() {
+  void * jresult ;
+  std::vector< RoadLink > *result = 0 ;
+  
+  result = (std::vector< RoadLink > *)new std::vector< RoadLink >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadLinkVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< RoadLink > *arg1 = 0 ;
+  std::vector< RoadLink > *result = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< RoadLink > const & is null", 0);
+    return 0;
+  } 
+  result = (std::vector< RoadLink > *)new std::vector< RoadLink >((std::vector< RoadLink > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_Clear(void * jarg1) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_Add(void * jarg1, void * jarg2) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  RoadLink *arg2 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (RoadLink *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "RoadLink const & is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((RoadLink const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< RoadLink > *arg1 = 0 ;
+  std::vector< RoadLink >::size_type result;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  result = (std::vector< RoadLink >::size_type)((std::vector< RoadLink > const *)arg1)->size();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< RoadLink > *arg1 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  result = (bool)((std::vector< RoadLink > const *)arg1)->empty();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< RoadLink > *arg1 = 0 ;
+  std::vector< RoadLink >::size_type result;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  result = (std::vector< RoadLink >::size_type)((std::vector< RoadLink > const *)arg1)->capacity();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  std::vector< RoadLink >::size_type arg2 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (std::vector< RoadLink >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_new_RoadLinkVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< RoadLink > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< RoadLink > *)new_std_vector_Sl_RoadLink_Sg___SWIG_2(arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  RoadLink result;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_RoadLink_Sg__getitemcopy(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = new RoadLink(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< RoadLink >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< RoadLink >::value_type *) &std_vector_Sl_RoadLink_Sg__getitem(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  RoadLink *arg3 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (RoadLink *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "RoadLink const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_RoadLink_Sg__setitem(arg1,arg2,(RoadLink const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  std::vector< RoadLink > *arg2 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (std::vector< RoadLink > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< RoadLink > const & is null", 0);
+    return ;
+  } 
+  std_vector_Sl_RoadLink_Sg__AddRange(arg1,(std::vector< RoadLink > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< RoadLink > *result = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< RoadLink > *)std_vector_Sl_RoadLink_Sg__GetRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  RoadLink *arg3 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (RoadLink *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "RoadLink const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_RoadLink_Sg__Insert(arg1,arg2,(RoadLink const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< RoadLink > *arg3 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< RoadLink > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< RoadLink > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_RoadLink_Sg__InsertRange(arg1,arg2,(std::vector< RoadLink > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_RoadLink_Sg__RemoveAt(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_RoadLink_Sg__RemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  RoadLink *arg1 = 0 ;
+  int arg2 ;
+  std::vector< RoadLink > *result = 0 ;
+  
+  arg1 = (RoadLink *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "RoadLink const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< RoadLink > *)std_vector_Sl_RoadLink_Sg__Repeat((RoadLink const &)*arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  std_vector_Sl_RoadLink_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_RoadLink_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  } catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_RoadLinkVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  int arg2 ;
+  std::vector< RoadLink > *arg3 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< RoadLink > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< RoadLink > const & is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_RoadLink_Sg__SetRange(arg1,arg2,(std::vector< RoadLink > const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CityFlowCore_delete_RoadLinkVector(void * jarg1) {
+  std::vector< RoadLink > *arg1 = 0 ;
+  
+  arg1 = (std::vector< RoadLink > *)jarg1; 
   delete arg1;
 }
 

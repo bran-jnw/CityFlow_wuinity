@@ -50,14 +50,14 @@ public class LightPhase : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_LightPhase(swigCPtr);
+          CityFlowPINVOKE.delete_LightPhase(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public LightPhase() : this(CityEnginePINVOKE.new_LightPhase(), true) {
+  public LightPhase() : this(CityFlowPINVOKE.new_LightPhase(), true) {
   }
 
 }

@@ -50,7 +50,7 @@ public class DictionaryEntry : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_DictionaryEntry(swigCPtr);
+          CityFlowPINVOKE.delete_DictionaryEntry(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -59,27 +59,27 @@ public class DictionaryEntry : global::System.IDisposable {
 
   public uint pos {
     set {
-      CityEnginePINVOKE.DictionaryEntry_pos_set(swigCPtr, value);
+      CityFlowPINVOKE.DictionaryEntry_pos_set(swigCPtr, value);
     } 
     get {
-      uint ret = CityEnginePINVOKE.DictionaryEntry_pos_get(swigCPtr);
+      uint ret = CityFlowPINVOKE.DictionaryEntry_pos_get(swigCPtr);
       return ret;
     } 
   }
 
-  public SWIGTYPE_p_std__string name {
+  public string name {
     set {
-      CityEnginePINVOKE.DictionaryEntry_name_set(swigCPtr, SWIGTYPE_p_std__string.getCPtr(value));
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      CityFlowPINVOKE.DictionaryEntry_name_set(swigCPtr, value);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.DictionaryEntry_name_get(swigCPtr), true);
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      string ret = CityFlowPINVOKE.DictionaryEntry_name_get(swigCPtr);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
-  public DictionaryEntry() : this(CityEnginePINVOKE.new_DictionaryEntry(), true) {
+  public DictionaryEntry() : this(CityFlowPINVOKE.new_DictionaryEntry(), true) {
   }
 
 }

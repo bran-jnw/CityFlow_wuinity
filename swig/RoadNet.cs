@@ -50,76 +50,76 @@ public class RoadNet : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_RoadNet(swigCPtr);
+          CityFlowPINVOKE.delete_RoadNet(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public bool loadFromJson(SWIGTYPE_p_std__string jsonFileName) {
-    bool ret = CityEnginePINVOKE.RoadNet_loadFromJson(swigCPtr, SWIGTYPE_p_std__string.getCPtr(jsonFileName));
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public bool loadFromJson(string jsonFileName) {
+    bool ret = CityFlowPINVOKE.RoadNet_loadFromJson(swigCPtr, jsonFileName);
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public SWIGTYPE_p_rapidjson__Value convertToJson(SWIGTYPE_p_rapidjson__Document__AllocatorType allocator) {
-    SWIGTYPE_p_rapidjson__Value ret = new SWIGTYPE_p_rapidjson__Value(CityEnginePINVOKE.RoadNet_convertToJson(swigCPtr, SWIGTYPE_p_rapidjson__Document__AllocatorType.getCPtr(allocator)), true);
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+    SWIGTYPE_p_rapidjson__Value ret = new SWIGTYPE_p_rapidjson__Value(CityFlowPINVOKE.RoadNet_convertToJson(swigCPtr, SWIGTYPE_p_rapidjson__Document__AllocatorType.getCPtr(allocator)), true);
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Road_t getRoads() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Road_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Road_t(CityEnginePINVOKE.RoadNet_getRoads__SWIG_0(swigCPtr), false);
+  public RoadVector getRoads() {
+    RoadVector ret = new RoadVector(CityFlowPINVOKE.RoadNet_getRoads__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Intersection_t getIntersections() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Intersection_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Intersection_t(CityEnginePINVOKE.RoadNet_getIntersections__SWIG_0(swigCPtr), false);
+  public IntersectionVector getIntersections() {
+    IntersectionVector ret = new IntersectionVector(CityFlowPINVOKE.RoadNet_getIntersections__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public Road getRoadById(SWIGTYPE_p_std__string id) {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.RoadNet_getRoadById(swigCPtr, SWIGTYPE_p_std__string.getCPtr(id));
+  public Road getRoadById(string id) {
+    global::System.IntPtr cPtr = CityFlowPINVOKE.RoadNet_getRoadById(swigCPtr, id);
     Road ret = (cPtr == global::System.IntPtr.Zero) ? null : new Road(cPtr, false);
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
-  public Intersection getIntersectionById(SWIGTYPE_p_std__string id) {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.RoadNet_getIntersectionById(swigCPtr, SWIGTYPE_p_std__string.getCPtr(id));
+  public Intersection getIntersectionById(string id) {
+    global::System.IntPtr cPtr = CityFlowPINVOKE.RoadNet_getIntersectionById(swigCPtr, id);
     Intersection ret = (cPtr == global::System.IntPtr.Zero) ? null : new Intersection(cPtr, false);
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
-  public Drivable getDrivableById(SWIGTYPE_p_std__string id) {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.RoadNet_getDrivableById(swigCPtr, SWIGTYPE_p_std__string.getCPtr(id));
+  public Drivable getDrivableById(string id) {
+    global::System.IntPtr cPtr = CityFlowPINVOKE.RoadNet_getDrivableById(swigCPtr, id);
     Drivable ret = (cPtr == global::System.IntPtr.Zero) ? null : new Drivable(cPtr, false);
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Lane_p_t getLanes() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Lane_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Lane_p_t(CityEnginePINVOKE.RoadNet_getLanes(swigCPtr), false);
+  public LanePointerVector getLanes() {
+    LanePointerVector ret = new LanePointerVector(CityFlowPINVOKE.RoadNet_getLanes(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t getLaneLinks() {
-    SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__LaneLink_p_t(CityEnginePINVOKE.RoadNet_getLaneLinks(swigCPtr), false);
+  public LaneLinkPointerVector getLaneLinks() {
+    LaneLinkPointerVector ret = new LaneLinkPointerVector(CityFlowPINVOKE.RoadNet_getLaneLinks(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Drivable_p_t getDrivables() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Drivable_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Drivable_p_t(CityEnginePINVOKE.RoadNet_getDrivables(swigCPtr), false);
+  public DrivablePointerVector getDrivables() {
+    DrivablePointerVector ret = new DrivablePointerVector(CityFlowPINVOKE.RoadNet_getDrivables(swigCPtr), false);
     return ret;
   }
 
   public void reset() {
-    CityEnginePINVOKE.RoadNet_reset(swigCPtr);
+    CityFlowPINVOKE.RoadNet_reset(swigCPtr);
   }
 
-  public RoadNet() : this(CityEnginePINVOKE.new_RoadNet(), true) {
+  public RoadNet() : this(CityFlowPINVOKE.new_RoadNet(), true) {
   }
 
 }

@@ -10,20 +10,20 @@
 
 namespace CityFlowCore {
 
-public class JsonFormatError : global::System.IDisposable {
+public class PointPointPair : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   protected bool swigCMemOwn;
 
-  internal JsonFormatError(global::System.IntPtr cPtr, bool cMemoryOwn) {
+  internal PointPointPair(global::System.IntPtr cPtr, bool cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(JsonFormatError obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(PointPointPair obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef swigRelease(JsonFormatError obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef swigRelease(PointPointPair obj) {
     if (obj != null) {
       if (!obj.swigCMemOwn)
         throw new global::System.ApplicationException("Cannot release ownership as memory is not owned");
@@ -36,7 +36,7 @@ public class JsonFormatError : global::System.IDisposable {
     }
   }
 
-  ~JsonFormatError() {
+  ~PointPointPair() {
     Dispose(false);
   }
 
@@ -50,15 +50,44 @@ public class JsonFormatError : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityFlowPINVOKE.delete_JsonFormatError(swigCPtr);
+          CityFlowPINVOKE.delete_PointPointPair(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public JsonFormatError(string info) : this(CityFlowPINVOKE.new_JsonFormatError(info), true) {
+  public PointPointPair() : this(CityFlowPINVOKE.new_PointPointPair__SWIG_0(), true) {
+  }
+
+  public PointPointPair(Point first, Point second) : this(CityFlowPINVOKE.new_PointPointPair__SWIG_1(Point.getCPtr(first), Point.getCPtr(second)), true) {
     if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
+  }
+
+  public PointPointPair(PointPointPair other) : this(CityFlowPINVOKE.new_PointPointPair__SWIG_2(PointPointPair.getCPtr(other)), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
+  }
+
+  public Point first {
+    set {
+      CityFlowPINVOKE.PointPointPair_first_set(swigCPtr, Point.getCPtr(value));
+    } 
+    get {
+      global::System.IntPtr cPtr = CityFlowPINVOKE.PointPointPair_first_get(swigCPtr);
+      Point ret = (cPtr == global::System.IntPtr.Zero) ? null : new Point(cPtr, false);
+      return ret;
+    } 
+  }
+
+  public Point second {
+    set {
+      CityFlowPINVOKE.PointPointPair_second_set(swigCPtr, Point.getCPtr(value));
+    } 
+    get {
+      global::System.IntPtr cPtr = CityFlowPINVOKE.PointPointPair_second_get(swigCPtr);
+      Point ret = (cPtr == global::System.IntPtr.Zero) ? null : new Point(cPtr, false);
+      return ret;
+    } 
   }
 
 }

@@ -13,7 +13,7 @@ namespace CityFlowCore {
 public class SimpleLaneChange : LaneChange {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
-  internal SimpleLaneChange(global::System.IntPtr cPtr, bool cMemoryOwn) : base(CityEnginePINVOKE.SimpleLaneChange_SWIGUpcast(cPtr), cMemoryOwn) {
+  internal SimpleLaneChange(global::System.IntPtr cPtr, bool cMemoryOwn) : base(CityFlowPINVOKE.SimpleLaneChange_SWIGUpcast(cPtr), cMemoryOwn) {
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
@@ -39,7 +39,7 @@ public class SimpleLaneChange : LaneChange {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_SimpleLaneChange(swigCPtr);
+          CityFlowPINVOKE.delete_SimpleLaneChange(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -47,33 +47,33 @@ public class SimpleLaneChange : LaneChange {
     }
   }
 
-  public SimpleLaneChange(Vehicle vehicle) : this(CityEnginePINVOKE.new_SimpleLaneChange__SWIG_0(Vehicle.getCPtr(vehicle)), true) {
+  public SimpleLaneChange(Vehicle vehicle) : this(CityFlowPINVOKE.new_SimpleLaneChange__SWIG_0(Vehicle.getCPtr(vehicle)), true) {
   }
 
-  public SimpleLaneChange(Vehicle vehicle, LaneChange other) : this(CityEnginePINVOKE.new_SimpleLaneChange__SWIG_1(Vehicle.getCPtr(vehicle), LaneChange.getCPtr(other)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public SimpleLaneChange(Vehicle vehicle, LaneChange other) : this(CityFlowPINVOKE.new_SimpleLaneChange__SWIG_1(Vehicle.getCPtr(vehicle), LaneChange.getCPtr(other)), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
   public override void makeSignal(double interval) {
-    CityEnginePINVOKE.SimpleLaneChange_makeSignal(swigCPtr, interval);
+    CityFlowPINVOKE.SimpleLaneChange_makeSignal(swigCPtr, interval);
   }
 
   public override void sendSignal() {
-    CityEnginePINVOKE.SimpleLaneChange_sendSignal(swigCPtr);
+    CityFlowPINVOKE.SimpleLaneChange_sendSignal(swigCPtr);
   }
 
   public override double yieldSpeed(double interval) {
-    double ret = CityEnginePINVOKE.SimpleLaneChange_yieldSpeed(swigCPtr, interval);
+    double ret = CityFlowPINVOKE.SimpleLaneChange_yieldSpeed(swigCPtr, interval);
     return ret;
   }
 
   public override double safeGapBefore() {
-    double ret = CityEnginePINVOKE.SimpleLaneChange_safeGapBefore(swigCPtr);
+    double ret = CityFlowPINVOKE.SimpleLaneChange_safeGapBefore(swigCPtr);
     return ret;
   }
 
   public override double safeGapAfter() {
-    double ret = CityEnginePINVOKE.SimpleLaneChange_safeGapAfter(swigCPtr);
+    double ret = CityFlowPINVOKE.SimpleLaneChange_safeGapAfter(swigCPtr);
     return ret;
   }
 

@@ -50,7 +50,7 @@ public class ControlInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_ControlInfo(swigCPtr);
+          CityFlowPINVOKE.delete_ControlInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -59,30 +59,30 @@ public class ControlInfo : global::System.IDisposable {
 
   public double speed {
     set {
-      CityEnginePINVOKE.ControlInfo_speed_set(swigCPtr, value);
+      CityFlowPINVOKE.ControlInfo_speed_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.ControlInfo_speed_get(swigCPtr);
+      double ret = CityFlowPINVOKE.ControlInfo_speed_get(swigCPtr);
       return ret;
     } 
   }
 
   public double changingSpeed {
     set {
-      CityEnginePINVOKE.ControlInfo_changingSpeed_set(swigCPtr, value);
+      CityFlowPINVOKE.ControlInfo_changingSpeed_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.ControlInfo_changingSpeed_get(swigCPtr);
+      double ret = CityFlowPINVOKE.ControlInfo_changingSpeed_get(swigCPtr);
       return ret;
     } 
   }
 
   public Lane nextLane {
     set {
-      CityEnginePINVOKE.ControlInfo_nextLane_set(swigCPtr, Lane.getCPtr(value));
+      CityFlowPINVOKE.ControlInfo_nextLane_set(swigCPtr, Lane.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = CityEnginePINVOKE.ControlInfo_nextLane_get(swigCPtr);
+      global::System.IntPtr cPtr = CityFlowPINVOKE.ControlInfo_nextLane_get(swigCPtr);
       Lane ret = (cPtr == global::System.IntPtr.Zero) ? null : new Lane(cPtr, false);
       return ret;
     } 
@@ -90,25 +90,25 @@ public class ControlInfo : global::System.IDisposable {
 
   public bool waitingForChangingLane {
     set {
-      CityEnginePINVOKE.ControlInfo_waitingForChangingLane_set(swigCPtr, value);
+      CityFlowPINVOKE.ControlInfo_waitingForChangingLane_set(swigCPtr, value);
     } 
     get {
-      bool ret = CityEnginePINVOKE.ControlInfo_waitingForChangingLane_get(swigCPtr);
+      bool ret = CityFlowPINVOKE.ControlInfo_waitingForChangingLane_get(swigCPtr);
       return ret;
     } 
   }
 
   public bool collision {
     set {
-      CityEnginePINVOKE.ControlInfo_collision_set(swigCPtr, value);
+      CityFlowPINVOKE.ControlInfo_collision_set(swigCPtr, value);
     } 
     get {
-      bool ret = CityEnginePINVOKE.ControlInfo_collision_get(swigCPtr);
+      bool ret = CityFlowPINVOKE.ControlInfo_collision_get(swigCPtr);
       return ret;
     } 
   }
 
-  public ControlInfo() : this(CityEnginePINVOKE.new_ControlInfo(), true) {
+  public ControlInfo() : this(CityFlowPINVOKE.new_ControlInfo(), true) {
   }
 
 }

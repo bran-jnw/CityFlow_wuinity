@@ -13,7 +13,7 @@ namespace CityFlowCore {
 public class JsonMemberMiss : JsonFormatError {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
-  internal JsonMemberMiss(global::System.IntPtr cPtr, bool cMemoryOwn) : base(CityEnginePINVOKE.JsonMemberMiss_SWIGUpcast(cPtr), cMemoryOwn) {
+  internal JsonMemberMiss(global::System.IntPtr cPtr, bool cMemoryOwn) : base(CityFlowPINVOKE.JsonMemberMiss_SWIGUpcast(cPtr), cMemoryOwn) {
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
@@ -39,7 +39,7 @@ public class JsonMemberMiss : JsonFormatError {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_JsonMemberMiss(swigCPtr);
+          CityFlowPINVOKE.delete_JsonMemberMiss(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -47,8 +47,8 @@ public class JsonMemberMiss : JsonFormatError {
     }
   }
 
-  public JsonMemberMiss(SWIGTYPE_p_std__string name) : this(CityEnginePINVOKE.new_JsonMemberMiss(SWIGTYPE_p_std__string.getCPtr(name)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public JsonMemberMiss(string name) : this(CityFlowPINVOKE.new_JsonMemberMiss(name), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
 }

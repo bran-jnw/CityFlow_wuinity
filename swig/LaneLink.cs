@@ -13,7 +13,7 @@ namespace CityFlowCore {
 public class LaneLink : Drivable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
-  internal LaneLink(global::System.IntPtr cPtr, bool cMemoryOwn) : base(CityEnginePINVOKE.LaneLink_SWIGUpcast(cPtr), cMemoryOwn) {
+  internal LaneLink(global::System.IntPtr cPtr, bool cMemoryOwn) : base(CityFlowPINVOKE.LaneLink_SWIGUpcast(cPtr), cMemoryOwn) {
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
@@ -39,7 +39,7 @@ public class LaneLink : Drivable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_LaneLink(swigCPtr);
+          CityFlowPINVOKE.delete_LaneLink(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -47,53 +47,53 @@ public class LaneLink : Drivable {
     }
   }
 
-  public LaneLink() : this(CityEnginePINVOKE.new_LaneLink(), true) {
+  public LaneLink() : this(CityFlowPINVOKE.new_LaneLink(), true) {
   }
 
   public RoadLink getRoadLink() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.LaneLink_getRoadLink(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.LaneLink_getRoadLink(swigCPtr);
     RoadLink ret = (cPtr == global::System.IntPtr.Zero) ? null : new RoadLink(cPtr, false);
     return ret;
   }
 
   public RoadLinkType getRoadLinkType() {
-    RoadLinkType ret = (RoadLinkType)CityEnginePINVOKE.LaneLink_getRoadLinkType(swigCPtr);
+    RoadLinkType ret = (RoadLinkType)CityFlowPINVOKE.LaneLink_getRoadLinkType(swigCPtr);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Cross_p_t getCrosses() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Cross_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Cross_p_t(CityEnginePINVOKE.LaneLink_getCrosses__SWIG_0(swigCPtr), false);
+  public CrossPointerVector getCrosses() {
+    CrossPointerVector ret = new CrossPointerVector(CityFlowPINVOKE.LaneLink_getCrosses__SWIG_0(swigCPtr), false);
     return ret;
   }
 
   public Lane getStartLane() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.LaneLink_getStartLane(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.LaneLink_getStartLane(swigCPtr);
     Lane ret = (cPtr == global::System.IntPtr.Zero) ? null : new Lane(cPtr, false);
     return ret;
   }
 
   public Lane getEndLane() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.LaneLink_getEndLane(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.LaneLink_getEndLane(swigCPtr);
     Lane ret = (cPtr == global::System.IntPtr.Zero) ? null : new Lane(cPtr, false);
     return ret;
   }
 
   public bool isAvailable() {
-    bool ret = CityEnginePINVOKE.LaneLink_isAvailable(swigCPtr);
+    bool ret = CityFlowPINVOKE.LaneLink_isAvailable(swigCPtr);
     return ret;
   }
 
   public bool isTurn() {
-    bool ret = CityEnginePINVOKE.LaneLink_isTurn(swigCPtr);
+    bool ret = CityFlowPINVOKE.LaneLink_isTurn(swigCPtr);
     return ret;
   }
 
   public void reset() {
-    CityEnginePINVOKE.LaneLink_reset(swigCPtr);
+    CityFlowPINVOKE.LaneLink_reset(swigCPtr);
   }
 
-  public override SWIGTYPE_p_std__string getId() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.LaneLink_getId(swigCPtr), true);
+  public override string getId() {
+    string ret = CityFlowPINVOKE.LaneLink_getId(swigCPtr);
     return ret;
   }
 

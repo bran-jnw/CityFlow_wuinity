@@ -50,209 +50,204 @@ public class Option : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Option(swigCPtr);
+          CityFlowPINVOKE.delete_Option(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public Option() : this(CityEnginePINVOKE.new_Option(), true) {
+  public Option() : this(CityFlowPINVOKE.new_Option(), true) {
   }
 
   public void help_doc() {
-    CityEnginePINVOKE.Option_help_doc(swigCPtr);
+    CityFlowPINVOKE.Option_help_doc(swigCPtr);
   }
 
   public SWIGTYPE_p_bool found() {
-    SWIGTYPE_p_bool ret = new SWIGTYPE_p_bool(CityEnginePINVOKE.Option_found(swigCPtr), false);
+    SWIGTYPE_p_bool ret = new SWIGTYPE_p_bool(CityFlowPINVOKE.Option_found(swigCPtr), false);
     return ret;
   }
 
   public Option required(bool req) {
-    Option ret = new Option(CityEnginePINVOKE.Option_required__SWIG_0(swigCPtr, req), false);
+    Option ret = new Option(CityFlowPINVOKE.Option_required__SWIG_0(swigCPtr, req), false);
     return ret;
   }
 
   public SWIGTYPE_p_bool required() {
-    SWIGTYPE_p_bool ret = new SWIGTYPE_p_bool(CityEnginePINVOKE.Option_required__SWIG_1(swigCPtr), false);
+    SWIGTYPE_p_bool ret = new SWIGTYPE_p_bool(CityFlowPINVOKE.Option_required__SWIG_1(swigCPtr), false);
     return ret;
   }
 
   public SWIGTYPE_p_std__string short_flag() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_short_flag(swigCPtr), false);
+    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityFlowPINVOKE.Option_short_flag(swigCPtr), false);
     return ret;
   }
 
   public SWIGTYPE_p_std__string long_flag() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_long_flag(swigCPtr), false);
+    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityFlowPINVOKE.Option_long_flag(swigCPtr), false);
     return ret;
   }
 
   public SWIGTYPE_p_std__string pos_flag() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_pos_flag(swigCPtr), false);
+    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityFlowPINVOKE.Option_pos_flag(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__string m_short_flag {
+  public string m_short_flag {
     set {
-      CityEnginePINVOKE.Option_m_short_flag_set(swigCPtr, SWIGTYPE_p_std__string.getCPtr(value));
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      CityFlowPINVOKE.Option_m_short_flag_set(swigCPtr, value);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_m_short_flag_get(swigCPtr), true);
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      string ret = CityFlowPINVOKE.Option_m_short_flag_get(swigCPtr);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
-  public SWIGTYPE_p_std__string m_long_flag {
+  public string m_long_flag {
     set {
-      CityEnginePINVOKE.Option_m_long_flag_set(swigCPtr, SWIGTYPE_p_std__string.getCPtr(value));
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      CityFlowPINVOKE.Option_m_long_flag_set(swigCPtr, value);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_m_long_flag_get(swigCPtr), true);
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      string ret = CityFlowPINVOKE.Option_m_long_flag_get(swigCPtr);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
-  public SWIGTYPE_p_std__string m_pos_flag {
+  public string m_pos_flag {
     set {
-      CityEnginePINVOKE.Option_m_pos_flag_set(swigCPtr, SWIGTYPE_p_std__string.getCPtr(value));
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      CityFlowPINVOKE.Option_m_pos_flag_set(swigCPtr, value);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_m_pos_flag_get(swigCPtr), true);
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      string ret = CityFlowPINVOKE.Option_m_pos_flag_get(swigCPtr);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
   public SWIGTYPE_p_optionparser__StorageMode mode() {
-    SWIGTYPE_p_optionparser__StorageMode ret = new SWIGTYPE_p_optionparser__StorageMode(CityEnginePINVOKE.Option_mode__SWIG_0(swigCPtr), false);
+    SWIGTYPE_p_optionparser__StorageMode ret = new SWIGTYPE_p_optionparser__StorageMode(CityFlowPINVOKE.Option_mode__SWIG_0(swigCPtr), false);
     return ret;
   }
 
   public Option mode(StorageMode mode) {
-    Option ret = new Option(CityEnginePINVOKE.Option_mode__SWIG_1(swigCPtr, (int)mode), false);
+    Option ret = new Option(CityFlowPINVOKE.Option_mode__SWIG_1(swigCPtr, (int)mode), false);
     return ret;
   }
 
   public SWIGTYPE_p_std__string help() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_help__SWIG_0(swigCPtr), false);
+    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityFlowPINVOKE.Option_help__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public Option help(SWIGTYPE_p_std__string help) {
-    Option ret = new Option(CityEnginePINVOKE.Option_help__SWIG_1(swigCPtr, SWIGTYPE_p_std__string.getCPtr(help)), false);
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Option help(string help) {
+    Option ret = new Option(CityFlowPINVOKE.Option_help__SWIG_1(swigCPtr, help), false);
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public SWIGTYPE_p_std__string dest() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_dest__SWIG_0(swigCPtr), false);
+    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityFlowPINVOKE.Option_dest__SWIG_0(swigCPtr), false);
     return ret;
   }
 
-  public Option dest(SWIGTYPE_p_std__string dest) {
-    Option ret = new Option(CityEnginePINVOKE.Option_dest__SWIG_1(swigCPtr, SWIGTYPE_p_std__string.getCPtr(dest)), false);
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Option dest(string dest) {
+    Option ret = new Option(CityFlowPINVOKE.Option_dest__SWIG_1(swigCPtr, dest), false);
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public SWIGTYPE_p_std__string default_value() {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_default_value__SWIG_0(swigCPtr), false);
-    return ret;
-  }
-
-  public Option default_value(SWIGTYPE_p_std__string default_value) {
-    Option ret = new Option(CityEnginePINVOKE.Option_default_value__SWIG_1(swigCPtr, SWIGTYPE_p_std__string.getCPtr(default_value)), false);
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityFlowPINVOKE.Option_default_value__SWIG_0(swigCPtr), false);
     return ret;
   }
 
   public Option default_value(string default_value) {
-    Option ret = new Option(CityEnginePINVOKE.Option_default_value__SWIG_2(swigCPtr, default_value), false);
+    Option ret = new Option(CityFlowPINVOKE.Option_default_value__SWIG_1(swigCPtr, default_value), false);
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public bool m_found {
     set {
-      CityEnginePINVOKE.Option_m_found_set(swigCPtr, value);
+      CityFlowPINVOKE.Option_m_found_set(swigCPtr, value);
     } 
     get {
-      bool ret = CityEnginePINVOKE.Option_m_found_get(swigCPtr);
+      bool ret = CityFlowPINVOKE.Option_m_found_get(swigCPtr);
       return ret;
     } 
   }
 
   public bool m_required {
     set {
-      CityEnginePINVOKE.Option_m_required_set(swigCPtr, value);
+      CityFlowPINVOKE.Option_m_required_set(swigCPtr, value);
     } 
     get {
-      bool ret = CityEnginePINVOKE.Option_m_required_get(swigCPtr);
+      bool ret = CityFlowPINVOKE.Option_m_required_get(swigCPtr);
       return ret;
     } 
   }
 
   public StorageMode m_mode {
     set {
-      CityEnginePINVOKE.Option_m_mode_set(swigCPtr, (int)value);
+      CityFlowPINVOKE.Option_m_mode_set(swigCPtr, (int)value);
     } 
     get {
-      StorageMode ret = (StorageMode)CityEnginePINVOKE.Option_m_mode_get(swigCPtr);
+      StorageMode ret = (StorageMode)CityFlowPINVOKE.Option_m_mode_get(swigCPtr);
       return ret;
     } 
   }
 
-  public SWIGTYPE_p_std__string m_help {
+  public string m_help {
     set {
-      CityEnginePINVOKE.Option_m_help_set(swigCPtr, SWIGTYPE_p_std__string.getCPtr(value));
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      CityFlowPINVOKE.Option_m_help_set(swigCPtr, value);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_m_help_get(swigCPtr), true);
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      string ret = CityFlowPINVOKE.Option_m_help_get(swigCPtr);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
-  public SWIGTYPE_p_std__string m_dest {
+  public string m_dest {
     set {
-      CityEnginePINVOKE.Option_m_dest_set(swigCPtr, SWIGTYPE_p_std__string.getCPtr(value));
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      CityFlowPINVOKE.Option_m_dest_set(swigCPtr, value);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_m_dest_get(swigCPtr), true);
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      string ret = CityFlowPINVOKE.Option_m_dest_get(swigCPtr);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
-  public SWIGTYPE_p_std__string m_default_value {
+  public string m_default_value {
     set {
-      CityEnginePINVOKE.Option_m_default_value_set(swigCPtr, SWIGTYPE_p_std__string.getCPtr(value));
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      CityFlowPINVOKE.Option_m_default_value_set(swigCPtr, value);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_m_default_value_get(swigCPtr), true);
-      if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+      string ret = CityFlowPINVOKE.Option_m_default_value_get(swigCPtr);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
-  public static OptionType get_type(SWIGTYPE_p_std__string opt) {
-    OptionType ret = (OptionType)CityEnginePINVOKE.Option_get_type(SWIGTYPE_p_std__string.getCPtr(opt));
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public static OptionType get_type(string opt) {
+    OptionType ret = (OptionType)CityFlowPINVOKE.Option_get_type(opt);
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
-  public static SWIGTYPE_p_std__string get_destination(SWIGTYPE_p_std__string opt1, SWIGTYPE_p_std__string opt2, OptionType ft, OptionType st) {
-    SWIGTYPE_p_std__string ret = new SWIGTYPE_p_std__string(CityEnginePINVOKE.Option_get_destination(SWIGTYPE_p_std__string.getCPtr(opt1), SWIGTYPE_p_std__string.getCPtr(opt2), (int)ft, (int)st), true);
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public static string get_destination(string opt1, string opt2, OptionType ft, OptionType st) {
+    string ret = CityFlowPINVOKE.Option_get_destination(opt1, opt2, (int)ft, (int)st);
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 

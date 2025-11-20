@@ -50,14 +50,14 @@ public class FinalInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_FinalInfo(swigCPtr);
+          CityFlowPINVOKE.delete_FinalInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public FinalInfo() : this(CityEnginePINVOKE.new_FinalInfo(), true) {
+  public FinalInfo() : this(CityFlowPINVOKE.new_FinalInfo(), true) {
   }
 
 }

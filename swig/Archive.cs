@@ -50,32 +50,32 @@ public class Archive : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Archive(swigCPtr);
+          CityFlowPINVOKE.delete_Archive(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public Archive() : this(CityEnginePINVOKE.new_Archive__SWIG_0(), true) {
+  public Archive() : this(CityFlowPINVOKE.new_Archive__SWIG_0(), true) {
   }
 
-  public Archive(Engine engine) : this(CityEnginePINVOKE.new_Archive__SWIG_1(Engine.getCPtr(engine)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Archive(Engine engine) : this(CityFlowPINVOKE.new_Archive__SWIG_1(Engine.getCPtr(engine)), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public Archive(Engine engine, SWIGTYPE_p_std__string filename) : this(CityEnginePINVOKE.new_Archive__SWIG_2(Engine.getCPtr(engine), SWIGTYPE_p_std__string.getCPtr(filename)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Archive(Engine engine, string filename) : this(CityFlowPINVOKE.new_Archive__SWIG_2(Engine.getCPtr(engine), filename), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void resume(Engine engine) {
-    CityEnginePINVOKE.Archive_resume(swigCPtr, Engine.getCPtr(engine));
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+    CityFlowPINVOKE.Archive_resume(swigCPtr, Engine.getCPtr(engine));
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public void dump(SWIGTYPE_p_std__string fileName) {
-    CityEnginePINVOKE.Archive_dump(swigCPtr, SWIGTYPE_p_std__string.getCPtr(fileName));
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public void dump(string fileName) {
+    CityFlowPINVOKE.Archive_dump(swigCPtr, fileName);
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
 }

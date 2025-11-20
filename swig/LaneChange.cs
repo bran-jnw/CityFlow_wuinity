@@ -50,7 +50,7 @@ public class LaneChange : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_LaneChange(swigCPtr);
+          CityFlowPINVOKE.delete_LaneChange(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -58,98 +58,98 @@ public class LaneChange : global::System.IDisposable {
   }
 
   public void updateLeaderAndFollower() {
-    CityEnginePINVOKE.LaneChange_updateLeaderAndFollower(swigCPtr);
+    CityFlowPINVOKE.LaneChange_updateLeaderAndFollower(swigCPtr);
   }
 
   public Lane getTarget() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.LaneChange_getTarget(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.LaneChange_getTarget(swigCPtr);
     Lane ret = (cPtr == global::System.IntPtr.Zero) ? null : new Lane(cPtr, false);
     return ret;
   }
 
   public Vehicle getTargetLeader() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.LaneChange_getTargetLeader(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.LaneChange_getTargetLeader(swigCPtr);
     Vehicle ret = (cPtr == global::System.IntPtr.Zero) ? null : new Vehicle(cPtr, false);
     return ret;
   }
 
   public Vehicle getTargetFollower() {
-    global::System.IntPtr cPtr = CityEnginePINVOKE.LaneChange_getTargetFollower(swigCPtr);
+    global::System.IntPtr cPtr = CityFlowPINVOKE.LaneChange_getTargetFollower(swigCPtr);
     Vehicle ret = (cPtr == global::System.IntPtr.Zero) ? null : new Vehicle(cPtr, false);
     return ret;
   }
 
   public double gapBefore() {
-    double ret = CityEnginePINVOKE.LaneChange_gapBefore(swigCPtr);
+    double ret = CityFlowPINVOKE.LaneChange_gapBefore(swigCPtr);
     return ret;
   }
 
   public double gapAfter() {
-    double ret = CityEnginePINVOKE.LaneChange_gapAfter(swigCPtr);
+    double ret = CityFlowPINVOKE.LaneChange_gapAfter(swigCPtr);
     return ret;
   }
 
   public void insertShadow(Vehicle shadow) {
-    CityEnginePINVOKE.LaneChange_insertShadow(swigCPtr, Vehicle.getCPtr(shadow));
+    CityFlowPINVOKE.LaneChange_insertShadow(swigCPtr, Vehicle.getCPtr(shadow));
   }
 
   public virtual double safeGapBefore() {
-    double ret = CityEnginePINVOKE.LaneChange_safeGapBefore(swigCPtr);
+    double ret = CityFlowPINVOKE.LaneChange_safeGapBefore(swigCPtr);
     return ret;
   }
 
   public virtual double safeGapAfter() {
-    double ret = CityEnginePINVOKE.LaneChange_safeGapAfter(swigCPtr);
+    double ret = CityFlowPINVOKE.LaneChange_safeGapAfter(swigCPtr);
     return ret;
   }
 
   public virtual void makeSignal(double interval) {
-    CityEnginePINVOKE.LaneChange_makeSignal(swigCPtr, interval);
+    CityFlowPINVOKE.LaneChange_makeSignal(swigCPtr, interval);
   }
 
   public bool planChange() {
-    bool ret = CityEnginePINVOKE.LaneChange_planChange(swigCPtr);
+    bool ret = CityFlowPINVOKE.LaneChange_planChange(swigCPtr);
     return ret;
   }
 
   public bool canChange() {
-    bool ret = CityEnginePINVOKE.LaneChange_canChange(swigCPtr);
+    bool ret = CityFlowPINVOKE.LaneChange_canChange(swigCPtr);
     return ret;
   }
 
   public bool isGapValid() {
-    bool ret = CityEnginePINVOKE.LaneChange_isGapValid(swigCPtr);
+    bool ret = CityFlowPINVOKE.LaneChange_isGapValid(swigCPtr);
     return ret;
   }
 
   public void finishChanging() {
-    CityEnginePINVOKE.LaneChange_finishChanging(swigCPtr);
+    CityFlowPINVOKE.LaneChange_finishChanging(swigCPtr);
   }
 
   public void abortChanging() {
-    CityEnginePINVOKE.LaneChange_abortChanging(swigCPtr);
+    CityFlowPINVOKE.LaneChange_abortChanging(swigCPtr);
   }
 
   public virtual double yieldSpeed(double interval) {
-    double ret = CityEnginePINVOKE.LaneChange_yieldSpeed(swigCPtr, interval);
+    double ret = CityFlowPINVOKE.LaneChange_yieldSpeed(swigCPtr, interval);
     return ret;
   }
 
   public virtual void sendSignal() {
-    CityEnginePINVOKE.LaneChange_sendSignal(swigCPtr);
+    CityFlowPINVOKE.LaneChange_sendSignal(swigCPtr);
   }
 
   public int getDirection() {
-    int ret = CityEnginePINVOKE.LaneChange_getDirection(swigCPtr);
+    int ret = CityFlowPINVOKE.LaneChange_getDirection(swigCPtr);
     return ret;
   }
 
   public void clearSignal() {
-    CityEnginePINVOKE.LaneChange_clearSignal(swigCPtr);
+    CityFlowPINVOKE.LaneChange_clearSignal(swigCPtr);
   }
 
   public bool hasFinished() {
-    bool ret = CityEnginePINVOKE.LaneChange_hasFinished(swigCPtr);
+    bool ret = CityFlowPINVOKE.LaneChange_hasFinished(swigCPtr);
     return ret;
   }
 

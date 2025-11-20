@@ -50,7 +50,7 @@ public class VehicleInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_VehicleInfo(swigCPtr);
+          CityFlowPINVOKE.delete_VehicleInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -59,136 +59,137 @@ public class VehicleInfo : global::System.IDisposable {
 
   public double speed {
     set {
-      CityEnginePINVOKE.VehicleInfo_speed_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_speed_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_speed_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_speed_get(swigCPtr);
       return ret;
     } 
   }
 
   public double len {
     set {
-      CityEnginePINVOKE.VehicleInfo_len_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_len_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_len_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_len_get(swigCPtr);
       return ret;
     } 
   }
 
   public double width {
     set {
-      CityEnginePINVOKE.VehicleInfo_width_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_width_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_width_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_width_get(swigCPtr);
       return ret;
     } 
   }
 
   public double maxPosAcc {
     set {
-      CityEnginePINVOKE.VehicleInfo_maxPosAcc_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_maxPosAcc_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_maxPosAcc_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_maxPosAcc_get(swigCPtr);
       return ret;
     } 
   }
 
   public double maxNegAcc {
     set {
-      CityEnginePINVOKE.VehicleInfo_maxNegAcc_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_maxNegAcc_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_maxNegAcc_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_maxNegAcc_get(swigCPtr);
       return ret;
     } 
   }
 
   public double usualPosAcc {
     set {
-      CityEnginePINVOKE.VehicleInfo_usualPosAcc_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_usualPosAcc_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_usualPosAcc_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_usualPosAcc_get(swigCPtr);
       return ret;
     } 
   }
 
   public double usualNegAcc {
     set {
-      CityEnginePINVOKE.VehicleInfo_usualNegAcc_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_usualNegAcc_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_usualNegAcc_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_usualNegAcc_get(swigCPtr);
       return ret;
     } 
   }
 
   public double minGap {
     set {
-      CityEnginePINVOKE.VehicleInfo_minGap_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_minGap_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_minGap_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_minGap_get(swigCPtr);
       return ret;
     } 
   }
 
   public double maxSpeed {
     set {
-      CityEnginePINVOKE.VehicleInfo_maxSpeed_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_maxSpeed_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_maxSpeed_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_maxSpeed_get(swigCPtr);
       return ret;
     } 
   }
 
   public double headwayTime {
     set {
-      CityEnginePINVOKE.VehicleInfo_headwayTime_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_headwayTime_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_headwayTime_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_headwayTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public double yieldDistance {
     set {
-      CityEnginePINVOKE.VehicleInfo_yieldDistance_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_yieldDistance_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_yieldDistance_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_yieldDistance_get(swigCPtr);
       return ret;
     } 
   }
 
   public double turnSpeed {
     set {
-      CityEnginePINVOKE.VehicleInfo_turnSpeed_set(swigCPtr, value);
+      CityFlowPINVOKE.VehicleInfo_turnSpeed_set(swigCPtr, value);
     } 
     get {
-      double ret = CityEnginePINVOKE.VehicleInfo_turnSpeed_get(swigCPtr);
+      double ret = CityFlowPINVOKE.VehicleInfo_turnSpeed_get(swigCPtr);
       return ret;
     } 
   }
 
   public SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t route {
     set {
-      CityEnginePINVOKE.VehicleInfo_route_set(swigCPtr, SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t.getCPtr(value));
+      CityFlowPINVOKE.VehicleInfo_route_set(swigCPtr, SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t.getCPtr(value));
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      global::System.IntPtr cPtr = CityEnginePINVOKE.VehicleInfo_route_get(swigCPtr);
-      SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t(cPtr, false);
+      SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t ret = new SWIGTYPE_p_std__shared_ptrT_CityFlow__Route_const_t(CityFlowPINVOKE.VehicleInfo_route_get(swigCPtr), false);
+      if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
-  public VehicleInfo() : this(CityEnginePINVOKE.new_VehicleInfo(), true) {
+  public VehicleInfo() : this(CityFlowPINVOKE.new_VehicleInfo(), true) {
   }
 
 }

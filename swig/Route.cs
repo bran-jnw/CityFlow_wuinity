@@ -50,22 +50,22 @@ public class Route : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Route(swigCPtr);
+          CityFlowPINVOKE.delete_Route(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public Route() : this(CityEnginePINVOKE.new_Route__SWIG_0(), true) {
+  public Route() : this(CityFlowPINVOKE.new_Route__SWIG_0(), true) {
   }
 
-  public Route(SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t route) : this(CityEnginePINVOKE.new_Route__SWIG_1(SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t.getCPtr(route)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Route(RoadPointerVector route) : this(CityFlowPINVOKE.new_Route__SWIG_1(RoadPointerVector.getCPtr(route)), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t getRoute() {
-    SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__Road_p_t(CityEnginePINVOKE.Route_getRoute(swigCPtr), true);
+  public RoadPointerVector getRoute() {
+    RoadPointerVector ret = new RoadPointerVector(CityFlowPINVOKE.Route_getRoute(swigCPtr), true);
     return ret;
   }
 

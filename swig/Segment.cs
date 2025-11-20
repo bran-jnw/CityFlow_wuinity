@@ -50,51 +50,51 @@ public class Segment : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Segment(swigCPtr);
+          CityFlowPINVOKE.delete_Segment(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public Segment() : this(CityEnginePINVOKE.new_Segment__SWIG_0(), true) {
+  public Segment() : this(CityFlowPINVOKE.new_Segment__SWIG_0(), true) {
   }
 
-  public Segment(uint index, Lane belongLane, double startPos, double endPos) : this(CityEnginePINVOKE.new_Segment__SWIG_1(index, Lane.getCPtr(belongLane), startPos, endPos), true) {
+  public Segment(uint index, Lane belongLane, double startPos, double endPos) : this(CityFlowPINVOKE.new_Segment__SWIG_1(index, Lane.getCPtr(belongLane), startPos, endPos), true) {
   }
 
   public double getStartPos() {
-    double ret = CityEnginePINVOKE.Segment_getStartPos(swigCPtr);
+    double ret = CityFlowPINVOKE.Segment_getStartPos(swigCPtr);
     return ret;
   }
 
   public double getEndPos() {
-    double ret = CityEnginePINVOKE.Segment_getEndPos(swigCPtr);
+    double ret = CityFlowPINVOKE.Segment_getEndPos(swigCPtr);
     return ret;
   }
 
   public uint getIndex() {
-    uint ret = CityEnginePINVOKE.Segment_getIndex(swigCPtr);
+    uint ret = CityFlowPINVOKE.Segment_getIndex(swigCPtr);
     return ret;
   }
 
   public SWIGTYPE_p_std__listT_std__listT_CityFlow__Vehicle_p_t__iterator_t getVehicles() {
-    SWIGTYPE_p_std__listT_std__listT_CityFlow__Vehicle_p_t__iterator_t ret = new SWIGTYPE_p_std__listT_std__listT_CityFlow__Vehicle_p_t__iterator_t(CityEnginePINVOKE.Segment_getVehicles__SWIG_0(swigCPtr), false);
+    SWIGTYPE_p_std__listT_std__listT_CityFlow__Vehicle_p_t__iterator_t ret = new SWIGTYPE_p_std__listT_std__listT_CityFlow__Vehicle_p_t__iterator_t(CityFlowPINVOKE.Segment_getVehicles__SWIG_0(swigCPtr), false);
     return ret;
   }
 
   public SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t__iterator findVehicle(Vehicle vehicle) {
-    SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t__iterator ret = new SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t__iterator(CityEnginePINVOKE.Segment_findVehicle(swigCPtr, Vehicle.getCPtr(vehicle)), true);
+    SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t__iterator ret = new SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t__iterator(CityFlowPINVOKE.Segment_findVehicle(swigCPtr, Vehicle.getCPtr(vehicle)), true);
     return ret;
   }
 
   public void removeVehicle(Vehicle vehicle) {
-    CityEnginePINVOKE.Segment_removeVehicle(swigCPtr, Vehicle.getCPtr(vehicle));
+    CityFlowPINVOKE.Segment_removeVehicle(swigCPtr, Vehicle.getCPtr(vehicle));
   }
 
   public void insertVehicle(SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t__iterator vehicle) {
-    CityEnginePINVOKE.Segment_insertVehicle(swigCPtr, SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t__iterator.getCPtr(vehicle));
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+    CityFlowPINVOKE.Segment_insertVehicle(swigCPtr, SWIGTYPE_p_std__listT_CityFlow__Vehicle_p_t__iterator.getCPtr(vehicle));
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
 }

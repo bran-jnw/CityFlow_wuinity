@@ -50,19 +50,18 @@ public class Barrier : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_Barrier(swigCPtr);
+          CityFlowPINVOKE.delete_Barrier(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public Barrier(SWIGTYPE_p_std__size_t nb_threads) : this(CityEnginePINVOKE.new_Barrier(SWIGTYPE_p_std__size_t.getCPtr(nb_threads)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public Barrier(uint nb_threads) : this(CityFlowPINVOKE.new_Barrier(nb_threads), true) {
   }
 
   public void wait() {
-    CityEnginePINVOKE.Barrier_wait(swigCPtr);
+    CityFlowPINVOKE.Barrier_wait(swigCPtr);
   }
 
 }

@@ -13,7 +13,7 @@ namespace CityFlowCore {
 public class JsonTypeError : JsonFormatError {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
-  internal JsonTypeError(global::System.IntPtr cPtr, bool cMemoryOwn) : base(CityEnginePINVOKE.JsonTypeError_SWIGUpcast(cPtr), cMemoryOwn) {
+  internal JsonTypeError(global::System.IntPtr cPtr, bool cMemoryOwn) : base(CityFlowPINVOKE.JsonTypeError_SWIGUpcast(cPtr), cMemoryOwn) {
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
@@ -39,7 +39,7 @@ public class JsonTypeError : JsonFormatError {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_JsonTypeError(swigCPtr);
+          CityFlowPINVOKE.delete_JsonTypeError(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -47,12 +47,8 @@ public class JsonTypeError : JsonFormatError {
     }
   }
 
-  public JsonTypeError(SWIGTYPE_p_std__string name, string type) : this(CityEnginePINVOKE.new_JsonTypeError__SWIG_0(SWIGTYPE_p_std__string.getCPtr(name), type), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
-  }
-
-  public JsonTypeError(SWIGTYPE_p_std__string name, SWIGTYPE_p_std__string type) : this(CityEnginePINVOKE.new_JsonTypeError__SWIG_1(SWIGTYPE_p_std__string.getCPtr(name), SWIGTYPE_p_std__string.getCPtr(type)), true) {
-    if (CityEnginePINVOKE.SWIGPendingException.Pending) throw CityEnginePINVOKE.SWIGPendingException.Retrieve();
+  public JsonTypeError(string name, string type) : this(CityFlowPINVOKE.new_JsonTypeError__SWIG_0(name, type), true) {
+    if (CityFlowPINVOKE.SWIGPendingException.Pending) throw CityFlowPINVOKE.SWIGPendingException.Retrieve();
   }
 
 }

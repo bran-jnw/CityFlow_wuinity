@@ -50,7 +50,7 @@ public class TrafficLight : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          CityEnginePINVOKE.delete_TrafficLight(swigCPtr);
+          CityFlowPINVOKE.delete_TrafficLight(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -58,42 +58,42 @@ public class TrafficLight : global::System.IDisposable {
   }
 
   public void init(int initPhaseIndex) {
-    CityEnginePINVOKE.TrafficLight_init(swigCPtr, initPhaseIndex);
+    CityFlowPINVOKE.TrafficLight_init(swigCPtr, initPhaseIndex);
   }
 
   public int getCurrentPhaseIndex() {
-    int ret = CityEnginePINVOKE.TrafficLight_getCurrentPhaseIndex(swigCPtr);
+    int ret = CityFlowPINVOKE.TrafficLight_getCurrentPhaseIndex(swigCPtr);
     return ret;
   }
 
   public LightPhase getCurrentPhase() {
-    LightPhase ret = new LightPhase(CityEnginePINVOKE.TrafficLight_getCurrentPhase(swigCPtr), false);
+    LightPhase ret = new LightPhase(CityFlowPINVOKE.TrafficLight_getCurrentPhase(swigCPtr), false);
     return ret;
   }
 
   public Intersection getIntersection() {
-    Intersection ret = new Intersection(CityEnginePINVOKE.TrafficLight_getIntersection(swigCPtr), false);
+    Intersection ret = new Intersection(CityFlowPINVOKE.TrafficLight_getIntersection(swigCPtr), false);
     return ret;
   }
 
-  public SWIGTYPE_p_std__vectorT_CityFlow__LightPhase_t getPhases() {
-    SWIGTYPE_p_std__vectorT_CityFlow__LightPhase_t ret = new SWIGTYPE_p_std__vectorT_CityFlow__LightPhase_t(CityEnginePINVOKE.TrafficLight_getPhases(swigCPtr), false);
+  public LightPhaseVector getPhases() {
+    LightPhaseVector ret = new LightPhaseVector(CityFlowPINVOKE.TrafficLight_getPhases(swigCPtr), false);
     return ret;
   }
 
   public void passTime(double seconds) {
-    CityEnginePINVOKE.TrafficLight_passTime(swigCPtr, seconds);
+    CityFlowPINVOKE.TrafficLight_passTime(swigCPtr, seconds);
   }
 
   public void setPhase(int phaseIndex) {
-    CityEnginePINVOKE.TrafficLight_setPhase(swigCPtr, phaseIndex);
+    CityFlowPINVOKE.TrafficLight_setPhase(swigCPtr, phaseIndex);
   }
 
   public void reset() {
-    CityEnginePINVOKE.TrafficLight_reset(swigCPtr);
+    CityFlowPINVOKE.TrafficLight_reset(swigCPtr);
   }
 
-  public TrafficLight() : this(CityEnginePINVOKE.new_TrafficLight(), true) {
+  public TrafficLight() : this(CityFlowPINVOKE.new_TrafficLight(), true) {
   }
 
 }
